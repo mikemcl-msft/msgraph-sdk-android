@@ -47,10 +47,19 @@ public interface IBaseEventRequestBuilder extends IRequestBuilder {
     IAttachmentCollectionRequestBuilder getAttachments();
 
     IAttachmentRequestBuilder getAttachments(final String id);
+
+    ISingleValueLegacyExtendedPropertyCollectionRequestBuilder getSingleValueExtendedProperties();
+
+    ISingleValueLegacyExtendedPropertyRequestBuilder getSingleValueExtendedProperties(final String id);
+
+    IMultiValueLegacyExtendedPropertyCollectionRequestBuilder getMultiValueExtendedProperties();
+
+    IMultiValueLegacyExtendedPropertyRequestBuilder getMultiValueExtendedProperties(final String id);
     IEventAcceptRequestBuilder getAccept(final String comment, final Boolean sendResponse);
     IEventDeclineRequestBuilder getDecline(final String comment, final Boolean sendResponse);
     IEventTentativelyAcceptRequestBuilder getTentativelyAccept(final String comment, final Boolean sendResponse);
     IEventSnoozeReminderRequestBuilder getSnoozeReminder(final DateTimeTimeZone newReminderTime);
     IEventDismissReminderRequestBuilder getDismissReminder();
+    IEventCancelRequestBuilder getCancel(final String comment);
 
 }

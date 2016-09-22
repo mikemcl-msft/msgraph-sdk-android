@@ -29,7 +29,7 @@ public class MessageCreateForwardRequestBuilder extends BaseMessageCreateForward
      * @param client The service client
      * @param options The options for this request
      */
-    public MessageCreateForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options) {
-        super(requestUrl, client, options);
+    public MessageCreateForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final Message message, final String comment, final List<Recipient> toRecipients) {
+        super(requestUrl, client, options, message, comment, toRecipients);
     }
 }

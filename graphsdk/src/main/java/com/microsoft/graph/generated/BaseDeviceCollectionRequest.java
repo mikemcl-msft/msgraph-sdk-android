@@ -68,17 +68,6 @@ public class BaseDeviceCollectionRequest extends BaseCollectionRequest<BaseDevic
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IDeviceCollectionRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (DeviceCollectionRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

@@ -119,15 +119,4 @@ public class BaseSubscribedSkuRequest extends BaseRequest implements IBaseSubscr
          return (SubscribedSkuRequest)this;
      }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-     public ISubscribedSkuRequest expand(final String value) {
-         getQueryOptions().add(new QueryOption("$expand", value));
-         return (SubscribedSkuRequest)this;
-     }
-
 }

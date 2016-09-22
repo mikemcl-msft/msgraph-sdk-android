@@ -217,6 +217,12 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
     public String userType;
 
     /**
+     * The Mailbox Settings.
+     */
+    @SerializedName("mailboxSettings")
+    public MailboxSettings mailboxSettings;
+
+    /**
      * The About Me.
      */
     @SerializedName("aboutMe")
@@ -318,6 +324,11 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
     public transient MessageCollectionPage messages;
 
     /**
+     * The Joined Groups.
+     */
+    public transient GroupCollectionPage joinedGroups;
+
+    /**
      * The Mail Folders.
      */
     public transient MailFolderCollectionPage mailFolders;
@@ -349,6 +360,11 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
     public transient EventCollectionPage events;
 
     /**
+     * The People.
+     */
+    public transient PersonCollectionPage people;
+
+    /**
      * The Contacts.
      */
     public transient ContactCollectionPage contacts;
@@ -371,10 +387,47 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
     public ProfilePhoto photo;
 
     /**
+     * The Photos.
+     */
+    public transient ProfilePhotoCollectionPage photos;
+
+    /**
      * The Drive.
      */
     @SerializedName("drive")
     public Drive drive;
+
+    /**
+     * The Insights.
+     */
+    @SerializedName("insights")
+    public OfficeGraphInsights insights;
+
+    /**
+     * The Trending Around.
+     */
+    public transient DriveItemCollectionPage trendingAround;
+
+    /**
+     * The Working With.
+     */
+    public transient UserCollectionPage workingWith;
+
+    /**
+     * The Tasks.
+     */
+    public transient TaskCollectionPage tasks;
+
+    /**
+     * The Plans.
+     */
+    public transient PlanCollectionPage plans;
+
+    /**
+     * The Notes.
+     */
+    @SerializedName("notes")
+    public Notes notes;
 
 
     /**
@@ -526,6 +579,22 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
             messages = new MessageCollectionPage(response, null);
         }
 
+        if (json.has("joinedGroups")) {
+            final BaseGroupCollectionResponse response = new BaseGroupCollectionResponse();
+            if (json.has("joinedGroups@odata.nextLink")) {
+                response.nextLink = json.get("joinedGroups@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("joinedGroups").toString(), JsonObject[].class);
+            final Group[] array = new Group[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Group.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            joinedGroups = new GroupCollectionPage(response, null);
+        }
+
         if (json.has("mailFolders")) {
             final BaseMailFolderCollectionResponse response = new BaseMailFolderCollectionResponse();
             if (json.has("mailFolders@odata.nextLink")) {
@@ -606,6 +675,22 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
             events = new EventCollectionPage(response, null);
         }
 
+        if (json.has("people")) {
+            final BasePersonCollectionResponse response = new BasePersonCollectionResponse();
+            if (json.has("people@odata.nextLink")) {
+                response.nextLink = json.get("people@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("people").toString(), JsonObject[].class);
+            final Person[] array = new Person[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Person.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            people = new PersonCollectionPage(response, null);
+        }
+
         if (json.has("contacts")) {
             final BaseContactCollectionResponse response = new BaseContactCollectionResponse();
             if (json.has("contacts@odata.nextLink")) {
@@ -636,6 +721,86 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             contactFolders = new ContactFolderCollectionPage(response, null);
+        }
+
+        if (json.has("photos")) {
+            final BaseProfilePhotoCollectionResponse response = new BaseProfilePhotoCollectionResponse();
+            if (json.has("photos@odata.nextLink")) {
+                response.nextLink = json.get("photos@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("photos").toString(), JsonObject[].class);
+            final ProfilePhoto[] array = new ProfilePhoto[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), ProfilePhoto.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            photos = new ProfilePhotoCollectionPage(response, null);
+        }
+
+        if (json.has("trendingAround")) {
+            final BaseDriveItemCollectionResponse response = new BaseDriveItemCollectionResponse();
+            if (json.has("trendingAround@odata.nextLink")) {
+                response.nextLink = json.get("trendingAround@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("trendingAround").toString(), JsonObject[].class);
+            final DriveItem[] array = new DriveItem[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), DriveItem.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            trendingAround = new DriveItemCollectionPage(response, null);
+        }
+
+        if (json.has("workingWith")) {
+            final BaseUserCollectionResponse response = new BaseUserCollectionResponse();
+            if (json.has("workingWith@odata.nextLink")) {
+                response.nextLink = json.get("workingWith@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("workingWith").toString(), JsonObject[].class);
+            final User[] array = new User[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), User.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            workingWith = new UserCollectionPage(response, null);
+        }
+
+        if (json.has("tasks")) {
+            final BaseTaskCollectionResponse response = new BaseTaskCollectionResponse();
+            if (json.has("tasks@odata.nextLink")) {
+                response.nextLink = json.get("tasks@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("tasks").toString(), JsonObject[].class);
+            final Task[] array = new Task[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Task.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            tasks = new TaskCollectionPage(response, null);
+        }
+
+        if (json.has("plans")) {
+            final BasePlanCollectionResponse response = new BasePlanCollectionResponse();
+            if (json.has("plans@odata.nextLink")) {
+                response.nextLink = json.get("plans@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("plans").toString(), JsonObject[].class);
+            final Plan[] array = new Plan[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Plan.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            plans = new PlanCollectionPage(response, null);
         }
     }
 }

@@ -103,6 +103,12 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
     public String visibility;
 
     /**
+     * The Access Type.
+     */
+    @SerializedName("accessType")
+    public GroupAccessType accessType;
+
+    /**
      * The Allow External Senders.
      */
     @SerializedName("allowExternalSenders")
@@ -113,6 +119,12 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      */
     @SerializedName("autoSubscribeNewMembers")
     public Boolean autoSubscribeNewMembers;
+
+    /**
+     * The Is Favorite.
+     */
+    @SerializedName("isFavorite")
+    public Boolean isFavorite;
 
     /**
      * The Is Subscribed By Mail.
@@ -148,6 +160,11 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
     public transient DirectoryObjectCollectionPage owners;
 
     /**
+     * The Settings.
+     */
+    public transient DirectorySettingCollectionPage settings;
+
+    /**
      * The Threads.
      */
     public transient ConversationThreadCollectionPage threads;
@@ -180,6 +197,11 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
     public ProfilePhoto photo;
 
     /**
+     * The Photos.
+     */
+    public transient ProfilePhotoCollectionPage photos;
+
+    /**
      * The Accepted Senders.
      */
     public transient DirectoryObjectCollectionPage acceptedSenders;
@@ -194,6 +216,17 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      */
     @SerializedName("drive")
     public Drive drive;
+
+    /**
+     * The Plans.
+     */
+    public transient PlanCollectionPage plans;
+
+    /**
+     * The Notes.
+     */
+    @SerializedName("notes")
+    public Notes notes;
 
 
     /**
@@ -281,6 +314,22 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
             owners = new DirectoryObjectCollectionPage(response, null);
         }
 
+        if (json.has("settings")) {
+            final BaseDirectorySettingCollectionResponse response = new BaseDirectorySettingCollectionResponse();
+            if (json.has("settings@odata.nextLink")) {
+                response.nextLink = json.get("settings@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("settings").toString(), JsonObject[].class);
+            final DirectorySetting[] array = new DirectorySetting[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), DirectorySetting.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            settings = new DirectorySettingCollectionPage(response, null);
+        }
+
         if (json.has("threads")) {
             final BaseConversationThreadCollectionResponse response = new BaseConversationThreadCollectionResponse();
             if (json.has("threads@odata.nextLink")) {
@@ -345,6 +394,22 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
             conversations = new ConversationCollectionPage(response, null);
         }
 
+        if (json.has("photos")) {
+            final BaseProfilePhotoCollectionResponse response = new BaseProfilePhotoCollectionResponse();
+            if (json.has("photos@odata.nextLink")) {
+                response.nextLink = json.get("photos@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("photos").toString(), JsonObject[].class);
+            final ProfilePhoto[] array = new ProfilePhoto[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), ProfilePhoto.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            photos = new ProfilePhotoCollectionPage(response, null);
+        }
+
         if (json.has("acceptedSenders")) {
             final BaseDirectoryObjectCollectionResponse response = new BaseDirectoryObjectCollectionResponse();
             if (json.has("acceptedSenders@odata.nextLink")) {
@@ -375,6 +440,22 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             rejectedSenders = new DirectoryObjectCollectionPage(response, null);
+        }
+
+        if (json.has("plans")) {
+            final BasePlanCollectionResponse response = new BasePlanCollectionResponse();
+            if (json.has("plans@odata.nextLink")) {
+                response.nextLink = json.get("plans@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("plans").toString(), JsonObject[].class);
+            final Plan[] array = new Plan[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Plan.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            plans = new PlanCollectionPage(response, null);
         }
     }
 }

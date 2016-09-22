@@ -38,12 +38,6 @@ public class BasePatternedRecurrence implements IJsonBackedObject {
     @SerializedName("pattern")
     public RecurrencePattern pattern;
 
-    /**
-     * The Range.
-     */
-    @SerializedName("range")
-    public RecurrenceRange range;
-
 
     /**
      * The raw representation of this class

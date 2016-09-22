@@ -119,15 +119,4 @@ public class BaseDirectoryRoleTemplateRequest extends BaseRequest implements IBa
          return (DirectoryRoleTemplateRequest)this;
      }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-     public IDirectoryRoleTemplateRequest expand(final String value) {
-         getQueryOptions().add(new QueryOption("$expand", value));
-         return (DirectoryRoleTemplateRequest)this;
-     }
-
 }

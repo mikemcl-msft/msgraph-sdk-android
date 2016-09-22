@@ -38,6 +38,51 @@ public interface IBaseGraphServiceClient extends IBaseClient {
     IDirectoryObjectRequestBuilder getDirectoryObjects(final String id);
 
     /**
+     * Gets the collection of Applications objects.
+     *
+     * @return The request builder for the collection of Applications objects
+     */
+    IApplicationCollectionRequestBuilder getApplications();
+
+    /**
+     * Gets a single Applications.
+     *
+     * @param id The id of the Applications to retrieve.
+     * @return The request builder for the Applications object
+     */
+    IApplicationRequestBuilder getApplications(final String id);
+
+    /**
+     * Gets the collection of AppRoleAssignments objects.
+     *
+     * @return The request builder for the collection of AppRoleAssignments objects
+     */
+    IAppRoleAssignmentCollectionRequestBuilder getAppRoleAssignments();
+
+    /**
+     * Gets a single AppRoleAssignments.
+     *
+     * @param id The id of the AppRoleAssignments to retrieve.
+     * @return The request builder for the AppRoleAssignments object
+     */
+    IAppRoleAssignmentRequestBuilder getAppRoleAssignments(final String id);
+
+    /**
+     * Gets the collection of Contacts objects.
+     *
+     * @return The request builder for the collection of Contacts objects
+     */
+    IOrgContactCollectionRequestBuilder getContacts();
+
+    /**
+     * Gets a single Contacts.
+     *
+     * @param id The id of the Contacts to retrieve.
+     * @return The request builder for the Contacts object
+     */
+    IOrgContactRequestBuilder getContacts(final String id);
+
+    /**
      * Gets the collection of Devices objects.
      *
      * @return The request builder for the collection of Devices objects
@@ -98,6 +143,21 @@ public interface IBaseGraphServiceClient extends IBaseClient {
     IDirectoryRoleTemplateRequestBuilder getDirectoryRoleTemplates(final String id);
 
     /**
+     * Gets the collection of DirectorySettingTemplates objects.
+     *
+     * @return The request builder for the collection of DirectorySettingTemplates objects
+     */
+    IDirectorySettingTemplateCollectionRequestBuilder getDirectorySettingTemplates();
+
+    /**
+     * Gets a single DirectorySettingTemplates.
+     *
+     * @param id The id of the DirectorySettingTemplates to retrieve.
+     * @return The request builder for the DirectorySettingTemplates object
+     */
+    IDirectorySettingTemplateRequestBuilder getDirectorySettingTemplates(final String id);
+
+    /**
      * Gets the collection of Organization objects.
      *
      * @return The request builder for the collection of Organization objects
@@ -111,6 +171,51 @@ public interface IBaseGraphServiceClient extends IBaseClient {
      * @return The request builder for the Organization object
      */
     IOrganizationRequestBuilder getOrganization(final String id);
+
+    /**
+     * Gets the collection of Oauth2PermissionGrants objects.
+     *
+     * @return The request builder for the collection of Oauth2PermissionGrants objects
+     */
+    IOAuth2PermissionGrantCollectionRequestBuilder getOauth2PermissionGrants();
+
+    /**
+     * Gets a single Oauth2PermissionGrants.
+     *
+     * @param id The id of the Oauth2PermissionGrants to retrieve.
+     * @return The request builder for the Oauth2PermissionGrants object
+     */
+    IOAuth2PermissionGrantRequestBuilder getOauth2PermissionGrants(final String id);
+
+    /**
+     * Gets the collection of ServicePrincipals objects.
+     *
+     * @return The request builder for the collection of ServicePrincipals objects
+     */
+    IServicePrincipalCollectionRequestBuilder getServicePrincipals();
+
+    /**
+     * Gets a single ServicePrincipals.
+     *
+     * @param id The id of the ServicePrincipals to retrieve.
+     * @return The request builder for the ServicePrincipals object
+     */
+    IServicePrincipalRequestBuilder getServicePrincipals(final String id);
+
+    /**
+     * Gets the collection of Settings objects.
+     *
+     * @return The request builder for the collection of Settings objects
+     */
+    IDirectorySettingCollectionRequestBuilder getSettings();
+
+    /**
+     * Gets a single Settings.
+     *
+     * @param id The id of the Settings to retrieve.
+     * @return The request builder for the Settings object
+     */
+    IDirectorySettingRequestBuilder getSettings(final String id);
 
     /**
      * Gets the collection of SubscribedSkus objects.
@@ -143,6 +248,21 @@ public interface IBaseGraphServiceClient extends IBaseClient {
     IUserRequestBuilder getUsers(final String id);
 
     /**
+     * Gets the collection of Workbooks objects.
+     *
+     * @return The request builder for the collection of Workbooks objects
+     */
+    IDriveItemCollectionRequestBuilder getWorkbooks();
+
+    /**
+     * Gets a single Workbooks.
+     *
+     * @param id The id of the Workbooks to retrieve.
+     * @return The request builder for the Workbooks object
+     */
+    IDriveItemRequestBuilder getWorkbooks(final String id);
+
+    /**
      * Gets the collection of Drives objects.
      *
      * @return The request builder for the collection of Drives objects
@@ -158,6 +278,51 @@ public interface IBaseGraphServiceClient extends IBaseClient {
     IDriveRequestBuilder getDrives(final String id);
 
     /**
+     * Gets the collection of Tasks objects.
+     *
+     * @return The request builder for the collection of Tasks objects
+     */
+    ITaskCollectionRequestBuilder getTasks();
+
+    /**
+     * Gets a single Tasks.
+     *
+     * @param id The id of the Tasks to retrieve.
+     * @return The request builder for the Tasks object
+     */
+    ITaskRequestBuilder getTasks(final String id);
+
+    /**
+     * Gets the collection of Plans objects.
+     *
+     * @return The request builder for the collection of Plans objects
+     */
+    IPlanCollectionRequestBuilder getPlans();
+
+    /**
+     * Gets a single Plans.
+     *
+     * @param id The id of the Plans to retrieve.
+     * @return The request builder for the Plans object
+     */
+    IPlanRequestBuilder getPlans(final String id);
+
+    /**
+     * Gets the collection of Buckets objects.
+     *
+     * @return The request builder for the collection of Buckets objects
+     */
+    IBucketCollectionRequestBuilder getBuckets();
+
+    /**
+     * Gets a single Buckets.
+     *
+     * @param id The id of the Buckets to retrieve.
+     * @return The request builder for the Buckets object
+     */
+    IBucketRequestBuilder getBuckets(final String id);
+
+    /**
      * Gets the collection of Subscriptions objects.
      *
      * @return The request builder for the collection of Subscriptions objects
@@ -171,6 +336,111 @@ public interface IBaseGraphServiceClient extends IBaseClient {
      * @return The request builder for the Subscriptions object
      */
     ISubscriptionRequestBuilder getSubscriptions(final String id);
+
+    /**
+     * Gets the collection of IdentityRiskEvents objects.
+     *
+     * @return The request builder for the collection of IdentityRiskEvents objects
+     */
+    IIdentityRiskEventCollectionRequestBuilder getIdentityRiskEvents();
+
+    /**
+     * Gets a single IdentityRiskEvents.
+     *
+     * @param id The id of the IdentityRiskEvents to retrieve.
+     * @return The request builder for the IdentityRiskEvents object
+     */
+    IIdentityRiskEventRequestBuilder getIdentityRiskEvents(final String id);
+
+    /**
+     * Gets the collection of ImpossibleTravelRiskEvents objects.
+     *
+     * @return The request builder for the collection of ImpossibleTravelRiskEvents objects
+     */
+    IImpossibleTravelRiskEventCollectionRequestBuilder getImpossibleTravelRiskEvents();
+
+    /**
+     * Gets a single ImpossibleTravelRiskEvents.
+     *
+     * @param id The id of the ImpossibleTravelRiskEvents to retrieve.
+     * @return The request builder for the ImpossibleTravelRiskEvents object
+     */
+    IImpossibleTravelRiskEventRequestBuilder getImpossibleTravelRiskEvents(final String id);
+
+    /**
+     * Gets the collection of LeakedCredentialsRiskEvents objects.
+     *
+     * @return The request builder for the collection of LeakedCredentialsRiskEvents objects
+     */
+    ILeakedCredentialsRiskEventCollectionRequestBuilder getLeakedCredentialsRiskEvents();
+
+    /**
+     * Gets a single LeakedCredentialsRiskEvents.
+     *
+     * @param id The id of the LeakedCredentialsRiskEvents to retrieve.
+     * @return The request builder for the LeakedCredentialsRiskEvents object
+     */
+    ILeakedCredentialsRiskEventRequestBuilder getLeakedCredentialsRiskEvents(final String id);
+
+    /**
+     * Gets the collection of AnonymousIpRiskEvents objects.
+     *
+     * @return The request builder for the collection of AnonymousIpRiskEvents objects
+     */
+    IAnonymousIpRiskEventCollectionRequestBuilder getAnonymousIpRiskEvents();
+
+    /**
+     * Gets a single AnonymousIpRiskEvents.
+     *
+     * @param id The id of the AnonymousIpRiskEvents to retrieve.
+     * @return The request builder for the AnonymousIpRiskEvents object
+     */
+    IAnonymousIpRiskEventRequestBuilder getAnonymousIpRiskEvents(final String id);
+
+    /**
+     * Gets the collection of SuspiciousIpRiskEvents objects.
+     *
+     * @return The request builder for the collection of SuspiciousIpRiskEvents objects
+     */
+    ISuspiciousIpRiskEventCollectionRequestBuilder getSuspiciousIpRiskEvents();
+
+    /**
+     * Gets a single SuspiciousIpRiskEvents.
+     *
+     * @param id The id of the SuspiciousIpRiskEvents to retrieve.
+     * @return The request builder for the SuspiciousIpRiskEvents object
+     */
+    ISuspiciousIpRiskEventRequestBuilder getSuspiciousIpRiskEvents(final String id);
+
+    /**
+     * Gets the collection of UnfamiliarLocationRiskEvents objects.
+     *
+     * @return The request builder for the collection of UnfamiliarLocationRiskEvents objects
+     */
+    IUnfamiliarLocationRiskEventCollectionRequestBuilder getUnfamiliarLocationRiskEvents();
+
+    /**
+     * Gets a single UnfamiliarLocationRiskEvents.
+     *
+     * @param id The id of the UnfamiliarLocationRiskEvents to retrieve.
+     * @return The request builder for the UnfamiliarLocationRiskEvents object
+     */
+    IUnfamiliarLocationRiskEventRequestBuilder getUnfamiliarLocationRiskEvents(final String id);
+
+    /**
+     * Gets the collection of MalwareRiskEvents objects.
+     *
+     * @return The request builder for the collection of MalwareRiskEvents objects
+     */
+    IMalwareRiskEventCollectionRequestBuilder getMalwareRiskEvents();
+
+    /**
+     * Gets a single MalwareRiskEvents.
+     *
+     * @param id The id of the MalwareRiskEvents to retrieve.
+     * @return The request builder for the MalwareRiskEvents object
+     */
+    IMalwareRiskEventRequestBuilder getMalwareRiskEvents(final String id);
 
     /**
      * Gets GraphServiceRequestBuilder.

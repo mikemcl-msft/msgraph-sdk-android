@@ -31,14 +31,6 @@ public interface IBaseDirectoryObjectCollectionRequest {
     DirectoryObject post(final DirectoryObject newDirectoryObject) throws ClientException;
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IDirectoryObjectCollectionRequest expand(final String value);
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

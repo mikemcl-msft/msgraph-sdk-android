@@ -31,6 +31,8 @@ public interface IBaseEventMessageRequestBuilder extends IRequestBuilder {
      */
     IEventMessageRequest buildRequest(final List<Option> options);
 
+    IEventMessageRequestEntityRequestBuilder eventMessageRequestEntity();
+
     /**
      * Gets the request builder for Event.
      */

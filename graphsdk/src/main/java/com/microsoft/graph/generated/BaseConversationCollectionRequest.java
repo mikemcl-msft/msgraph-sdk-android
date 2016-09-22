@@ -68,17 +68,6 @@ public class BaseConversationCollectionRequest extends BaseCollectionRequest<Bas
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IConversationCollectionRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (ConversationCollectionRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

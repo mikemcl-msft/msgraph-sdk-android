@@ -51,17 +51,6 @@ public class BaseDirectoryObjectCollectionReferenceRequest extends BaseCollectio
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IDirectoryObjectCollectionReferenceRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (DirectoryObjectCollectionReferenceRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

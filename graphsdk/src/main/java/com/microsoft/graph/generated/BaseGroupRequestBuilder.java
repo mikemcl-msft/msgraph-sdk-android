@@ -75,6 +75,13 @@ public class BaseGroupRequestBuilder extends BaseRequestBuilder implements IBase
     public IDirectoryObjectWithReferenceRequestBuilder getOwners(final String id) {
         return new DirectoryObjectWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("owners") + "/" + id, getClient(), null);
     }
+    public IDirectorySettingCollectionRequestBuilder getSettings() {
+        return new DirectorySettingCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("settings"), getClient(), null);
+    }
+
+    public IDirectorySettingRequestBuilder getSettings(final String id) {
+        return new DirectorySettingRequestBuilder(getRequestUrlWithAdditionalSegment("settings") + "/" + id, getClient(), null);
+    }
     public IConversationThreadCollectionRequestBuilder getThreads() {
         return new ConversationThreadCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("threads"), getClient(), null);
     }
@@ -117,6 +124,13 @@ public class BaseGroupRequestBuilder extends BaseRequestBuilder implements IBase
     public IProfilePhotoRequestBuilder getPhoto() {
         return new ProfilePhotoRequestBuilder(getRequestUrlWithAdditionalSegment("photo"), getClient(), null);
     }
+    public IProfilePhotoCollectionRequestBuilder getPhotos() {
+        return new ProfilePhotoCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("photos"), getClient(), null);
+    }
+
+    public IProfilePhotoRequestBuilder getPhotos(final String id) {
+        return new ProfilePhotoRequestBuilder(getRequestUrlWithAdditionalSegment("photos") + "/" + id, getClient(), null);
+    }
     public IDirectoryObjectCollectionRequestBuilder getAcceptedSenders() {
         return new DirectoryObjectCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("acceptedSenders"), getClient(), null);
     }
@@ -137,6 +151,20 @@ public class BaseGroupRequestBuilder extends BaseRequestBuilder implements IBase
      */
     public IDriveRequestBuilder getDrive() {
         return new DriveRequestBuilder(getRequestUrlWithAdditionalSegment("drive"), getClient(), null);
+    }
+    public IPlanCollectionWithReferencesRequestBuilder getPlans() {
+        return new PlanCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("plans"), getClient(), null);
+    }
+
+    public IPlanWithReferenceRequestBuilder getPlans(final String id) {
+        return new PlanWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("plans") + "/" + id, getClient(), null);
+    }
+
+    /**
+     * Gets the request builder for Notes.
+     */
+    public INotesRequestBuilder getNotes() {
+        return new NotesRequestBuilder(getRequestUrlWithAdditionalSegment("notes"), getClient(), null);
     }
 
     public IGroupSubscribeByMailRequestBuilder getSubscribeByMail() {

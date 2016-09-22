@@ -103,6 +103,13 @@ public class BaseUserRequestBuilder extends BaseRequestBuilder implements IBaseU
     public IMessageRequestBuilder getMessages(final String id) {
         return new MessageRequestBuilder(getRequestUrlWithAdditionalSegment("messages") + "/" + id, getClient(), null);
     }
+    public IGroupCollectionRequestBuilder getJoinedGroups() {
+        return new GroupCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("joinedGroups"), getClient(), null);
+    }
+
+    public IGroupRequestBuilder getJoinedGroups(final String id) {
+        return new GroupRequestBuilder(getRequestUrlWithAdditionalSegment("joinedGroups") + "/" + id, getClient(), null);
+    }
     public IMailFolderCollectionRequestBuilder getMailFolders() {
         return new MailFolderCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("mailFolders"), getClient(), null);
     }
@@ -145,6 +152,13 @@ public class BaseUserRequestBuilder extends BaseRequestBuilder implements IBaseU
     public IEventRequestBuilder getEvents(final String id) {
         return new EventRequestBuilder(getRequestUrlWithAdditionalSegment("events") + "/" + id, getClient(), null);
     }
+    public IPersonCollectionRequestBuilder getPeople() {
+        return new PersonCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("people"), getClient(), null);
+    }
+
+    public IPersonRequestBuilder getPeople(final String id) {
+        return new PersonRequestBuilder(getRequestUrlWithAdditionalSegment("people") + "/" + id, getClient(), null);
+    }
     public IContactCollectionRequestBuilder getContacts() {
         return new ContactCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("contacts"), getClient(), null);
     }
@@ -173,12 +187,61 @@ public class BaseUserRequestBuilder extends BaseRequestBuilder implements IBaseU
     public IProfilePhotoRequestBuilder getPhoto() {
         return new ProfilePhotoRequestBuilder(getRequestUrlWithAdditionalSegment("photo"), getClient(), null);
     }
+    public IProfilePhotoCollectionRequestBuilder getPhotos() {
+        return new ProfilePhotoCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("photos"), getClient(), null);
+    }
+
+    public IProfilePhotoRequestBuilder getPhotos(final String id) {
+        return new ProfilePhotoRequestBuilder(getRequestUrlWithAdditionalSegment("photos") + "/" + id, getClient(), null);
+    }
 
     /**
      * Gets the request builder for Drive.
      */
     public IDriveRequestBuilder getDrive() {
         return new DriveRequestBuilder(getRequestUrlWithAdditionalSegment("drive"), getClient(), null);
+    }
+
+    /**
+     * Gets the request builder for OfficeGraphInsights.
+     */
+    public IOfficeGraphInsightsRequestBuilder getInsights() {
+        return new OfficeGraphInsightsRequestBuilder(getRequestUrlWithAdditionalSegment("insights"), getClient(), null);
+    }
+    public IDriveItemCollectionRequestBuilder getTrendingAround() {
+        return new DriveItemCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("trendingAround"), getClient(), null);
+    }
+
+    public IDriveItemRequestBuilder getTrendingAround(final String id) {
+        return new DriveItemRequestBuilder(getRequestUrlWithAdditionalSegment("trendingAround") + "/" + id, getClient(), null);
+    }
+    public IUserCollectionRequestBuilder getWorkingWith() {
+        return new UserCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("workingWith"), getClient(), null);
+    }
+
+    public IUserRequestBuilder getWorkingWith(final String id) {
+        return new UserRequestBuilder(getRequestUrlWithAdditionalSegment("workingWith") + "/" + id, getClient(), null);
+    }
+    public ITaskCollectionWithReferencesRequestBuilder getTasks() {
+        return new TaskCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("tasks"), getClient(), null);
+    }
+
+    public ITaskWithReferenceRequestBuilder getTasks(final String id) {
+        return new TaskWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("tasks") + "/" + id, getClient(), null);
+    }
+    public IPlanCollectionWithReferencesRequestBuilder getPlans() {
+        return new PlanCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("plans"), getClient(), null);
+    }
+
+    public IPlanWithReferenceRequestBuilder getPlans(final String id) {
+        return new PlanWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("plans") + "/" + id, getClient(), null);
+    }
+
+    /**
+     * Gets the request builder for Notes.
+     */
+    public INotesRequestBuilder getNotes() {
+        return new NotesRequestBuilder(getRequestUrlWithAdditionalSegment("notes"), getClient(), null);
     }
 
     public IUserAssignLicenseRequestBuilder getAssignLicense(final List<AssignedLicense> addLicenses, final List<java.util.UUID> removeLicenses) {
@@ -191,6 +254,10 @@ public class BaseUserRequestBuilder extends BaseRequestBuilder implements IBaseU
 
     public IUserSendMailRequestBuilder getSendMail(final Message message, final Boolean saveToSentItems) {
         return new UserSendMailRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.sendMail"), getClient(), null, message, saveToSentItems);
+    }
+
+    public IUserFindMeetingTimesRequestBuilder getFindMeetingTimes(final List<AttendeeBase> attendees, final LocationConstraint locationConstraint, final TimeConstraint timeConstraint, final javax.xml.datatype.Duration meetingDuration, final Integer maxCandidates, final Boolean isOrganizerOptional, final Boolean returnSuggestionHints) {
+        return new UserFindMeetingTimesRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.findMeetingTimes"), getClient(), null, attendees, locationConstraint, timeConstraint, meetingDuration, maxCandidates, isOrganizerOptional, returnSuggestionHints);
     }
 
     public IUserReminderViewCollectionRequestBuilder getReminderView(final String startDateTime, final String endDateTime) {

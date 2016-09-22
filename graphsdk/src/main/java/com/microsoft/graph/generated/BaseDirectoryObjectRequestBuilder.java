@@ -48,6 +48,18 @@ public class BaseDirectoryObjectRequestBuilder extends BaseRequestBuilder implem
     }
 
 
+    public IExtensionPropertyRequestBuilder extensionProperty() {
+        return new ExtensionPropertyRequestBuilder(getRequestUrlWithAdditionalSegment("extensionProperty"), getClient(), null);
+    }
+
+    public IApplicationRequestBuilder application() {
+        return new ApplicationRequestBuilder(getRequestUrlWithAdditionalSegment("application"), getClient(), null);
+    }
+
+    public IOrgContactRequestBuilder orgContact() {
+        return new OrgContactRequestBuilder(getRequestUrlWithAdditionalSegment("orgContact"), getClient(), null);
+    }
+
     public IDeviceRequestBuilder device() {
         return new DeviceRequestBuilder(getRequestUrlWithAdditionalSegment("device"), getClient(), null);
     }
@@ -60,8 +72,16 @@ public class BaseDirectoryObjectRequestBuilder extends BaseRequestBuilder implem
         return new DirectoryRoleTemplateRequestBuilder(getRequestUrlWithAdditionalSegment("directoryRoleTemplate"), getClient(), null);
     }
 
+    public IDirectorySettingTemplateRequestBuilder directorySettingTemplate() {
+        return new DirectorySettingTemplateRequestBuilder(getRequestUrlWithAdditionalSegment("directorySettingTemplate"), getClient(), null);
+    }
+
     public IGroupRequestBuilder group() {
         return new GroupRequestBuilder(getRequestUrlWithAdditionalSegment("group"), getClient(), null);
+    }
+
+    public IServicePrincipalRequestBuilder servicePrincipal() {
+        return new ServicePrincipalRequestBuilder(getRequestUrlWithAdditionalSegment("servicePrincipal"), getClient(), null);
     }
 
     public IOrganizationRequestBuilder organization() {

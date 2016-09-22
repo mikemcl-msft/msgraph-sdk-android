@@ -85,12 +85,4 @@ public interface IBaseGroupRequest extends IHttpRequest {
      */
     IBaseGroupRequest select(final String value);
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IBaseGroupRequest expand(final String value);
-
 }

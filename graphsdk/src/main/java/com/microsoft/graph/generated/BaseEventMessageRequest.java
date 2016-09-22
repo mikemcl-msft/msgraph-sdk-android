@@ -41,7 +41,7 @@ public class BaseEventMessageRequest extends BaseRequest implements IBaseEventMe
      * Gets the EventMessage from the service
      * @param callback The callback to be called after success or failure.
      */
-    public void get(final ICallback<EventMessage> callback) {
+    public void getEventMessage(final ICallback<EventMessage> callback) {
         send(HttpMethod.GET, callback, null);
     }
 
@@ -50,7 +50,7 @@ public class BaseEventMessageRequest extends BaseRequest implements IBaseEventMe
      * @return The EventMessage from the request.
      * @throws ClientException This exception occurs if the request was unable to complete for any reason.
      */
-    public EventMessage get() throws ClientException {
+    public EventMessage getEventMessage() throws ClientException {
        return send(HttpMethod.GET, null);
     }
 

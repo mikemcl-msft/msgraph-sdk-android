@@ -32,6 +32,4 @@ public interface IBaseDirectoryObjectWithReferenceRequest extends IHttpRequest {
 
     IBaseDirectoryObjectWithReferenceRequest select(final String value);
 
-    IBaseDirectoryObjectWithReferenceRequest expand(final String value);
-
 }

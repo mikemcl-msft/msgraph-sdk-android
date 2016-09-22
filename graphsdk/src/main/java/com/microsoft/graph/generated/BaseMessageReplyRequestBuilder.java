@@ -28,8 +28,9 @@ public class BaseMessageReplyRequestBuilder extends BasePostMethodRequestBuilder
      * @param client The service client
      * @param options The options for this request
      */
-    public BaseMessageReplyRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final String comment) {
+    public BaseMessageReplyRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final Message message, final String comment) {
         super(requestUrl, client, options);
+        mBodyParams.put("message", message);
         mBodyParams.put("comment", comment);
     }
 
@@ -55,6 +56,9 @@ public class BaseMessageReplyRequestBuilder extends BasePostMethodRequestBuilder
                 options
         );
 
+        if (hasParameter("message")) {
+            request.mBody.message = getParameter("message");
+        }
         if (hasParameter("comment")) {
             request.mBody.comment = getParameter("comment");
         }

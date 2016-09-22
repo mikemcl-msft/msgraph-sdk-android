@@ -26,6 +26,12 @@ import com.google.gson.annotations.*;
 public class BaseMessageReplyBody {
 
     /**
+     * The message.
+     */
+    @SerializedName("message")
+    public Message message;
+
+    /**
      * The comment.
      */
     @SerializedName("comment")

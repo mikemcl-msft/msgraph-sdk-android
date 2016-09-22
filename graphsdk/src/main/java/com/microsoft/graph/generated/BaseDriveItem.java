@@ -187,6 +187,12 @@ public class BaseDriveItem extends Entity implements IJsonBackedObject {
     public com.microsoft.graph.extensions.Package msgraph_package;
 
     /**
+     * The Workbook.
+     */
+    @SerializedName("workbook")
+    public Workbook workbook;
+
+    /**
      * The Created By User.
      */
     @SerializedName("createdByUser")

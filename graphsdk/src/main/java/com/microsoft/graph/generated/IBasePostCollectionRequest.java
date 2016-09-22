@@ -31,14 +31,6 @@ public interface IBasePostCollectionRequest {
     Post post(final Post newPost) throws ClientException;
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IPostCollectionRequest expand(final String value);
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

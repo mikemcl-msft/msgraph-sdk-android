@@ -18,7 +18,7 @@ import com.microsoft.graph.serializer.MockSerializer;
  */
 public class BaseClientTests extends AndroidTestCase {
 
-    public static final String DEFAULT_GRAPH_ENDPOINT = "https://graph.microsoft.com/v1.0";
+    public static final String DEFAULT_GRAPH_ENDPOINT = "https://graph.microsoft.com/beta";
     private String mEndpoint = DEFAULT_GRAPH_ENDPOINT;
     private BaseClient baseClient;
     private IAuthenticationProvider mAuthenticationProvider;

@@ -85,12 +85,4 @@ public interface IBaseDirectoryRoleRequest extends IHttpRequest {
      */
     IBaseDirectoryRoleRequest select(final String value);
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IBaseDirectoryRoleRequest expand(final String value);
-
 }

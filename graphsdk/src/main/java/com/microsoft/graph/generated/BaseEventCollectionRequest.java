@@ -68,17 +68,6 @@ public class BaseEventCollectionRequest extends BaseCollectionRequest<BaseEventC
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IEventCollectionRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (EventCollectionRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

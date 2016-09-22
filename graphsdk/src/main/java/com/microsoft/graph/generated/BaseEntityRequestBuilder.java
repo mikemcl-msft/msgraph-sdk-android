@@ -52,6 +52,14 @@ public class BaseEntityRequestBuilder extends BaseRequestBuilder implements IBas
         return new DirectoryObjectRequestBuilder(getRequestUrlWithAdditionalSegment("directoryObject"), getClient(), null);
     }
 
+    public IAppRoleAssignmentRequestBuilder appRoleAssignment() {
+        return new AppRoleAssignmentRequestBuilder(getRequestUrlWithAdditionalSegment("appRoleAssignment"), getClient(), null);
+    }
+
+    public IDirectorySettingRequestBuilder directorySetting() {
+        return new DirectorySettingRequestBuilder(getRequestUrlWithAdditionalSegment("directorySetting"), getClient(), null);
+    }
+
     public IConversationThreadRequestBuilder conversationThread() {
         return new ConversationThreadRequestBuilder(getRequestUrlWithAdditionalSegment("conversationThread"), getClient(), null);
     }
@@ -76,6 +84,18 @@ public class BaseEntityRequestBuilder extends BaseRequestBuilder implements IBas
         return new DriveRequestBuilder(getRequestUrlWithAdditionalSegment("drive"), getClient(), null);
     }
 
+    public IPlanRequestBuilder plan() {
+        return new PlanRequestBuilder(getRequestUrlWithAdditionalSegment("plan"), getClient(), null);
+    }
+
+    public INotesRequestBuilder notes() {
+        return new NotesRequestBuilder(getRequestUrlWithAdditionalSegment("notes"), getClient(), null);
+    }
+
+    public IOAuth2PermissionGrantRequestBuilder oAuth2PermissionGrant() {
+        return new OAuth2PermissionGrantRequestBuilder(getRequestUrlWithAdditionalSegment("oAuth2PermissionGrant"), getClient(), null);
+    }
+
     public ISubscribedSkuRequestBuilder subscribedSku() {
         return new SubscribedSkuRequestBuilder(getRequestUrlWithAdditionalSegment("subscribedSku"), getClient(), null);
     }
@@ -88,6 +108,10 @@ public class BaseEntityRequestBuilder extends BaseRequestBuilder implements IBas
         return new CalendarGroupRequestBuilder(getRequestUrlWithAdditionalSegment("calendarGroup"), getClient(), null);
     }
 
+    public IPersonRequestBuilder person() {
+        return new PersonRequestBuilder(getRequestUrlWithAdditionalSegment("person"), getClient(), null);
+    }
+
     public IContactFolderRequestBuilder contactFolder() {
         return new ContactFolderRequestBuilder(getRequestUrlWithAdditionalSegment("contactFolder"), getClient(), null);
     }
@@ -96,20 +120,20 @@ public class BaseEntityRequestBuilder extends BaseRequestBuilder implements IBas
         return new InferenceClassificationRequestBuilder(getRequestUrlWithAdditionalSegment("inferenceClassification"), getClient(), null);
     }
 
-    public IAttachmentRequestBuilder attachment() {
-        return new AttachmentRequestBuilder(getRequestUrlWithAdditionalSegment("attachment"), getClient(), null);
-    }
-
-    public IExtensionRequestBuilder extension() {
-        return new ExtensionRequestBuilder(getRequestUrlWithAdditionalSegment("extension"), getClient(), null);
-    }
-
-    public IInferenceClassificationOverrideRequestBuilder inferenceClassificationOverride() {
-        return new InferenceClassificationOverrideRequestBuilder(getRequestUrlWithAdditionalSegment("inferenceClassificationOverride"), getClient(), null);
+    public IOfficeGraphInsightsRequestBuilder officeGraphInsights() {
+        return new OfficeGraphInsightsRequestBuilder(getRequestUrlWithAdditionalSegment("officeGraphInsights"), getClient(), null);
     }
 
     public IDriveItemRequestBuilder driveItem() {
         return new DriveItemRequestBuilder(getRequestUrlWithAdditionalSegment("driveItem"), getClient(), null);
+    }
+
+    public ITaskRequestBuilder task() {
+        return new TaskRequestBuilder(getRequestUrlWithAdditionalSegment("task"), getClient(), null);
+    }
+
+    public IWorkbookRequestBuilder workbook() {
+        return new WorkbookRequestBuilder(getRequestUrlWithAdditionalSegment("workbook"), getClient(), null);
     }
 
     public IPermissionRequestBuilder permission() {
@@ -120,7 +144,95 @@ public class BaseEntityRequestBuilder extends BaseRequestBuilder implements IBas
         return new ThumbnailSetRequestBuilder(getRequestUrlWithAdditionalSegment("thumbnailSet"), getClient(), null);
     }
 
+    public IExcelApplicationRequestBuilder excelApplication() {
+        return new ExcelApplicationRequestBuilder(getRequestUrlWithAdditionalSegment("excelApplication"), getClient(), null);
+    }
+
+    public IBindingRequestBuilder binding() {
+        return new BindingRequestBuilder(getRequestUrlWithAdditionalSegment("binding"), getClient(), null);
+    }
+
+    public IFormatProtectionRequestBuilder formatProtection() {
+        return new FormatProtectionRequestBuilder(getRequestUrlWithAdditionalSegment("formatProtection"), getClient(), null);
+    }
+
+    public IAttachmentRequestBuilder attachment() {
+        return new AttachmentRequestBuilder(getRequestUrlWithAdditionalSegment("attachment"), getClient(), null);
+    }
+
+    public IUserConfigurationRequestBuilder userConfiguration() {
+        return new UserConfigurationRequestBuilder(getRequestUrlWithAdditionalSegment("userConfiguration"), getClient(), null);
+    }
+
+    public ISingleValueLegacyExtendedPropertyRequestBuilder singleValueLegacyExtendedProperty() {
+        return new SingleValueLegacyExtendedPropertyRequestBuilder(getRequestUrlWithAdditionalSegment("singleValueLegacyExtendedProperty"), getClient(), null);
+    }
+
+    public IMultiValueLegacyExtendedPropertyRequestBuilder multiValueLegacyExtendedProperty() {
+        return new MultiValueLegacyExtendedPropertyRequestBuilder(getRequestUrlWithAdditionalSegment("multiValueLegacyExtendedProperty"), getClient(), null);
+    }
+
+    public IExtensionRequestBuilder extension() {
+        return new ExtensionRequestBuilder(getRequestUrlWithAdditionalSegment("extension"), getClient(), null);
+    }
+
+    public IInferenceClassificationOverrideRequestBuilder inferenceClassificationOverride() {
+        return new InferenceClassificationOverrideRequestBuilder(getRequestUrlWithAdditionalSegment("inferenceClassificationOverride"), getClient(), null);
+    }
+
+    public ITrendingRequestBuilder trending() {
+        return new TrendingRequestBuilder(getRequestUrlWithAdditionalSegment("trending"), getClient(), null);
+    }
+
+    public ITaskDetailsRequestBuilder taskDetails() {
+        return new TaskDetailsRequestBuilder(getRequestUrlWithAdditionalSegment("taskDetails"), getClient(), null);
+    }
+
+    public ITaskBoardTaskFormatRequestBuilder taskBoardTaskFormat() {
+        return new TaskBoardTaskFormatRequestBuilder(getRequestUrlWithAdditionalSegment("taskBoardTaskFormat"), getClient(), null);
+    }
+
+    public IBucketRequestBuilder bucket() {
+        return new BucketRequestBuilder(getRequestUrlWithAdditionalSegment("bucket"), getClient(), null);
+    }
+
+    public IPlanDetailsRequestBuilder planDetails() {
+        return new PlanDetailsRequestBuilder(getRequestUrlWithAdditionalSegment("planDetails"), getClient(), null);
+    }
+
+    public IPlanTaskBoardRequestBuilder planTaskBoard() {
+        return new PlanTaskBoardRequestBuilder(getRequestUrlWithAdditionalSegment("planTaskBoard"), getClient(), null);
+    }
+
+    public INotebookRequestBuilder notebook() {
+        return new NotebookRequestBuilder(getRequestUrlWithAdditionalSegment("notebook"), getClient(), null);
+    }
+
+    public ISectionRequestBuilder section() {
+        return new SectionRequestBuilder(getRequestUrlWithAdditionalSegment("section"), getClient(), null);
+    }
+
+    public ISectionGroupRequestBuilder sectionGroup() {
+        return new SectionGroupRequestBuilder(getRequestUrlWithAdditionalSegment("sectionGroup"), getClient(), null);
+    }
+
+    public IPageRequestBuilder page() {
+        return new PageRequestBuilder(getRequestUrlWithAdditionalSegment("page"), getClient(), null);
+    }
+
+    public IResourceRequestBuilder resource() {
+        return new ResourceRequestBuilder(getRequestUrlWithAdditionalSegment("resource"), getClient(), null);
+    }
+
+    public INotesOperationRequestBuilder notesOperation() {
+        return new NotesOperationRequestBuilder(getRequestUrlWithAdditionalSegment("notesOperation"), getClient(), null);
+    }
+
     public ISubscriptionRequestBuilder subscription() {
         return new SubscriptionRequestBuilder(getRequestUrlWithAdditionalSegment("subscription"), getClient(), null);
+    }
+
+    public IIdentityRiskEventRequestBuilder identityRiskEvent() {
+        return new IdentityRiskEventRequestBuilder(getRequestUrlWithAdditionalSegment("identityRiskEvent"), getClient(), null);
     }
 }

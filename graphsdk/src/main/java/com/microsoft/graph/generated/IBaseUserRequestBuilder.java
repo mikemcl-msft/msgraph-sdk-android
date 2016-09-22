@@ -64,6 +64,10 @@ public interface IBaseUserRequestBuilder extends IRequestBuilder {
 
     IMessageRequestBuilder getMessages(final String id);
 
+    IGroupCollectionRequestBuilder getJoinedGroups();
+
+    IGroupRequestBuilder getJoinedGroups(final String id);
+
     IMailFolderCollectionRequestBuilder getMailFolders();
 
     IMailFolderRequestBuilder getMailFolders(final String id);
@@ -89,6 +93,10 @@ public interface IBaseUserRequestBuilder extends IRequestBuilder {
 
     IEventRequestBuilder getEvents(final String id);
 
+    IPersonCollectionRequestBuilder getPeople();
+
+    IPersonRequestBuilder getPeople(final String id);
+
     IContactCollectionRequestBuilder getContacts();
 
     IContactRequestBuilder getContacts(final String id);
@@ -107,13 +115,44 @@ public interface IBaseUserRequestBuilder extends IRequestBuilder {
      */
     IProfilePhotoRequestBuilder getPhoto();
 
+    IProfilePhotoCollectionRequestBuilder getPhotos();
+
+    IProfilePhotoRequestBuilder getPhotos(final String id);
+
     /**
      * Gets the request builder for Drive.
      */
     IDriveRequestBuilder getDrive();
+
+    /**
+     * Gets the request builder for OfficeGraphInsights.
+     */
+    IOfficeGraphInsightsRequestBuilder getInsights();
+
+    IDriveItemCollectionRequestBuilder getTrendingAround();
+
+    IDriveItemRequestBuilder getTrendingAround(final String id);
+
+    IUserCollectionRequestBuilder getWorkingWith();
+
+    IUserRequestBuilder getWorkingWith(final String id);
+
+    ITaskCollectionWithReferencesRequestBuilder getTasks();
+
+    ITaskWithReferenceRequestBuilder getTasks(final String id);
+
+    IPlanCollectionWithReferencesRequestBuilder getPlans();
+
+    IPlanWithReferenceRequestBuilder getPlans(final String id);
+
+    /**
+     * Gets the request builder for Notes.
+     */
+    INotesRequestBuilder getNotes();
     IUserAssignLicenseRequestBuilder getAssignLicense(final List<AssignedLicense> addLicenses, final List<java.util.UUID> removeLicenses);
     IUserChangePasswordRequestBuilder getChangePassword(final String currentPassword, final String newPassword);
     IUserSendMailRequestBuilder getSendMail(final Message message, final Boolean saveToSentItems);
+    IUserFindMeetingTimesRequestBuilder getFindMeetingTimes(final List<AttendeeBase> attendees, final LocationConstraint locationConstraint, final TimeConstraint timeConstraint, final javax.xml.datatype.Duration meetingDuration, final Integer maxCandidates, final Boolean isOrganizerOptional, final Boolean returnSuggestionHints);
 
     IUserReminderViewCollectionRequestBuilder getReminderView(final String startDateTime, final String endDateTime);
 

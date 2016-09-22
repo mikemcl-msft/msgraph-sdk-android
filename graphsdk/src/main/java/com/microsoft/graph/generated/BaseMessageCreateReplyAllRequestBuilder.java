@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * The class for the Base Message Create Reply All Request Builder.
  */
-public class BaseMessageCreateReplyAllRequestBuilder extends BaseGetMethodRequestBuilder {
+public class BaseMessageCreateReplyAllRequestBuilder extends BasePostMethodRequestBuilder {
 
     /**
      * The request builder for this MessageCreateReplyAll
@@ -28,8 +28,10 @@ public class BaseMessageCreateReplyAllRequestBuilder extends BaseGetMethodReques
      * @param client The service client
      * @param options The options for this request
      */
-    public BaseMessageCreateReplyAllRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options) {
+    public BaseMessageCreateReplyAllRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final Message message, final String comment) {
         super(requestUrl, client, options);
+        mBodyParams.put("message", message);
+        mBodyParams.put("comment", comment);
     }
 
     /**
@@ -54,6 +56,12 @@ public class BaseMessageCreateReplyAllRequestBuilder extends BaseGetMethodReques
                 options
         );
 
+        if (hasParameter("message")) {
+            request.mBody.message = getParameter("message");
+        }
+        if (hasParameter("comment")) {
+            request.mBody.comment = getParameter("comment");
+        }
 
         return request;
     }

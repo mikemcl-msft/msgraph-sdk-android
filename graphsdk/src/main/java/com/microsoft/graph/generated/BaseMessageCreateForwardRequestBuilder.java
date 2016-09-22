@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * The class for the Base Message Create Forward Request Builder.
  */
-public class BaseMessageCreateForwardRequestBuilder extends BaseGetMethodRequestBuilder {
+public class BaseMessageCreateForwardRequestBuilder extends BasePostMethodRequestBuilder {
 
     /**
      * The request builder for this MessageCreateForward
@@ -28,8 +28,11 @@ public class BaseMessageCreateForwardRequestBuilder extends BaseGetMethodRequest
      * @param client The service client
      * @param options The options for this request
      */
-    public BaseMessageCreateForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options) {
+    public BaseMessageCreateForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final Message message, final String comment, final List<Recipient> toRecipients) {
         super(requestUrl, client, options);
+        mBodyParams.put("message", message);
+        mBodyParams.put("comment", comment);
+        mBodyParams.put("toRecipients", toRecipients);
     }
 
     /**
@@ -54,6 +57,15 @@ public class BaseMessageCreateForwardRequestBuilder extends BaseGetMethodRequest
                 options
         );
 
+        if (hasParameter("message")) {
+            request.mBody.message = getParameter("message");
+        }
+        if (hasParameter("comment")) {
+            request.mBody.comment = getParameter("comment");
+        }
+        if (hasParameter("toRecipients")) {
+            request.mBody.toRecipients = getParameter("toRecipients");
+        }
 
         return request;
     }

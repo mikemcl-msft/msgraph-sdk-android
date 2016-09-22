@@ -48,6 +48,10 @@ public interface IBaseGroupRequestBuilder extends IRequestBuilder {
 
     IDirectoryObjectWithReferenceRequestBuilder getOwners(final String id);
 
+    IDirectorySettingCollectionRequestBuilder getSettings();
+
+    IDirectorySettingRequestBuilder getSettings(final String id);
+
     IConversationThreadCollectionRequestBuilder getThreads();
 
     IConversationThreadRequestBuilder getThreads(final String id);
@@ -74,6 +78,10 @@ public interface IBaseGroupRequestBuilder extends IRequestBuilder {
      */
     IProfilePhotoRequestBuilder getPhoto();
 
+    IProfilePhotoCollectionRequestBuilder getPhotos();
+
+    IProfilePhotoRequestBuilder getPhotos(final String id);
+
     IDirectoryObjectCollectionRequestBuilder getAcceptedSenders();
 
     IDirectoryObjectRequestBuilder getAcceptedSenders(final String id);
@@ -86,6 +94,15 @@ public interface IBaseGroupRequestBuilder extends IRequestBuilder {
      * Gets the request builder for Drive.
      */
     IDriveRequestBuilder getDrive();
+
+    IPlanCollectionWithReferencesRequestBuilder getPlans();
+
+    IPlanWithReferenceRequestBuilder getPlans(final String id);
+
+    /**
+     * Gets the request builder for Notes.
+     */
+    INotesRequestBuilder getNotes();
     IGroupSubscribeByMailRequestBuilder getSubscribeByMail();
     IGroupUnsubscribeByMailRequestBuilder getUnsubscribeByMail();
     IGroupAddFavoriteRequestBuilder getAddFavorite();

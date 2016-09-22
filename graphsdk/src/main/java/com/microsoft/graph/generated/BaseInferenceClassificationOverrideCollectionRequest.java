@@ -68,17 +68,6 @@ public class BaseInferenceClassificationOverrideCollectionRequest extends BaseCo
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IInferenceClassificationOverrideCollectionRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (InferenceClassificationOverrideCollectionRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

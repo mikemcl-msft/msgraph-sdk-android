@@ -21,6 +21,7 @@ import java.util.List;
  * The class for the Base Message Create Reply Request.
  */
 public class BaseMessageCreateReplyRequest extends BaseRequest implements IBaseMessageCreateReplyRequest {
+    protected final MessageCreateReplyBody mBody;
 
     /**
      * The request for this MessageCreateReply
@@ -31,26 +32,15 @@ public class BaseMessageCreateReplyRequest extends BaseRequest implements IBaseM
      */
     public BaseMessageCreateReplyRequest(final String requestUrl, final IBaseClient client, final List<Option> options) {
         super(requestUrl, client, options, Message.class);
-
+        mBody = new MessageCreateReplyBody();
     }
 
-    /**
-     * Creates the Message
-     *
-     * @param callback The callback to be called after success or failure.
-     */
     public void post(final ICallback<Message> callback) {
-        send(HttpMethod.POST, callback, null);
+        send(HttpMethod.POST, callback, mBody);
     }
 
-    /**
-     * Creates the Message
-     *
-     * @return The Message
-     * @throws ClientException An exception occurs if there was an error while the request was sent.
-     */
     public Message post() throws ClientException {
-       return send(HttpMethod.POST, null);
+        return send(HttpMethod.POST, mBody);
     }
 
     /**
@@ -61,6 +51,17 @@ public class BaseMessageCreateReplyRequest extends BaseRequest implements IBaseM
      */
     public IMessageCreateReplyRequest select(final String value) {
         getQueryOptions().add(new QueryOption("$select", value));
+        return (MessageCreateReplyRequest)this;
+    }
+
+    /**
+     * Sets the top value for the request
+     *
+     * @param value The max number of items to return
+     * @return The updated request
+     */
+    public IMessageCreateReplyRequest top(final int value) {
+        getQueryOptions().add(new QueryOption("$top", value+""));
         return (MessageCreateReplyRequest)this;
     }
 

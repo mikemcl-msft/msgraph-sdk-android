@@ -28,6 +28,21 @@ public class EventMessageRequest extends BaseEventMessageRequest implements IEve
      * @param requestUrl The request url
      * @param client The service client
      * @param options The options for this request
+     * @param responseClass The class of the reponse
+     */
+    public EventMessageRequest(final String requestUrl,
+            final IBaseClient client,
+            final List<Option> options,
+            final Class responseClass) {
+        super(requestUrl, client, options, responseClass);
+    }
+
+    /**
+     * The request for the EventMessage
+     *
+     * @param requestUrl The request url
+     * @param client The service client
+     * @param options The options for this request
      */
     public EventMessageRequest(final String requestUrl, final IBaseClient client, final List<Option> options) {
         super(requestUrl, client, options, EventMessage.class);

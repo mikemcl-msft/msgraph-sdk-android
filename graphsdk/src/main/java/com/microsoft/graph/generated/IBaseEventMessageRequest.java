@@ -26,14 +26,14 @@ public interface IBaseEventMessageRequest extends IHttpRequest {
      * Gets the EventMessage from the service
      * @param callback The callback to be called after success or failure.
      */
-    void get(final ICallback<EventMessage> callback);
+    void getEventMessage(final ICallback<EventMessage> callback);
 
     /**
      * Gets the EventMessage from the service
      * @return The EventMessage from the request.
      * @throws ClientException This exception occurs if the request was unable to complete for any reason.
      */
-    EventMessage get() throws ClientException;
+    EventMessage getEventMessage() throws ClientException;
 
     /**
      * Delete this item from the service.

@@ -33,6 +33,10 @@ public interface IBaseEntityRequestBuilder extends IRequestBuilder {
 
     IDirectoryObjectRequestBuilder directoryObject();
 
+    IAppRoleAssignmentRequestBuilder appRoleAssignment();
+
+    IDirectorySettingRequestBuilder directorySetting();
+
     IConversationThreadRequestBuilder conversationThread();
 
     ICalendarRequestBuilder calendar();
@@ -45,28 +49,80 @@ public interface IBaseEntityRequestBuilder extends IRequestBuilder {
 
     IDriveRequestBuilder drive();
 
+    IPlanRequestBuilder plan();
+
+    INotesRequestBuilder notes();
+
+    IOAuth2PermissionGrantRequestBuilder oAuth2PermissionGrant();
+
     ISubscribedSkuRequestBuilder subscribedSku();
 
     IMailFolderRequestBuilder mailFolder();
 
     ICalendarGroupRequestBuilder calendarGroup();
 
+    IPersonRequestBuilder person();
+
     IContactFolderRequestBuilder contactFolder();
 
     IInferenceClassificationRequestBuilder inferenceClassification();
 
-    IAttachmentRequestBuilder attachment();
-
-    IExtensionRequestBuilder extension();
-
-    IInferenceClassificationOverrideRequestBuilder inferenceClassificationOverride();
+    IOfficeGraphInsightsRequestBuilder officeGraphInsights();
 
     IDriveItemRequestBuilder driveItem();
+
+    ITaskRequestBuilder task();
+
+    IWorkbookRequestBuilder workbook();
 
     IPermissionRequestBuilder permission();
 
     IThumbnailSetRequestBuilder thumbnailSet();
 
+    IExcelApplicationRequestBuilder excelApplication();
+
+    IBindingRequestBuilder binding();
+
+    IFormatProtectionRequestBuilder formatProtection();
+
+    IAttachmentRequestBuilder attachment();
+
+    IUserConfigurationRequestBuilder userConfiguration();
+
+    ISingleValueLegacyExtendedPropertyRequestBuilder singleValueLegacyExtendedProperty();
+
+    IMultiValueLegacyExtendedPropertyRequestBuilder multiValueLegacyExtendedProperty();
+
+    IExtensionRequestBuilder extension();
+
+    IInferenceClassificationOverrideRequestBuilder inferenceClassificationOverride();
+
+    ITrendingRequestBuilder trending();
+
+    ITaskDetailsRequestBuilder taskDetails();
+
+    ITaskBoardTaskFormatRequestBuilder taskBoardTaskFormat();
+
+    IBucketRequestBuilder bucket();
+
+    IPlanDetailsRequestBuilder planDetails();
+
+    IPlanTaskBoardRequestBuilder planTaskBoard();
+
+    INotebookRequestBuilder notebook();
+
+    ISectionRequestBuilder section();
+
+    ISectionGroupRequestBuilder sectionGroup();
+
+    IPageRequestBuilder page();
+
+    IResourceRequestBuilder resource();
+
+    INotesOperationRequestBuilder notesOperation();
+
     ISubscriptionRequestBuilder subscription();
+
+    IIdentityRiskEventRequestBuilder identityRiskEvent();
 
 }

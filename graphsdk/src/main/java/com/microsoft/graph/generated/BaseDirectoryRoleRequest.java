@@ -119,15 +119,4 @@ public class BaseDirectoryRoleRequest extends BaseRequest implements IBaseDirect
          return (DirectoryRoleRequest)this;
      }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-     public IDirectoryRoleRequest expand(final String value) {
-         getQueryOptions().add(new QueryOption("$expand", value));
-         return (DirectoryRoleRequest)this;
-     }
-
 }

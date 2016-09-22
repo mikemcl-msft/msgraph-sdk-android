@@ -65,6 +65,20 @@ public class BaseMessageRequestBuilder extends BaseRequestBuilder implements IBa
     public IAttachmentRequestBuilder getAttachments(final String id) {
         return new AttachmentRequestBuilder(getRequestUrlWithAdditionalSegment("attachments") + "/" + id, getClient(), null);
     }
+    public ISingleValueLegacyExtendedPropertyCollectionRequestBuilder getSingleValueExtendedProperties() {
+        return new SingleValueLegacyExtendedPropertyCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("singleValueExtendedProperties"), getClient(), null);
+    }
+
+    public ISingleValueLegacyExtendedPropertyRequestBuilder getSingleValueExtendedProperties(final String id) {
+        return new SingleValueLegacyExtendedPropertyRequestBuilder(getRequestUrlWithAdditionalSegment("singleValueExtendedProperties") + "/" + id, getClient(), null);
+    }
+    public IMultiValueLegacyExtendedPropertyCollectionRequestBuilder getMultiValueExtendedProperties() {
+        return new MultiValueLegacyExtendedPropertyCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("multiValueExtendedProperties"), getClient(), null);
+    }
+
+    public IMultiValueLegacyExtendedPropertyRequestBuilder getMultiValueExtendedProperties(final String id) {
+        return new MultiValueLegacyExtendedPropertyRequestBuilder(getRequestUrlWithAdditionalSegment("multiValueExtendedProperties") + "/" + id, getClient(), null);
+    }
 
     public IMessageCopyRequestBuilder getCopy(final String destinationId) {
         return new MessageCopyRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.copy"), getClient(), null, destinationId);
@@ -74,31 +88,35 @@ public class BaseMessageRequestBuilder extends BaseRequestBuilder implements IBa
         return new MessageMoveRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.move"), getClient(), null, destinationId);
     }
 
-    public IMessageCreateReplyRequestBuilder getCreateReply() {
-        return new MessageCreateReplyRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createReply"), getClient(), null);
+    public IMessageCreateReplyRequestBuilder getCreateReply(final Message message, final String comment) {
+        return new MessageCreateReplyRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createReply"), getClient(), null, message, comment);
     }
 
-    public IMessageCreateReplyAllRequestBuilder getCreateReplyAll() {
-        return new MessageCreateReplyAllRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createReplyAll"), getClient(), null);
+    public IMessageCreateReplyAllRequestBuilder getCreateReplyAll(final Message message, final String comment) {
+        return new MessageCreateReplyAllRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createReplyAll"), getClient(), null, message, comment);
     }
 
-    public IMessageCreateForwardRequestBuilder getCreateForward() {
-        return new MessageCreateForwardRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createForward"), getClient(), null);
+    public IMessageCreateForwardRequestBuilder getCreateForward(final Message message, final String comment, final List<Recipient> toRecipients) {
+        return new MessageCreateForwardRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createForward"), getClient(), null, message, comment, toRecipients);
     }
 
-    public IMessageReplyRequestBuilder getReply(final String comment) {
-        return new MessageReplyRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.reply"), getClient(), null, comment);
+    public IMessageReplyRequestBuilder getReply(final Message message, final String comment) {
+        return new MessageReplyRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.reply"), getClient(), null, message, comment);
     }
 
-    public IMessageReplyAllRequestBuilder getReplyAll(final String comment) {
-        return new MessageReplyAllRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.replyAll"), getClient(), null, comment);
+    public IMessageReplyAllRequestBuilder getReplyAll(final Message message, final String comment) {
+        return new MessageReplyAllRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.replyAll"), getClient(), null, message, comment);
     }
 
-    public IMessageForwardRequestBuilder getForward(final String comment, final List<Recipient> toRecipients) {
-        return new MessageForwardRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.forward"), getClient(), null, comment, toRecipients);
+    public IMessageForwardRequestBuilder getForward(final Message message, final String comment, final List<Recipient> toRecipients) {
+        return new MessageForwardRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.forward"), getClient(), null, message, comment, toRecipients);
     }
 
     public IMessageSendRequestBuilder getSend() {
         return new MessageSendRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.send"), getClient(), null);
+    }
+
+    public IMessageUnsubscribeRequestBuilder getUnsubscribe() {
+        return new MessageUnsubscribeRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.unsubscribe"), getClient(), null);
     }
 }

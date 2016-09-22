@@ -37,9 +37,9 @@ public enum MeetingMessageType
     */
     meetingAccepted,
     /**
-    * meeting Tenatively Accepted
+    * meeting Tentatively Accepted
     */
-    meetingTenativelyAccepted,
+    meetingTentativelyAccepted,
     /**
     * meeting Declined
     */

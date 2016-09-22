@@ -119,15 +119,4 @@ public class BaseDirectoryObjectRequest extends BaseRequest implements IBaseDire
          return (DirectoryObjectRequest)this;
      }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-     public IDirectoryObjectRequest expand(final String value) {
-         getQueryOptions().add(new QueryOption("$expand", value));
-         return (DirectoryObjectRequest)this;
-     }
-
 }

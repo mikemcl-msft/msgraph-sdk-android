@@ -31,14 +31,6 @@ public interface IBaseGroupCollectionRequest {
     Group post(final Group newGroup) throws ClientException;
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IGroupCollectionRequest expand(final String value);
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

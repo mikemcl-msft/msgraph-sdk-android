@@ -31,13 +31,23 @@ public interface IBaseDirectoryObjectRequestBuilder extends IRequestBuilder {
      */
     IDirectoryObjectRequest buildRequest(final List<Option> options);
 
+    IExtensionPropertyRequestBuilder extensionProperty();
+
+    IApplicationRequestBuilder application();
+
+    IOrgContactRequestBuilder orgContact();
+
     IDeviceRequestBuilder device();
 
     IDirectoryRoleRequestBuilder directoryRole();
 
     IDirectoryRoleTemplateRequestBuilder directoryRoleTemplate();
 
+    IDirectorySettingTemplateRequestBuilder directorySettingTemplate();
+
     IGroupRequestBuilder group();
+
+    IServicePrincipalRequestBuilder servicePrincipal();
 
     IOrganizationRequestBuilder organization();
 

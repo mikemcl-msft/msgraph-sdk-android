@@ -31,14 +31,6 @@ public interface IBaseCalendarGroupCollectionRequest {
     CalendarGroup post(final CalendarGroup newCalendarGroup) throws ClientException;
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    ICalendarGroupCollectionRequest expand(final String value);
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

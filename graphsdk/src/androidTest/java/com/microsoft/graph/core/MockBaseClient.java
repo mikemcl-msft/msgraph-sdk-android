@@ -11,7 +11,7 @@ import com.microsoft.graph.serializer.ISerializer;
  */
 public class MockBaseClient implements IBaseClient {
 
-    private static final String DEFAULT_GRAPH_ENDPOINT = "https://graph.microsoft.com/v1.0";
+    private static final String DEFAULT_GRAPH_ENDPOINT = "https://graph.microsoft.com/beta";
     private String mEndpoint;
     private IAuthenticationProvider mAuthenticationProvider;
     private IExecutors mExecutors;

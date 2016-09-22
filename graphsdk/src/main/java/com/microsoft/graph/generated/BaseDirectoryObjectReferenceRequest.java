@@ -52,14 +52,4 @@ public class BaseDirectoryObjectReferenceRequest extends BaseRequest implements 
         return (DirectoryObjectReferenceRequest)this;
     }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IDirectoryObjectReferenceRequest expand(final String value) {
-        getQueryOptions().add(new QueryOption("$expand", value));
-        return (DirectoryObjectReferenceRequest)this;
-    }
 }

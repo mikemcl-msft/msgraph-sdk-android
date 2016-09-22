@@ -49,6 +49,13 @@ public class BaseDriveItemRequestBuilder extends BaseRequestBuilder implements I
 
 
     /**
+     * Gets the request builder for Workbook.
+     */
+    public IWorkbookRequestBuilder getWorkbook() {
+        return new WorkbookRequestBuilder(getRequestUrlWithAdditionalSegment("workbook"), getClient(), null);
+    }
+
+    /**
      * Gets the request builder for User.
      */
     public IUserWithReferenceRequestBuilder getCreatedByUser() {
@@ -89,6 +96,10 @@ public class BaseDriveItemRequestBuilder extends BaseRequestBuilder implements I
 
     public IDriveItemCreateLinkRequestBuilder getCreateLink(final String type, final String scope) {
         return new DriveItemCreateLinkRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.createLink"), getClient(), null, type, scope);
+    }
+
+    public IDriveItemInviteCollectionRequestBuilder getInvite(final Boolean requireSignIn, final List<String> roles, final Boolean sendInvitation, final String message, final List<DriveRecipient> recipients) {
+        return new DriveItemInviteCollectionRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.invite"), getClient(), null, requireSignIn, roles, sendInvitation, message, recipients);
     }
 
     public IDriveItemCopyRequestBuilder getCopy(final String name, final ItemReference parentReference) {

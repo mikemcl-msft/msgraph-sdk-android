@@ -85,12 +85,4 @@ public interface IBaseOrganizationRequest extends IHttpRequest {
      */
     IBaseOrganizationRequest select(final String value);
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IBaseOrganizationRequest expand(final String value);
-
 }

@@ -85,12 +85,4 @@ public interface IBaseDeviceRequest extends IHttpRequest {
      */
     IBaseDeviceRequest select(final String value);
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IBaseDeviceRequest expand(final String value);
-
 }

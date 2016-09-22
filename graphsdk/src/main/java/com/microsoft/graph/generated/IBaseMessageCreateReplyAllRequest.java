@@ -25,19 +25,8 @@ import com.google.gson.annotations.*;
  */
 public interface IBaseMessageCreateReplyAllRequest {
 
-    /**
-     * Creates the Message
-     *
-     * @param callback The callback to be called after success or failure.
-     */
     void post(final ICallback<Message> callback);
 
-    /**
-     * Creates the Message
-     *
-     * @return The Message
-     * @throws ClientException An exception occurs if there was an error while the request was sent.
-     */
     Message post() throws ClientException;
 
     /**
@@ -46,7 +35,15 @@ public interface IBaseMessageCreateReplyAllRequest {
      * @param value The select clause
      * @return The updated request
      */
-    IMessageCreateReplyAllRequest select(final String value);
+    IMessageCreateReplyAllRequest select(final String value) ;
+
+    /**
+     * Sets the top value for the request
+     *
+     * @param value The max number of items to return
+     * @return The updated request
+     */
+    IMessageCreateReplyAllRequest top(final int value);
 
     /**
      * Sets the expand clause for the request

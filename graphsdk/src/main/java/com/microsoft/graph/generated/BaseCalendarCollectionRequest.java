@@ -68,17 +68,6 @@ public class BaseCalendarCollectionRequest extends BaseCollectionRequest<BaseCal
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public ICalendarCollectionRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (CalendarCollectionRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause

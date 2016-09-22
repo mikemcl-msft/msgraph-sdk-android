@@ -29,7 +29,7 @@ public class MessageReplyRequestBuilder extends BaseMessageReplyRequestBuilder i
      * @param client The service client
      * @param options The options for this request
      */
-    public MessageReplyRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final String comment) {
-        super(requestUrl, client, options, comment);
+    public MessageReplyRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final Message message, final String comment) {
+        super(requestUrl, client, options, message, comment);
     }
 }

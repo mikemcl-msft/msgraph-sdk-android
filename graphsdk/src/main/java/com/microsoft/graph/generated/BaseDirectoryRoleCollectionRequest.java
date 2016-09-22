@@ -68,17 +68,6 @@ public class BaseDirectoryRoleCollectionRequest extends BaseCollectionRequest<Ba
     }
 
     /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IDirectoryRoleCollectionRequest expand(final String value) {
-        addQueryOption(new QueryOption("$expand", value));
-        return (DirectoryRoleCollectionRequest)this;
-    }
-
-    /**
      * Sets the select clause for the request
      *
      * @param value The select clause
@@ -86,17 +75,6 @@ public class BaseDirectoryRoleCollectionRequest extends BaseCollectionRequest<Ba
      */
     public IDirectoryRoleCollectionRequest select(final String value) {
         addQueryOption(new QueryOption("$select", value));
-        return (DirectoryRoleCollectionRequest)this;
-    }
-
-    /**
-     * Sets the top value for the request
-     *
-     * @param value The max number of items to return
-     * @return The updated request
-     */
-    public IDirectoryRoleCollectionRequest top(final int value) {
-        addQueryOption(new QueryOption("$top", value + ""));
         return (DirectoryRoleCollectionRequest)this;
     }
 

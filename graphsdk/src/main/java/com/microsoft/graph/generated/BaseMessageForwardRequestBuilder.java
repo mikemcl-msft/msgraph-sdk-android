@@ -28,8 +28,9 @@ public class BaseMessageForwardRequestBuilder extends BasePostMethodRequestBuild
      * @param client The service client
      * @param options The options for this request
      */
-    public BaseMessageForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final String comment, final List<Recipient> toRecipients) {
+    public BaseMessageForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final Message message, final String comment, final List<Recipient> toRecipients) {
         super(requestUrl, client, options);
+        mBodyParams.put("message", message);
         mBodyParams.put("comment", comment);
         mBodyParams.put("toRecipients", toRecipients);
     }
@@ -56,6 +57,9 @@ public class BaseMessageForwardRequestBuilder extends BasePostMethodRequestBuild
                 options
         );
 
+        if (hasParameter("message")) {
+            request.mBody.message = getParameter("message");
+        }
         if (hasParameter("comment")) {
             request.mBody.comment = getParameter("comment");
         }

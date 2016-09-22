@@ -85,12 +85,4 @@ public interface IBaseUserRequest extends IHttpRequest {
      */
     IBaseUserRequest select(final String value);
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    IBaseUserRequest expand(final String value);
-
 }

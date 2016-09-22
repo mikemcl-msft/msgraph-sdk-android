@@ -48,6 +48,10 @@ public class BaseEventMessageRequestBuilder extends BaseRequestBuilder implement
     }
 
 
+    public IEventMessageRequestEntityRequestBuilder eventMessageRequestEntity() {
+        return new EventMessageRequestEntityRequestBuilder(getRequestUrlWithAdditionalSegment("eventMessageRequestEntity"), getClient(), null);
+    }
+
     /**
      * Gets the request builder for Event.
      */

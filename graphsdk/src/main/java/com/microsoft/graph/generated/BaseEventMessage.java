@@ -37,6 +37,42 @@ public class BaseEventMessage extends Message implements IJsonBackedObject {
     public MeetingMessageType meetingMessageType;
 
     /**
+     * The Start Date Time.
+     */
+    @SerializedName("startDateTime")
+    public DateTimeTimeZone startDateTime;
+
+    /**
+     * The End Date Time.
+     */
+    @SerializedName("endDateTime")
+    public DateTimeTimeZone endDateTime;
+
+    /**
+     * The Location.
+     */
+    @SerializedName("location")
+    public Location location;
+
+    /**
+     * The Type.
+     */
+    @SerializedName("type")
+    public EventType type;
+
+    /**
+     * The Recurrence.
+     */
+    @SerializedName("recurrence")
+    public PatternedRecurrence recurrence;
+
+    /**
+     * The Is Out Of Date.
+     */
+    @SerializedName("isOutOfDate")
+    public Boolean isOutOfDate;
+
+    /**
      * The Event.
      */
     @SerializedName("event")

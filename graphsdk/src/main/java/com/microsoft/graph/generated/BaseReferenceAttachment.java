@@ -30,6 +30,42 @@ public class BaseReferenceAttachment extends Attachment implements IJsonBackedOb
         oDataType = "microsoft.graph.referenceAttachment";
     }
 
+    /**
+     * The Source Url.
+     */
+    @SerializedName("sourceUrl")
+    public String sourceUrl;
+
+    /**
+     * The Provider Type.
+     */
+    @SerializedName("providerType")
+    public ReferenceAttachmentProvider providerType;
+
+    /**
+     * The Thumbnail Url.
+     */
+    @SerializedName("thumbnailUrl")
+    public String thumbnailUrl;
+
+    /**
+     * The Preview Url.
+     */
+    @SerializedName("previewUrl")
+    public String previewUrl;
+
+    /**
+     * The Permission.
+     */
+    @SerializedName("permission")
+    public ReferenceAttachmentPermission permission;
+
+    /**
+     * The Is Folder.
+     */
+    @SerializedName("isFolder")
+    public Boolean isFolder;
+
 
     /**
      * The raw representation of this class

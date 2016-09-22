@@ -32,6 +32,11 @@ public interface IBaseDriveItemRequestBuilder extends IRequestBuilder {
     IDriveItemRequest buildRequest(final List<Option> options);
 
     /**
+     * Gets the request builder for Workbook.
+     */
+    IWorkbookRequestBuilder getWorkbook();
+
+    /**
      * Gets the request builder for User.
      */
     IUserWithReferenceRequestBuilder getCreatedByUser();
@@ -55,6 +60,8 @@ public interface IBaseDriveItemRequestBuilder extends IRequestBuilder {
 
     IDriveItemStreamRequestBuilder getContent();
     IDriveItemCreateLinkRequestBuilder getCreateLink(final String type, final String scope);
+
+    IDriveItemInviteCollectionRequestBuilder getInvite(final Boolean requireSignIn, final List<String> roles, final Boolean sendInvitation, final String message, final List<DriveRecipient> recipients);
     IDriveItemCopyRequestBuilder getCopy(final String name, final ItemReference parentReference);
 
     IDriveItemSearchCollectionRequestBuilder getSearch(final String q);

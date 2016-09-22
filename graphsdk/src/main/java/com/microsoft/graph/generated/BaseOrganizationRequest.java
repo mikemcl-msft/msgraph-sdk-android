@@ -119,15 +119,4 @@ public class BaseOrganizationRequest extends BaseRequest implements IBaseOrganiz
          return (OrganizationRequest)this;
      }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-     public IOrganizationRequest expand(final String value) {
-         getQueryOptions().add(new QueryOption("$expand", value));
-         return (OrganizationRequest)this;
-     }
-
 }

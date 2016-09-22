@@ -119,15 +119,4 @@ public class BaseDeviceRequest extends BaseRequest implements IBaseDeviceRequest
          return (DeviceRequest)this;
      }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-     public IDeviceRequest expand(final String value) {
-         getQueryOptions().add(new QueryOption("$expand", value));
-         return (DeviceRequest)this;
-     }
-
 }

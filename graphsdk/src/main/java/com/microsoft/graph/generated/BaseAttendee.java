@@ -23,7 +23,7 @@ import com.google.gson.annotations.*;
 /**
  * The class for the Base Attendee.
  */
-public class BaseAttendee extends Recipient implements IJsonBackedObject {
+public class BaseAttendee extends AttendeeBase implements IJsonBackedObject {
 
 
     public BaseAttendee() {
@@ -35,12 +35,6 @@ public class BaseAttendee extends Recipient implements IJsonBackedObject {
      */
     @SerializedName("status")
     public ResponseStatus status;
-
-    /**
-     * The Type.
-     */
-    @SerializedName("type")
-    public AttendeeType type;
 
 
     /**

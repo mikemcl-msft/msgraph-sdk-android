@@ -32,6 +32,4 @@ public interface IBaseUserWithReferenceRequest extends IHttpRequest {
 
     IBaseUserWithReferenceRequest select(final String value);
 
-    IBaseUserWithReferenceRequest expand(final String value);
-
 }

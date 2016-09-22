@@ -33,6 +33,18 @@ public class BasePhysicalAddress implements IJsonBackedObject {
     }
 
     /**
+     * The Type.
+     */
+    @SerializedName("type")
+    public PhysicalAddressType type;
+
+    /**
+     * The Post Office Box.
+     */
+    @SerializedName("postOfficeBox")
+    public String postOfficeBox;
+
+    /**
      * The Street.
      */
     @SerializedName("street")

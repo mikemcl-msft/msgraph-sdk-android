@@ -39,10 +39,28 @@ public class BaseLocation implements IJsonBackedObject {
     public String displayName;
 
     /**
+     * The Location Email Address.
+     */
+    @SerializedName("locationEmailAddress")
+    public String locationEmailAddress;
+
+    /**
      * The Address.
      */
     @SerializedName("address")
     public PhysicalAddress address;
+
+    /**
+     * The Coordinates.
+     */
+    @SerializedName("coordinates")
+    public OutlookGeoCoordinates coordinates;
+
+    /**
+     * The Location Uri.
+     */
+    @SerializedName("locationUri")
+    public String locationUri;
 
 
     /**

@@ -52,14 +52,4 @@ public class BaseUserReferenceRequest extends BaseRequest implements IBaseUserRe
         return (UserReferenceRequest)this;
     }
 
-    /**
-     * Sets the expand clause for the request
-     *
-     * @param value The expand clause
-     * @return The updated request
-     */
-    public IUserReferenceRequest expand(final String value) {
-        getQueryOptions().add(new QueryOption("$expand", value));
-        return (UserReferenceRequest)this;
-    }
 }

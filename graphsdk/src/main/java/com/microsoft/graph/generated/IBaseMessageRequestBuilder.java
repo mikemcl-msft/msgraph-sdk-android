@@ -40,14 +40,23 @@ public interface IBaseMessageRequestBuilder extends IRequestBuilder {
     IAttachmentCollectionRequestBuilder getAttachments();
 
     IAttachmentRequestBuilder getAttachments(final String id);
+
+    ISingleValueLegacyExtendedPropertyCollectionRequestBuilder getSingleValueExtendedProperties();
+
+    ISingleValueLegacyExtendedPropertyRequestBuilder getSingleValueExtendedProperties(final String id);
+
+    IMultiValueLegacyExtendedPropertyCollectionRequestBuilder getMultiValueExtendedProperties();
+
+    IMultiValueLegacyExtendedPropertyRequestBuilder getMultiValueExtendedProperties(final String id);
     IMessageCopyRequestBuilder getCopy(final String destinationId);
     IMessageMoveRequestBuilder getMove(final String destinationId);
-    IMessageCreateReplyRequestBuilder getCreateReply();
-    IMessageCreateReplyAllRequestBuilder getCreateReplyAll();
-    IMessageCreateForwardRequestBuilder getCreateForward();
-    IMessageReplyRequestBuilder getReply(final String comment);
-    IMessageReplyAllRequestBuilder getReplyAll(final String comment);
-    IMessageForwardRequestBuilder getForward(final String comment, final List<Recipient> toRecipients);
+    IMessageCreateReplyRequestBuilder getCreateReply(final Message message, final String comment);
+    IMessageCreateReplyAllRequestBuilder getCreateReplyAll(final Message message, final String comment);
+    IMessageCreateForwardRequestBuilder getCreateForward(final Message message, final String comment, final List<Recipient> toRecipients);
+    IMessageReplyRequestBuilder getReply(final Message message, final String comment);
+    IMessageReplyAllRequestBuilder getReplyAll(final Message message, final String comment);
+    IMessageForwardRequestBuilder getForward(final Message message, final String comment, final List<Recipient> toRecipients);
     IMessageSendRequestBuilder getSend();
+    IMessageUnsubscribeRequestBuilder getUnsubscribe();
 
 }
