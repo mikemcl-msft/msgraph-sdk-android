@@ -95,13 +95,6 @@ public class BasePerson extends Entity implements IJsonBackedObject {
     public List<Location> postalAddresses;
 
     /**
-     * The Websites.
-     */
-    @SerializedName("websites")
-    @Expose
-    public List<Website> websites;
-
-    /**
      * The Title.
      */
     @SerializedName("title")

@@ -137,13 +137,6 @@ public class BaseContact extends OutlookItem implements IJsonBackedObject {
     public List<EmailAddress> emailAddresses;
 
     /**
-     * The Websites.
-     */
-    @SerializedName("websites")
-    @Expose
-    public List<Website> websites;
-
-    /**
      * The Im Addresses.
      */
     @SerializedName("imAddresses")
