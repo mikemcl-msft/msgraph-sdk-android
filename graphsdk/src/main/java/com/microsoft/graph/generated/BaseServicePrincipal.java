@@ -172,13 +172,6 @@ public class BaseServicePrincipal extends DirectoryObject implements IJsonBacked
     public List<String> tags;
 
     /**
-     * The App Role Assignment.
-     */
-    @SerializedName("appRoleAssignment")
-    @Expose
-    public AppRoleAssignment appRoleAssignment;
-
-    /**
      * The App Role Assigned To.
      */
     public transient AppRoleAssignmentCollectionPage appRoleAssignedTo;
@@ -187,13 +180,6 @@ public class BaseServicePrincipal extends DirectoryObject implements IJsonBacked
      * The App Role Assignments.
      */
     public transient AppRoleAssignmentCollectionPage appRoleAssignments;
-
-    /**
-     * The Oauth2Permission Grant.
-     */
-    @SerializedName("oauth2PermissionGrant")
-    @Expose
-    public OAuth2PermissionGrant oauth2PermissionGrant;
 
     /**
      * The Oauth2Permission Grants.

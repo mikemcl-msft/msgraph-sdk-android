@@ -48,26 +48,12 @@ public class BaseConnectorGroupRequestBuilder extends BaseRequestBuilder impleme
         return new ConnectorGroupRequest(getRequestUrl(), getClient(), requestOptions);
     }
 
-
-    /**
-     * Gets the request builder for Connector.
-     */
-    public IConnectorWithReferenceRequestBuilder getMember() {
-        return new ConnectorWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("member"), getClient(), null);
-    }
     public IConnectorCollectionWithReferencesRequestBuilder getMembers() {
         return new ConnectorCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("members"), getClient(), null);
     }
 
     public IConnectorWithReferenceRequestBuilder getMembers(final String id) {
         return new ConnectorWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("members") + "/" + id, getClient(), null);
-    }
-
-    /**
-     * Gets the request builder for Application.
-     */
-    public IApplicationWithReferenceRequestBuilder getApplication() {
-        return new ApplicationWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("application"), getClient(), null);
     }
     public IApplicationCollectionWithReferencesRequestBuilder getApplications() {
         return new ApplicationCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("applications"), getClient(), null);

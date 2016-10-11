@@ -32,11 +32,6 @@ public interface IBaseInvitationRequestBuilder extends IRequestBuilder {
      */
     IInvitationRequest buildRequest(final List<Option> requestOptions);
 
-    /**
-     * Gets the request builder for Group.
-     */
-    IGroupWithReferenceRequestBuilder getInvitedToGroup();
-
     IGroupCollectionWithReferencesRequestBuilder getInvitedToGroups();
 
     IGroupWithReferenceRequestBuilder getInvitedToGroups(final String id);

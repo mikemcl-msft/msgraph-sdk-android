@@ -55,13 +55,6 @@ public class BasePrivilegedRoleRequestBuilder extends BaseRequestBuilder impleme
     public IPrivilegedRoleSettingsRequestBuilder getSettings() {
         return new PrivilegedRoleSettingsRequestBuilder(getRequestUrlWithAdditionalSegment("settings"), getClient(), null);
     }
-
-    /**
-     * Gets the request builder for PrivilegedRoleAssignment.
-     */
-    public IPrivilegedRoleAssignmentWithReferenceRequestBuilder getAssignment() {
-        return new PrivilegedRoleAssignmentWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("assignment"), getClient(), null);
-    }
     public IPrivilegedRoleAssignmentCollectionWithReferencesRequestBuilder getAssignments() {
         return new PrivilegedRoleAssignmentCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("assignments"), getClient(), null);
     }

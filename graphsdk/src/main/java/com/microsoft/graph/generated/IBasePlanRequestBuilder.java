@@ -32,19 +32,9 @@ public interface IBasePlanRequestBuilder extends IRequestBuilder {
      */
     IPlanRequest buildRequest(final List<Option> requestOptions);
 
-    /**
-     * Gets the request builder for Task.
-     */
-    ITaskWithReferenceRequestBuilder getTask();
-
     ITaskCollectionWithReferencesRequestBuilder getTasks();
 
     ITaskWithReferenceRequestBuilder getTasks(final String id);
-
-    /**
-     * Gets the request builder for Bucket.
-     */
-    IBucketWithReferenceRequestBuilder getBucket();
 
     IBucketCollectionWithReferencesRequestBuilder getBuckets();
 

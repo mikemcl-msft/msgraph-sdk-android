@@ -32,11 +32,6 @@ public interface IBaseServicePrincipalRequestBuilder extends IRequestBuilder {
      */
     IServicePrincipalRequest buildRequest(final List<Option> requestOptions);
 
-    /**
-     * Gets the request builder for AppRoleAssignment.
-     */
-    IAppRoleAssignmentWithReferenceRequestBuilder getAppRoleAssignment();
-
     IAppRoleAssignmentCollectionWithReferencesRequestBuilder getAppRoleAssignedTo();
 
     IAppRoleAssignmentWithReferenceRequestBuilder getAppRoleAssignedTo(final String id);
@@ -44,11 +39,6 @@ public interface IBaseServicePrincipalRequestBuilder extends IRequestBuilder {
     IAppRoleAssignmentCollectionWithReferencesRequestBuilder getAppRoleAssignments();
 
     IAppRoleAssignmentWithReferenceRequestBuilder getAppRoleAssignments(final String id);
-
-    /**
-     * Gets the request builder for OAuth2PermissionGrant.
-     */
-    IOAuth2PermissionGrantWithReferenceRequestBuilder getOauth2PermissionGrant();
 
     IOAuth2PermissionGrantCollectionWithReferencesRequestBuilder getOauth2PermissionGrants();
 

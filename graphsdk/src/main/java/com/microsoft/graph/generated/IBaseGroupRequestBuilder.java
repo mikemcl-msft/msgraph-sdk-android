@@ -101,11 +101,6 @@ public interface IBaseGroupRequestBuilder extends IRequestBuilder {
      */
     ISharePointRequestBuilder getSharepoint();
 
-    /**
-     * Gets the request builder for Plan.
-     */
-    IPlanWithReferenceRequestBuilder getPlan();
-
     IPlanCollectionWithReferencesRequestBuilder getPlans();
 
     IPlanWithReferenceRequestBuilder getPlans(final String id);

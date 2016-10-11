@@ -48,26 +48,12 @@ public class BasePlanRequestBuilder extends BaseRequestBuilder implements IBaseP
         return new PlanRequest(getRequestUrl(), getClient(), requestOptions);
     }
 
-
-    /**
-     * Gets the request builder for Task.
-     */
-    public ITaskWithReferenceRequestBuilder getTask() {
-        return new TaskWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("task"), getClient(), null);
-    }
     public ITaskCollectionWithReferencesRequestBuilder getTasks() {
         return new TaskCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("tasks"), getClient(), null);
     }
 
     public ITaskWithReferenceRequestBuilder getTasks(final String id) {
         return new TaskWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("tasks") + "/" + id, getClient(), null);
-    }
-
-    /**
-     * Gets the request builder for Bucket.
-     */
-    public IBucketWithReferenceRequestBuilder getBucket() {
-        return new BucketWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("bucket"), getClient(), null);
     }
     public IBucketCollectionWithReferencesRequestBuilder getBuckets() {
         return new BucketCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("buckets"), getClient(), null);

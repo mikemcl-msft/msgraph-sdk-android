@@ -46,13 +46,6 @@ public class BasePrivilegedRole extends Entity implements IJsonBackedObject {
     public PrivilegedRoleSettings settings;
 
     /**
-     * The Assignment.
-     */
-    @SerializedName("assignment")
-    @Expose
-    public PrivilegedRoleAssignment assignment;
-
-    /**
      * The Assignments.
      */
     public transient PrivilegedRoleAssignmentCollectionPage assignments;

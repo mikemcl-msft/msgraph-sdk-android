@@ -37,11 +37,6 @@ public interface IBasePrivilegedRoleRequestBuilder extends IRequestBuilder {
      */
     IPrivilegedRoleSettingsRequestBuilder getSettings();
 
-    /**
-     * Gets the request builder for PrivilegedRoleAssignment.
-     */
-    IPrivilegedRoleAssignmentWithReferenceRequestBuilder getAssignment();
-
     IPrivilegedRoleAssignmentCollectionWithReferencesRequestBuilder getAssignments();
 
     IPrivilegedRoleAssignmentWithReferenceRequestBuilder getAssignments(final String id);

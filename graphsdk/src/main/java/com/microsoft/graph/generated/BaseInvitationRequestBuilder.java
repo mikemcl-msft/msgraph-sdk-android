@@ -48,13 +48,6 @@ public class BaseInvitationRequestBuilder extends BaseRequestBuilder implements 
         return new InvitationRequest(getRequestUrl(), getClient(), requestOptions);
     }
 
-
-    /**
-     * Gets the request builder for Group.
-     */
-    public IGroupWithReferenceRequestBuilder getInvitedToGroup() {
-        return new GroupWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("invitedToGroup"), getClient(), null);
-    }
     public IGroupCollectionWithReferencesRequestBuilder getInvitedToGroups() {
         return new GroupCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("invitedToGroups"), getClient(), null);
     }

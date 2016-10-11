@@ -297,13 +297,6 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
     public SharePoint sharepoint;
 
     /**
-     * The Plan.
-     */
-    @SerializedName("plan")
-    @Expose
-    public Plan plan;
-
-    /**
      * The Plans.
      */
     public transient PlanCollectionPage plans;

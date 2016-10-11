@@ -160,13 +160,6 @@ public class BaseGroupRequestBuilder extends BaseRequestBuilder implements IBase
     public ISharePointRequestBuilder getSharepoint() {
         return new SharePointRequestBuilder(getRequestUrlWithAdditionalSegment("sharepoint"), getClient(), null);
     }
-
-    /**
-     * Gets the request builder for Plan.
-     */
-    public IPlanWithReferenceRequestBuilder getPlan() {
-        return new PlanWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("plan"), getClient(), null);
-    }
     public IPlanCollectionWithReferencesRequestBuilder getPlans() {
         return new PlanCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("plans"), getClient(), null);
     }

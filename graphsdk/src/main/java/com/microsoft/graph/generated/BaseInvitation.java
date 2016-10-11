@@ -81,13 +81,6 @@ public class BaseInvitation extends Entity implements IJsonBackedObject {
     public String status;
 
     /**
-     * The Invited To Group.
-     */
-    @SerializedName("invitedToGroup")
-    @Expose
-    public Group invitedToGroup;
-
-    /**
      * The Invited To Groups.
      */
     public transient GroupCollectionPage invitedToGroups;

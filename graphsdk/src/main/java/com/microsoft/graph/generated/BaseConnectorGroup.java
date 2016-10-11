@@ -53,23 +53,9 @@ public class BaseConnectorGroup extends Entity implements IJsonBackedObject {
     public Boolean isDefault;
 
     /**
-     * The Member.
-     */
-    @SerializedName("member")
-    @Expose
-    public Connector member;
-
-    /**
      * The Members.
      */
     public transient ConnectorCollectionPage members;
-
-    /**
-     * The Application.
-     */
-    @SerializedName("application")
-    @Expose
-    public Application application;
 
     /**
      * The Applications.

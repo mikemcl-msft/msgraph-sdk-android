@@ -48,13 +48,6 @@ public class BaseServicePrincipalRequestBuilder extends BaseRequestBuilder imple
         return new ServicePrincipalRequest(getRequestUrl(), getClient(), requestOptions);
     }
 
-
-    /**
-     * Gets the request builder for AppRoleAssignment.
-     */
-    public IAppRoleAssignmentWithReferenceRequestBuilder getAppRoleAssignment() {
-        return new AppRoleAssignmentWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("appRoleAssignment"), getClient(), null);
-    }
     public IAppRoleAssignmentCollectionWithReferencesRequestBuilder getAppRoleAssignedTo() {
         return new AppRoleAssignmentCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("appRoleAssignedTo"), getClient(), null);
     }
@@ -68,13 +61,6 @@ public class BaseServicePrincipalRequestBuilder extends BaseRequestBuilder imple
 
     public IAppRoleAssignmentWithReferenceRequestBuilder getAppRoleAssignments(final String id) {
         return new AppRoleAssignmentWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("appRoleAssignments") + "/" + id, getClient(), null);
-    }
-
-    /**
-     * Gets the request builder for OAuth2PermissionGrant.
-     */
-    public IOAuth2PermissionGrantWithReferenceRequestBuilder getOauth2PermissionGrant() {
-        return new OAuth2PermissionGrantWithReferenceRequestBuilder(getRequestUrlWithAdditionalSegment("oauth2PermissionGrant"), getClient(), null);
     }
     public IOAuth2PermissionGrantCollectionWithReferencesRequestBuilder getOauth2PermissionGrants() {
         return new OAuth2PermissionGrantCollectionWithReferencesRequestBuilder(getRequestUrlWithAdditionalSegment("oauth2PermissionGrants"), getClient(), null);

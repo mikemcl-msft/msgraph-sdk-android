@@ -32,19 +32,9 @@ public interface IBaseConnectorGroupRequestBuilder extends IRequestBuilder {
      */
     IConnectorGroupRequest buildRequest(final List<Option> requestOptions);
 
-    /**
-     * Gets the request builder for Connector.
-     */
-    IConnectorWithReferenceRequestBuilder getMember();
-
     IConnectorCollectionWithReferencesRequestBuilder getMembers();
 
     IConnectorWithReferenceRequestBuilder getMembers(final String id);
-
-    /**
-     * Gets the request builder for Application.
-     */
-    IApplicationWithReferenceRequestBuilder getApplication();
 
     IApplicationCollectionWithReferencesRequestBuilder getApplications();
 
