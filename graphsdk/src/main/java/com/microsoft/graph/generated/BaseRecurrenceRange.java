@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseRecurrenceRange implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseRecurrenceRange() {
@@ -36,30 +38,35 @@ public class BaseRecurrenceRange implements IJsonBackedObject {
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public RecurrenceRangeType type;
 
     /**
      * The Start Date.
      */
     @SerializedName("startDate")
+    @Expose
     public com.microsoft.graph.model.DateOnly startDate;
 
     /**
      * The End Date.
      */
     @SerializedName("endDate")
+    @Expose
     public com.microsoft.graph.model.DateOnly endDate;
 
     /**
      * The Recurrence Time Zone.
      */
     @SerializedName("recurrenceTimeZone")
+    @Expose
     public String recurrenceTimeZone;
 
     /**
      * The Number Of Occurrences.
      */
     @SerializedName("numberOfOccurrences")
+    @Expose
     public Integer numberOfOccurrences;
 
 

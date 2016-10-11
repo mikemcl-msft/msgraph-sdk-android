@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,42 +35,49 @@ public class BaseOAuth2PermissionGrant extends Entity implements IJsonBackedObje
      * The Client Id.
      */
     @SerializedName("clientId")
+    @Expose
     public String clientId;
 
     /**
      * The Consent Type.
      */
     @SerializedName("consentType")
+    @Expose
     public String consentType;
 
     /**
      * The Expiry Time.
      */
     @SerializedName("expiryTime")
+    @Expose
     public java.util.Calendar expiryTime;
 
     /**
      * The Principal Id.
      */
     @SerializedName("principalId")
+    @Expose
     public String principalId;
 
     /**
      * The Resource Id.
      */
     @SerializedName("resourceId")
+    @Expose
     public String resourceId;
 
     /**
      * The Scope.
      */
     @SerializedName("scope")
+    @Expose
     public String scope;
 
     /**
      * The Start Time.
      */
     @SerializedName("startTime")
+    @Expose
     public java.util.Calendar startTime;
 
 

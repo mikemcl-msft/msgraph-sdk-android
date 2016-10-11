@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,36 +35,42 @@ public class BasePermission extends Entity implements IJsonBackedObject {
      * The Granted To.
      */
     @SerializedName("grantedTo")
+    @Expose
     public IdentitySet grantedTo;
 
     /**
      * The Invitation.
      */
     @SerializedName("invitation")
+    @Expose
     public SharingInvitation invitation;
 
     /**
      * The Inherited From.
      */
     @SerializedName("inheritedFrom")
+    @Expose
     public ItemReference inheritedFrom;
 
     /**
      * The Link.
      */
     @SerializedName("link")
+    @Expose
     public SharingLink link;
 
     /**
      * The Roles.
      */
     @SerializedName("roles")
+    @Expose
     public List<String> roles;
 
     /**
      * The Share Id.
      */
     @SerializedName("shareId")
+    @Expose
     public String shareId;
 
 

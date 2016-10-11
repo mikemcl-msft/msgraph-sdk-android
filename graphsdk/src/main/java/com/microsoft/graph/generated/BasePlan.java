@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,24 +35,41 @@ public class BasePlan extends Entity implements IJsonBackedObject {
      * The Created By.
      */
     @SerializedName("createdBy")
+    @Expose
     public String createdBy;
 
     /**
      * The Owner.
      */
     @SerializedName("owner")
+    @Expose
     public String owner;
 
     /**
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
+
+    /**
+     * The Task.
+     */
+    @SerializedName("task")
+    @Expose
+    public Task task;
 
     /**
      * The Tasks.
      */
     public transient TaskCollectionPage tasks;
+
+    /**
+     * The Bucket.
+     */
+    @SerializedName("bucket")
+    @Expose
+    public Bucket bucket;
 
     /**
      * The Buckets.
@@ -62,24 +80,28 @@ public class BasePlan extends Entity implements IJsonBackedObject {
      * The Details.
      */
     @SerializedName("details")
+    @Expose
     public PlanDetails details;
 
     /**
      * The Assigned To Task Board.
      */
     @SerializedName("assignedToTaskBoard")
+    @Expose
     public PlanTaskBoard assignedToTaskBoard;
 
     /**
      * The Progress Task Board.
      */
     @SerializedName("progressTaskBoard")
+    @Expose
     public PlanTaskBoard progressTaskBoard;
 
     /**
      * The Bucket Task Board.
      */
     @SerializedName("bucketTaskBoard")
+    @Expose
     public PlanTaskBoard bucketTaskBoard;
 
 

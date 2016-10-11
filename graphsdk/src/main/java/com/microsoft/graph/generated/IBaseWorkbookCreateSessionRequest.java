@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -25,9 +26,9 @@ import com.google.gson.annotations.*;
  */
 public interface IBaseWorkbookCreateSessionRequest {
 
-    void post(final ICallback<SessionInfo> callback);
+    void post(final ICallback<WorkbookSessionInfo> callback);
 
-    SessionInfo post() throws ClientException;
+    WorkbookSessionInfo post() throws ClientException;
 
     /**
      * Sets the select clause for the request

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,19 +27,19 @@ import com.google.gson.annotations.*;
 public interface IBaseNotebookImportNotebookRequest {
 
     /**
-     * Creates the Notebook
+     * Creates the NotebookImportNotebook
      *
      * @param callback The callback to be called after success or failure.
      */
-    void post(final ICallback<Notebook> callback);
+    void post(final ICallback<ImportStatusModel> callback);
 
     /**
-     * Creates the Notebook
+     * Creates the NotebookImportNotebook
      *
-     * @return The Notebook
+     * @return The ImportStatusModel
      * @throws ClientException An exception occurs if there was an error while the request was sent.
      */
-    Notebook post() throws ClientException;
+    ImportStatusModel post() throws ClientException;
 
     /**
      * Sets the select clause for the request

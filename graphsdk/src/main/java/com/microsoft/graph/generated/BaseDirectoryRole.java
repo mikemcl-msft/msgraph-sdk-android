@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,24 +35,32 @@ public class BaseDirectoryRole extends DirectoryObject implements IJsonBackedObj
      * The Description.
      */
     @SerializedName("description")
+    @Expose
     public String description;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Role Template Id.
      */
     @SerializedName("roleTemplateId")
+    @Expose
     public String roleTemplateId;
 
     /**
      * The Members.
      */
     public transient DirectoryObjectCollectionPage members;
+
+    /**
+     * The Scoped Administrators.
+     */
+    public transient ScopedRoleMembershipCollectionPage scopedAdministrators;
 
 
     /**
@@ -105,6 +114,22 @@ public class BaseDirectoryRole extends DirectoryObject implements IJsonBackedObj
             }
             response.value = Arrays.asList(array);
             members = new DirectoryObjectCollectionPage(response, null);
+        }
+
+        if (json.has("scopedAdministrators")) {
+            final BaseScopedRoleMembershipCollectionResponse response = new BaseScopedRoleMembershipCollectionResponse();
+            if (json.has("scopedAdministrators@odata.nextLink")) {
+                response.nextLink = json.get("scopedAdministrators@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("scopedAdministrators").toString(), JsonObject[].class);
+            final ScopedRoleMembership[] array = new ScopedRoleMembership[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), ScopedRoleMembership.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            scopedAdministrators = new ScopedRoleMembershipCollectionPage(response, null);
         }
     }
 }

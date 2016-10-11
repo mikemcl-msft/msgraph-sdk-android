@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.microsoft.graph.authentication.*;
 import com.microsoft.graph.logger.*;

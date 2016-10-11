@@ -30,7 +30,7 @@ public interface IBasePageRequestBuilder extends IRequestBuilder {
     /**
      * Creates the request with specific options instead of the existing options
      */
-    IPageRequest buildRequest(final List<Option> options);
+    IPageRequest buildRequest(final List<Option> requestOptions);
 
     /**
      * Gets the request builder for Section.
@@ -44,7 +44,6 @@ public interface IBasePageRequestBuilder extends IRequestBuilder {
 
     IPageStreamRequestBuilder getContent();
 
-    //IPageStreamRequestBuilder getContent();
     IPagePatchContentRequestBuilder getPatchContent(final List<PatchContentCommand> commands);
     IPageCopyToSectionRequestBuilder getCopyToSection(final String id, final String groupId);
 

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,204 +35,231 @@ public class BaseContact extends OutlookItem implements IJsonBackedObject {
      * The Parent Folder Id.
      */
     @SerializedName("parentFolderId")
+    @Expose
     public String parentFolderId;
 
     /**
      * The Birthday.
      */
     @SerializedName("birthday")
+    @Expose
     public java.util.Calendar birthday;
 
     /**
      * The File As.
      */
     @SerializedName("fileAs")
+    @Expose
     public String fileAs;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Given Name.
      */
     @SerializedName("givenName")
+    @Expose
     public String givenName;
 
     /**
      * The Initials.
      */
     @SerializedName("initials")
+    @Expose
     public String initials;
 
     /**
      * The Middle Name.
      */
     @SerializedName("middleName")
+    @Expose
     public String middleName;
 
     /**
      * The Nick Name.
      */
     @SerializedName("nickName")
+    @Expose
     public String nickName;
 
     /**
      * The Surname.
      */
     @SerializedName("surname")
+    @Expose
     public String surname;
 
     /**
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
 
     /**
      * The Yomi Given Name.
      */
     @SerializedName("yomiGivenName")
+    @Expose
     public String yomiGivenName;
 
     /**
      * The Yomi Surname.
      */
     @SerializedName("yomiSurname")
+    @Expose
     public String yomiSurname;
 
     /**
      * The Yomi Company Name.
      */
     @SerializedName("yomiCompanyName")
+    @Expose
     public String yomiCompanyName;
 
     /**
      * The Generation.
      */
     @SerializedName("generation")
+    @Expose
     public String generation;
 
     /**
      * The Email Addresses.
      */
     @SerializedName("emailAddresses")
+    @Expose
     public List<EmailAddress> emailAddresses;
+
+    /**
+     * The Websites.
+     */
+    @SerializedName("websites")
+    @Expose
+    public List<Website> websites;
 
     /**
      * The Im Addresses.
      */
     @SerializedName("imAddresses")
+    @Expose
     public List<String> imAddresses;
 
     /**
      * The Job Title.
      */
     @SerializedName("jobTitle")
+    @Expose
     public String jobTitle;
 
     /**
      * The Company Name.
      */
     @SerializedName("companyName")
+    @Expose
     public String companyName;
 
     /**
      * The Department.
      */
     @SerializedName("department")
+    @Expose
     public String department;
 
     /**
      * The Office Location.
      */
     @SerializedName("officeLocation")
+    @Expose
     public String officeLocation;
 
     /**
      * The Profession.
      */
     @SerializedName("profession")
+    @Expose
     public String profession;
-
-    /**
-     * The Business Home Page.
-     */
-    @SerializedName("businessHomePage")
-    public String businessHomePage;
 
     /**
      * The Assistant Name.
      */
     @SerializedName("assistantName")
+    @Expose
     public String assistantName;
 
     /**
      * The Manager.
      */
     @SerializedName("manager")
+    @Expose
     public String manager;
 
     /**
-     * The Home Phones.
+     * The Phones.
      */
-    @SerializedName("homePhones")
-    public List<String> homePhones;
+    @SerializedName("phones")
+    @Expose
+    public List<Phone> phones;
 
     /**
-     * The Mobile Phone.
+     * The Postal Addresses.
      */
-    @SerializedName("mobilePhone")
-    public String mobilePhone;
-
-    /**
-     * The Business Phones.
-     */
-    @SerializedName("businessPhones")
-    public List<String> businessPhones;
-
-    /**
-     * The Home Address.
-     */
-    @SerializedName("homeAddress")
-    public PhysicalAddress homeAddress;
-
-    /**
-     * The Business Address.
-     */
-    @SerializedName("businessAddress")
-    public PhysicalAddress businessAddress;
-
-    /**
-     * The Other Address.
-     */
-    @SerializedName("otherAddress")
-    public PhysicalAddress otherAddress;
+    @SerializedName("postalAddresses")
+    @Expose
+    public List<PhysicalAddress> postalAddresses;
 
     /**
      * The Spouse Name.
      */
     @SerializedName("spouseName")
+    @Expose
     public String spouseName;
 
     /**
      * The Personal Notes.
      */
     @SerializedName("personalNotes")
+    @Expose
     public String personalNotes;
 
     /**
      * The Children.
      */
     @SerializedName("children")
+    @Expose
     public List<String> children;
+
+    /**
+     * The Wedding Anniversary.
+     */
+    @SerializedName("weddingAnniversary")
+    @Expose
+    public com.microsoft.graph.model.DateOnly weddingAnniversary;
+
+    /**
+     * The Gender.
+     */
+    @SerializedName("gender")
+    @Expose
+    public String gender;
+
+    /**
+     * The Is Favorite.
+     */
+    @SerializedName("isFavorite")
+    @Expose
+    public Boolean isFavorite;
 
     /**
      * The Flag.
      */
     @SerializedName("flag")
+    @Expose
     public FollowupFlag flag;
 
     /**
@@ -253,6 +281,7 @@ public class BaseContact extends OutlookItem implements IJsonBackedObject {
      * The Photo.
      */
     @SerializedName("photo")
+    @Expose
     public ProfilePhoto photo;
 
 

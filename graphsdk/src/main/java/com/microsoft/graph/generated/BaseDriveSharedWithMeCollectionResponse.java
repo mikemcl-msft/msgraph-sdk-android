@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -27,9 +28,11 @@ import com.google.gson.annotations.*;
 public class BaseDriveSharedWithMeCollectionResponse implements IJsonBackedObject {
 
     @SerializedName("value")
+    @Expose
     public List<DriveItem> value;
 
     @SerializedName("@odata.nextLink")
+    @Expose(serialize = false)
     public String nextLink;
 
     /**

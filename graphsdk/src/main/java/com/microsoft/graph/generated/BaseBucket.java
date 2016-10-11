@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,18 +35,21 @@ public class BaseBucket extends Entity implements IJsonBackedObject {
      * The Name.
      */
     @SerializedName("name")
+    @Expose
     public String name;
 
     /**
      * The Plan Id.
      */
     @SerializedName("planId")
+    @Expose
     public String planId;
 
     /**
      * The Order Hint.
      */
     @SerializedName("orderHint")
+    @Expose
     public String orderHint;
 
     /**

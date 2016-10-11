@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,30 +35,35 @@ public class BaseTrending extends Entity implements IJsonBackedObject {
      * The Weight.
      */
     @SerializedName("weight")
+    @Expose
     public Double weight;
 
     /**
      * The Resource Visualization.
      */
     @SerializedName("resourceVisualization")
+    @Expose
     public ResourceVisualization resourceVisualization;
 
     /**
      * The Resource Reference.
      */
     @SerializedName("resourceReference")
+    @Expose
     public ResourceReference resourceReference;
 
     /**
      * The Last Modified Date Time.
      */
     @SerializedName("lastModifiedDateTime")
+    @Expose
     public java.util.Calendar lastModifiedDateTime;
 
     /**
      * The Resource.
      */
     @SerializedName("resource")
+    @Expose
     public Entity resource;
 
 

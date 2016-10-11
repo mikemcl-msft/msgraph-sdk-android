@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseKeyValue implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseKeyValue() {
@@ -36,12 +38,14 @@ public class BaseKeyValue implements IJsonBackedObject {
      * The Key.
      */
     @SerializedName("key")
+    @Expose
     public String key;
 
     /**
      * The Value.
      */
     @SerializedName("value")
+    @Expose
     public String value;
 
 

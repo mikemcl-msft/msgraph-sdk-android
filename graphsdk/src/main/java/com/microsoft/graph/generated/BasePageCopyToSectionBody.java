@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,12 +30,14 @@ public class BasePageCopyToSectionBody {
      * The id.
      */
     @SerializedName("id")
+    @Expose
     public String id;
 
     /**
      * The group Id.
      */
     @SerializedName("groupId")
+    @Expose
     public String groupId;
 
 

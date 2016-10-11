@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,30 +35,35 @@ public class BaseConversation extends Entity implements IJsonBackedObject {
      * The Topic.
      */
     @SerializedName("topic")
+    @Expose
     public String topic;
 
     /**
      * The Has Attachments.
      */
     @SerializedName("hasAttachments")
+    @Expose
     public Boolean hasAttachments;
 
     /**
      * The Last Delivered Date Time.
      */
     @SerializedName("lastDeliveredDateTime")
+    @Expose
     public java.util.Calendar lastDeliveredDateTime;
 
     /**
      * The Unique Senders.
      */
     @SerializedName("uniqueSenders")
+    @Expose
     public List<String> uniqueSenders;
 
     /**
      * The Preview.
      */
     @SerializedName("preview")
+    @Expose
     public String preview;
 
     /**

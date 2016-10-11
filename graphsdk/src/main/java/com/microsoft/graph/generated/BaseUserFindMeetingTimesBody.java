@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,42 +30,49 @@ public class BaseUserFindMeetingTimesBody {
      * The attendees.
      */
     @SerializedName("attendees")
+    @Expose
     public List<AttendeeBase> attendees;
 
     /**
      * The location Constraint.
      */
     @SerializedName("locationConstraint")
+    @Expose
     public LocationConstraint locationConstraint;
 
     /**
      * The time Constraint.
      */
     @SerializedName("timeConstraint")
+    @Expose
     public TimeConstraint timeConstraint;
 
     /**
      * The meeting Duration.
      */
     @SerializedName("meetingDuration")
+    @Expose
     public javax.xml.datatype.Duration meetingDuration;
 
     /**
      * The max Candidates.
      */
     @SerializedName("maxCandidates")
+    @Expose
     public Integer maxCandidates;
 
     /**
      * The is Organizer Optional.
      */
     @SerializedName("isOrganizerOptional")
+    @Expose
     public Boolean isOrganizerOptional;
 
     /**
      * The return Suggestion Hints.
      */
     @SerializedName("returnSuggestionHints")
+    @Expose
     public Boolean returnSuggestionHints;
 
 

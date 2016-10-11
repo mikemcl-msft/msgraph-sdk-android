@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseFile implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseFile() {
@@ -36,13 +38,22 @@ public class BaseFile implements IJsonBackedObject {
      * The Hashes.
      */
     @SerializedName("hashes")
+    @Expose
     public Hashes hashes;
 
     /**
      * The Mime Type.
      */
     @SerializedName("mimeType")
+    @Expose
     public String mimeType;
+
+    /**
+     * The Processing Metadata.
+     */
+    @SerializedName("processingMetadata")
+    @Expose
+    public Boolean processingMetadata;
 
 
     /**

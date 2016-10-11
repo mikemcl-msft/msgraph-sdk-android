@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BasePhysicalAddress implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BasePhysicalAddress() {
@@ -36,42 +38,49 @@ public class BasePhysicalAddress implements IJsonBackedObject {
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public PhysicalAddressType type;
 
     /**
      * The Post Office Box.
      */
     @SerializedName("postOfficeBox")
+    @Expose
     public String postOfficeBox;
 
     /**
      * The Street.
      */
     @SerializedName("street")
+    @Expose
     public String street;
 
     /**
      * The City.
      */
     @SerializedName("city")
+    @Expose
     public String city;
 
     /**
      * The State.
      */
     @SerializedName("state")
+    @Expose
     public String state;
 
     /**
      * The Country Or Region.
      */
     @SerializedName("countryOrRegion")
+    @Expose
     public String countryOrRegion;
 
     /**
      * The Postal Code.
      */
     @SerializedName("postalCode")
+    @Expose
     public String postalCode;
 
 

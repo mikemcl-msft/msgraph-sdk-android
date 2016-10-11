@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseImportStatusModel implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseImportStatusModel() {
@@ -36,18 +38,21 @@ public class BaseImportStatusModel implements IJsonBackedObject {
      * The Id.
      */
     @SerializedName("id")
+    @Expose
     public String id;
 
     /**
      * The Status.
      */
     @SerializedName("status")
+    @Expose
     public String status;
 
     /**
      * The Created Date Time.
      */
     @SerializedName("createdDateTime")
+    @Expose
     public java.util.Calendar createdDateTime;
 
 

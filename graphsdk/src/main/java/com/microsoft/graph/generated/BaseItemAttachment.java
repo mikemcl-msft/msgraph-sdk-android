@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,6 +35,7 @@ public class BaseItemAttachment extends Attachment implements IJsonBackedObject 
      * The Item.
      */
     @SerializedName("item")
+    @Expose
     public OutlookItem item;
 
 

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,36 +35,42 @@ public class BaseReferenceAttachment extends Attachment implements IJsonBackedOb
      * The Source Url.
      */
     @SerializedName("sourceUrl")
+    @Expose
     public String sourceUrl;
 
     /**
      * The Provider Type.
      */
     @SerializedName("providerType")
+    @Expose
     public ReferenceAttachmentProvider providerType;
 
     /**
      * The Thumbnail Url.
      */
     @SerializedName("thumbnailUrl")
+    @Expose
     public String thumbnailUrl;
 
     /**
      * The Preview Url.
      */
     @SerializedName("previewUrl")
+    @Expose
     public String previewUrl;
 
     /**
      * The Permission.
      */
     @SerializedName("permission")
+    @Expose
     public ReferenceAttachmentPermission permission;
 
     /**
      * The Is Folder.
      */
     @SerializedName("isFolder")
+    @Expose
     public Boolean isFolder;
 
 

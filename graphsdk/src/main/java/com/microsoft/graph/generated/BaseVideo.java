@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseVideo implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseVideo() {
@@ -36,24 +38,28 @@ public class BaseVideo implements IJsonBackedObject {
      * The Bitrate.
      */
     @SerializedName("bitrate")
+    @Expose
     public Integer bitrate;
 
     /**
      * The Duration.
      */
     @SerializedName("duration")
+    @Expose
     public Long duration;
 
     /**
      * The Height.
      */
     @SerializedName("height")
+    @Expose
     public Integer height;
 
     /**
      * The Width.
      */
     @SerializedName("width")
+    @Expose
     public Integer width;
 
 

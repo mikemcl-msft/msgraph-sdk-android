@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseAlternativeSecurityId implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseAlternativeSecurityId() {
@@ -36,18 +38,21 @@ public class BaseAlternativeSecurityId implements IJsonBackedObject {
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public Integer type;
 
     /**
      * The Identity Provider.
      */
     @SerializedName("identityProvider")
+    @Expose
     public String identityProvider;
 
     /**
      * The Key.
      */
     @SerializedName("key")
+    @Expose
     public byte[] key;
 
 

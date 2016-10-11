@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseResourceVisualization implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseResourceVisualization() {
@@ -36,42 +38,49 @@ public class BaseResourceVisualization implements IJsonBackedObject {
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
 
     /**
      * The Media Type.
      */
     @SerializedName("mediaType")
+    @Expose
     public String mediaType;
 
     /**
      * The Preview Image Url.
      */
     @SerializedName("previewImageUrl")
+    @Expose
     public String previewImageUrl;
 
     /**
      * The Preview Text.
      */
     @SerializedName("previewText")
+    @Expose
     public String previewText;
 
     /**
      * The Container Web Url.
      */
     @SerializedName("containerWebUrl")
+    @Expose
     public String containerWebUrl;
 
     /**
      * The Container Display Name.
      */
     @SerializedName("containerDisplayName")
+    @Expose
     public String containerDisplayName;
 
     /**
      * The Container Type.
      */
     @SerializedName("containerType")
+    @Expose
     public ContainerType containerType;
 
 

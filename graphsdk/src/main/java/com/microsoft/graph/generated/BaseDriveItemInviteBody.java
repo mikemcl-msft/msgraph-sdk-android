@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,30 +30,35 @@ public class BaseDriveItemInviteBody {
      * The require Sign In.
      */
     @SerializedName("requireSignIn")
+    @Expose
     public Boolean requireSignIn;
 
     /**
      * The roles.
      */
     @SerializedName("roles")
+    @Expose
     public List<String> roles;
 
     /**
      * The send Invitation.
      */
     @SerializedName("sendInvitation")
+    @Expose
     public Boolean sendInvitation;
 
     /**
      * The message.
      */
     @SerializedName("message")
+    @Expose
     public String message;
 
     /**
      * The recipients.
      */
     @SerializedName("recipients")
+    @Expose
     public List<DriveRecipient> recipients;
 
 

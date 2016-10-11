@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -27,9 +28,9 @@ public class UserAssignLicenseRequestBuilder extends BaseUserAssignLicenseReques
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
+     * @param requestOptions The options for this request
      */
-    public UserAssignLicenseRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final List<AssignedLicense> addLicenses, final List<java.util.UUID> removeLicenses) {
-        super(requestUrl, client, options, addLicenses, removeLicenses);
+    public UserAssignLicenseRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> requestOptions, final List<AssignedLicense> addLicenses, final List<java.util.UUID> removeLicenses) {
+        super(requestUrl, client, requestOptions, addLicenses, removeLicenses);
     }
 }

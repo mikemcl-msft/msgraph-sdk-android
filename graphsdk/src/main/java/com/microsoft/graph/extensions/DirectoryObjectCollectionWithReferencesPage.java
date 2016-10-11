@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -23,7 +24,7 @@ import java.util.List;
 public class DirectoryObjectCollectionWithReferencesPage extends BaseDirectoryObjectCollectionWithReferencesPage implements IDirectoryObjectCollectionWithReferencesPage {
 
     /**
-     * A collection page for User.
+     * A collection page for AdministrativeUnit.
      *
      * @param response The serialized BaseDirectoryObjectCollectionResponse from the service
      * @param builder The request builder for the next collection page

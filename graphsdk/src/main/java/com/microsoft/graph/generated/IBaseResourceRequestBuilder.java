@@ -25,10 +25,8 @@ public interface IBaseResourceRequestBuilder extends IRequestBuilder {
     /**
      * Creates the request with specific options instead of the existing options
      */
-    IResourceRequest buildRequest(final List<Option> options);
+    IResourceRequest buildRequest(final List<Option> requestOptions);
 
     IResourceStreamRequestBuilder getContent();
-
-    //IResourceStreamRequestBuilder getContent();
 
 }

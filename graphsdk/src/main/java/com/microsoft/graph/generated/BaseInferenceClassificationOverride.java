@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,12 +35,14 @@ public class BaseInferenceClassificationOverride extends Entity implements IJson
      * The Classify As.
      */
     @SerializedName("classifyAs")
+    @Expose
     public InferenceClassificationType classifyAs;
 
     /**
      * The Sender Email Address.
      */
     @SerializedName("senderEmailAddress")
+    @Expose
     public EmailAddress senderEmailAddress;
 
 

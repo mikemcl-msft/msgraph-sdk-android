@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseLocation implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseLocation() {
@@ -36,30 +38,35 @@ public class BaseLocation implements IJsonBackedObject {
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Location Email Address.
      */
     @SerializedName("locationEmailAddress")
+    @Expose
     public String locationEmailAddress;
 
     /**
      * The Address.
      */
     @SerializedName("address")
+    @Expose
     public PhysicalAddress address;
 
     /**
      * The Coordinates.
      */
     @SerializedName("coordinates")
+    @Expose
     public OutlookGeoCoordinates coordinates;
 
     /**
      * The Location Uri.
      */
     @SerializedName("locationUri")
+    @Expose
     public String locationUri;
 
 

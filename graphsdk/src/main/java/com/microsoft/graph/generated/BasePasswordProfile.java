@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BasePasswordProfile implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BasePasswordProfile() {
@@ -36,12 +38,14 @@ public class BasePasswordProfile implements IJsonBackedObject {
      * The Password.
      */
     @SerializedName("password")
+    @Expose
     public String password;
 
     /**
      * The Force Change Password Next Sign In.
      */
     @SerializedName("forceChangePasswordNextSignIn")
+    @Expose
     public Boolean forceChangePasswordNextSignIn;
 
 

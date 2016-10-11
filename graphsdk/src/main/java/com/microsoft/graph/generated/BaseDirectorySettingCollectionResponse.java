@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -30,12 +31,14 @@ public class BaseDirectorySettingCollectionResponse implements IJsonBackedObject
      * The list of DirectorySetting within this collection page
      */
     @SerializedName("value")
+    @Expose
     public List<DirectorySetting> value;
 
     /**
      * The url to the next page of this collection, or null
      */
     @SerializedName("@odata.nextLink")
+    @Expose(serialize = false)
     public String nextLink;
 
     /**

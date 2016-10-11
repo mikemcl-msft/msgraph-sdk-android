@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,132 +35,154 @@ public class BaseTask extends Entity implements IJsonBackedObject {
      * The Created By.
      */
     @SerializedName("createdBy")
+    @Expose
     public String createdBy;
 
     /**
      * The Assigned To.
      */
     @SerializedName("assignedTo")
+    @Expose
     public String assignedTo;
 
     /**
      * The Plan Id.
      */
     @SerializedName("planId")
+    @Expose
     public String planId;
 
     /**
      * The Bucket Id.
      */
     @SerializedName("bucketId")
+    @Expose
     public String bucketId;
 
     /**
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
 
     /**
      * The Order Hint.
      */
     @SerializedName("orderHint")
+    @Expose
     public String orderHint;
 
     /**
      * The Assignee Priority.
      */
     @SerializedName("assigneePriority")
+    @Expose
     public String assigneePriority;
 
     /**
      * The Percent Complete.
      */
     @SerializedName("percentComplete")
+    @Expose
     public Integer percentComplete;
 
     /**
      * The Start Date Time.
      */
     @SerializedName("startDateTime")
+    @Expose
     public java.util.Calendar startDateTime;
 
     /**
      * The Assigned Date Time.
      */
     @SerializedName("assignedDateTime")
+    @Expose
     public java.util.Calendar assignedDateTime;
 
     /**
      * The Created Date Time.
      */
     @SerializedName("createdDateTime")
+    @Expose
     public java.util.Calendar createdDateTime;
 
     /**
      * The Assigned By.
      */
     @SerializedName("assignedBy")
+    @Expose
     public String assignedBy;
 
     /**
      * The Due Date Time.
      */
     @SerializedName("dueDateTime")
+    @Expose
     public java.util.Calendar dueDateTime;
 
     /**
      * The Has Description.
      */
     @SerializedName("hasDescription")
+    @Expose
     public Boolean hasDescription;
 
     /**
      * The Preview Type.
      */
     @SerializedName("previewType")
+    @Expose
     public PreviewType previewType;
 
     /**
      * The Completed Date Time.
      */
     @SerializedName("completedDateTime")
+    @Expose
     public java.util.Calendar completedDateTime;
 
     /**
      * The Applied Categories.
      */
     @SerializedName("appliedCategories")
-    public AppliedCategoriesCollection appliedCategories;
+    @Expose
+    public Map<String, Boolean> appliedCategories;
 
     /**
      * The Conversation Thread Id.
      */
     @SerializedName("conversationThreadId")
+    @Expose
     public String conversationThreadId;
 
     /**
      * The Details.
      */
     @SerializedName("details")
+    @Expose
     public TaskDetails details;
 
     /**
      * The Assigned To Task Board Format.
      */
     @SerializedName("assignedToTaskBoardFormat")
+    @Expose
     public TaskBoardTaskFormat assignedToTaskBoardFormat;
 
     /**
      * The Progress Task Board Format.
      */
     @SerializedName("progressTaskBoardFormat")
+    @Expose
     public TaskBoardTaskFormat progressTaskBoardFormat;
 
     /**
      * The Bucket Task Board Format.
      */
     @SerializedName("bucketTaskBoardFormat")
+    @Expose
     public TaskBoardTaskFormat bucketTaskBoardFormat;
 
 

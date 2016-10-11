@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The Enum Reference Attachment Permission.
@@ -32,6 +33,22 @@ public enum ReferenceAttachmentPermission
     * edit
     */
     edit,
+    /**
+    * anonymous View
+    */
+    anonymousView,
+    /**
+    * anonymous Edit
+    */
+    anonymousEdit,
+    /**
+    * organization View
+    */
+    organizationView,
+    /**
+    * organization Edit
+    */
+    organizationEdit,
     /**
     * For ReferenceAttachmentPermission values that were not expected from the service
     */

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseOAuth2Permission implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseOAuth2Permission() {
@@ -36,54 +38,63 @@ public class BaseOAuth2Permission implements IJsonBackedObject {
      * The Admin Consent Description.
      */
     @SerializedName("adminConsentDescription")
+    @Expose
     public String adminConsentDescription;
 
     /**
      * The Admin Consent Display Name.
      */
     @SerializedName("adminConsentDisplayName")
+    @Expose
     public String adminConsentDisplayName;
 
     /**
      * The Id.
      */
     @SerializedName("id")
+    @Expose
     public java.util.UUID id;
 
     /**
      * The Is Enabled.
      */
     @SerializedName("isEnabled")
+    @Expose
     public Boolean isEnabled;
 
     /**
      * The Origin.
      */
     @SerializedName("origin")
+    @Expose
     public String origin;
 
     /**
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public String type;
 
     /**
      * The User Consent Description.
      */
     @SerializedName("userConsentDescription")
+    @Expose
     public String userConsentDescription;
 
     /**
      * The User Consent Display Name.
      */
     @SerializedName("userConsentDisplayName")
+    @Expose
     public String userConsentDisplayName;
 
     /**
      * The Value.
      */
     @SerializedName("value")
+    @Expose
     public String value;
 
 

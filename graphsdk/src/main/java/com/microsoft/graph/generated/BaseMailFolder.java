@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,36 +35,42 @@ public class BaseMailFolder extends Entity implements IJsonBackedObject {
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Parent Folder Id.
      */
     @SerializedName("parentFolderId")
+    @Expose
     public String parentFolderId;
 
     /**
      * The Child Folder Count.
      */
     @SerializedName("childFolderCount")
+    @Expose
     public Integer childFolderCount;
 
     /**
      * The Unread Item Count.
      */
     @SerializedName("unreadItemCount")
+    @Expose
     public Integer unreadItemCount;
 
     /**
      * The Total Item Count.
      */
     @SerializedName("totalItemCount")
+    @Expose
     public Integer totalItemCount;
 
     /**
      * The Well Known Name.
      */
     @SerializedName("wellKnownName")
+    @Expose
     public String wellKnownName;
 
     /**

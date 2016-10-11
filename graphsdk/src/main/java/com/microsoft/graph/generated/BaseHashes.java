@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseHashes implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseHashes() {
@@ -36,13 +38,22 @@ public class BaseHashes implements IJsonBackedObject {
      * The Crc32Hash.
      */
     @SerializedName("crc32Hash")
+    @Expose
     public String crc32Hash;
 
     /**
      * The Sha1Hash.
      */
     @SerializedName("sha1Hash")
+    @Expose
     public String sha1Hash;
+
+    /**
+     * The Quick Xor Hash.
+     */
+    @SerializedName("quickXorHash")
+    @Expose
+    public String quickXorHash;
 
 
     /**

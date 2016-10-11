@@ -14,12 +14,13 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
 /**
- * The class for the Web Site.
+ * The class for the Website.
  */
-public class WebSite extends BaseWebSite {
+public class Website extends BaseWebsite {
 
 }

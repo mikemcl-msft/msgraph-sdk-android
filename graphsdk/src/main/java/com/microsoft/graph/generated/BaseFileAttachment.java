@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,18 +35,21 @@ public class BaseFileAttachment extends Attachment implements IJsonBackedObject 
      * The Content Id.
      */
     @SerializedName("contentId")
+    @Expose
     public String contentId;
 
     /**
      * The Content Location.
      */
     @SerializedName("contentLocation")
+    @Expose
     public String contentLocation;
 
     /**
      * The Content Bytes.
      */
     @SerializedName("contentBytes")
+    @Expose
     public byte[] contentBytes;
 
 

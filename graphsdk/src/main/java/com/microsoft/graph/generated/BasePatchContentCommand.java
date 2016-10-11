@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BasePatchContentCommand implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BasePatchContentCommand() {
@@ -36,24 +38,28 @@ public class BasePatchContentCommand implements IJsonBackedObject {
      * The Action.
      */
     @SerializedName("action")
+    @Expose
     public PatchActionType action;
 
     /**
      * The Target.
      */
     @SerializedName("target")
+    @Expose
     public String target;
 
     /**
      * The Content.
      */
     @SerializedName("content")
+    @Expose
     public String content;
 
     /**
      * The Position.
      */
     @SerializedName("position")
+    @Expose
     public PatchInsertPosition position;
 
 

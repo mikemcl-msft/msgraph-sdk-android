@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseMeetingTimeCandidate implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseMeetingTimeCandidate() {
@@ -36,36 +38,42 @@ public class BaseMeetingTimeCandidate implements IJsonBackedObject {
      * The Meeting Time Slot.
      */
     @SerializedName("meetingTimeSlot")
+    @Expose
     public TimeSlot meetingTimeSlot;
 
     /**
      * The Confidence.
      */
     @SerializedName("confidence")
+    @Expose
     public Double confidence;
 
     /**
      * The Organizer Availability.
      */
     @SerializedName("organizerAvailability")
+    @Expose
     public FreeBusyStatus organizerAvailability;
 
     /**
      * The Attendee Availability.
      */
     @SerializedName("attendeeAvailability")
+    @Expose
     public List<AttendeeAvailability> attendeeAvailability;
 
     /**
      * The Locations.
      */
     @SerializedName("locations")
+    @Expose
     public List<Location> locations;
 
     /**
      * The Suggestion Hint.
      */
     @SerializedName("suggestionHint")
+    @Expose
     public String suggestionHint;
 
 

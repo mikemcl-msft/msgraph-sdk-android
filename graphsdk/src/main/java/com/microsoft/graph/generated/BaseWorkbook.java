@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,7 +35,30 @@ public class BaseWorkbook extends Entity implements IJsonBackedObject {
      * The Application.
      */
     @SerializedName("application")
-    public ExcelApplication application;
+    @Expose
+    public WorkbookApplication application;
+
+    /**
+     * The Names.
+     */
+    public transient WorkbookNamedItemCollectionPage names;
+
+    /**
+     * The Tables.
+     */
+    public transient WorkbookTableCollectionPage tables;
+
+    /**
+     * The Worksheets.
+     */
+    public transient WorkbookWorksheetCollectionPage worksheets;
+
+    /**
+     * The Functions.
+     */
+    @SerializedName("functions")
+    @Expose
+    public WorkbookFunctions functions;
 
 
     /**
@@ -73,5 +97,53 @@ public class BaseWorkbook extends Entity implements IJsonBackedObject {
         mSerializer = serializer;
         mRawObject = json;
 
+
+        if (json.has("names")) {
+            final BaseWorkbookNamedItemCollectionResponse response = new BaseWorkbookNamedItemCollectionResponse();
+            if (json.has("names@odata.nextLink")) {
+                response.nextLink = json.get("names@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("names").toString(), JsonObject[].class);
+            final WorkbookNamedItem[] array = new WorkbookNamedItem[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), WorkbookNamedItem.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            names = new WorkbookNamedItemCollectionPage(response, null);
+        }
+
+        if (json.has("tables")) {
+            final BaseWorkbookTableCollectionResponse response = new BaseWorkbookTableCollectionResponse();
+            if (json.has("tables@odata.nextLink")) {
+                response.nextLink = json.get("tables@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("tables").toString(), JsonObject[].class);
+            final WorkbookTable[] array = new WorkbookTable[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), WorkbookTable.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            tables = new WorkbookTableCollectionPage(response, null);
+        }
+
+        if (json.has("worksheets")) {
+            final BaseWorkbookWorksheetCollectionResponse response = new BaseWorkbookWorksheetCollectionResponse();
+            if (json.has("worksheets@odata.nextLink")) {
+                response.nextLink = json.get("worksheets@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("worksheets").toString(), JsonObject[].class);
+            final WorkbookWorksheet[] array = new WorkbookWorksheet[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), WorkbookWorksheet.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            worksheets = new WorkbookWorksheetCollectionPage(response, null);
+        }
     }
 }

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,66 +35,77 @@ public class BasePage extends Entity implements IJsonBackedObject {
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
 
     /**
      * The Created By App Id.
      */
     @SerializedName("createdByAppId")
+    @Expose
     public String createdByAppId;
 
     /**
      * The Links.
      */
     @SerializedName("links")
+    @Expose
     public PageLinks links;
 
     /**
      * The Content Url.
      */
     @SerializedName("contentUrl")
+    @Expose
     public String contentUrl;
 
     /**
      * The Last Modified Time.
      */
     @SerializedName("lastModifiedTime")
+    @Expose
     public java.util.Calendar lastModifiedTime;
 
     /**
      * The Level.
      */
     @SerializedName("level")
+    @Expose
     public Integer level;
 
     /**
      * The Order.
      */
     @SerializedName("order")
+    @Expose
     public Integer order;
 
     /**
      * The Self.
      */
     @SerializedName("self")
+    @Expose
     public String self;
 
     /**
      * The Created Time.
      */
     @SerializedName("createdTime")
+    @Expose
     public java.util.Calendar createdTime;
 
     /**
      * The Parent Section.
      */
     @SerializedName("parentSection")
+    @Expose
     public Section parentSection;
 
     /**
      * The Parent Notebook.
      */
     @SerializedName("parentNotebook")
+    @Expose
     public Notebook parentNotebook;
 
 

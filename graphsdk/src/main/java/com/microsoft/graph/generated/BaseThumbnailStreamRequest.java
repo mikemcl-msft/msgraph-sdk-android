@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import java.io.*;
 
@@ -29,15 +30,15 @@ public class BaseThumbnailStreamRequest extends BaseStreamRequest<Thumbnail> imp
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
+     * @param requestOptions The options for this request
      * @param responseClass The class of the reponse
      */
     public BaseThumbnailStreamRequest(
                          final String requestUrl,
                          final IBaseClient client,
-                         final List<Option> options,
+                         final List<Option> requestOptions,
                          final Class responseClass) {
-        super(requestUrl, client, options, responseClass);
+        super(requestUrl, client, requestOptions, responseClass);
     }
 
     /**

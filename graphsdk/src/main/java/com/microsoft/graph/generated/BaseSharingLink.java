@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseSharingLink implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseSharingLink() {
@@ -36,18 +38,28 @@ public class BaseSharingLink implements IJsonBackedObject {
      * The Application.
      */
     @SerializedName("application")
+    @Expose
     public Identity application;
 
     /**
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public String type;
+
+    /**
+     * The Scope.
+     */
+    @SerializedName("scope")
+    @Expose
+    public String scope;
 
     /**
      * The Web Url.
      */
     @SerializedName("webUrl")
+    @Expose
     public String webUrl;
 
 

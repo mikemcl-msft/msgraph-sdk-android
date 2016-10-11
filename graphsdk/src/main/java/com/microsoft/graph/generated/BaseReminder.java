@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseReminder implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseReminder() {
@@ -36,48 +38,56 @@ public class BaseReminder implements IJsonBackedObject {
      * The Event Id.
      */
     @SerializedName("eventId")
+    @Expose
     public String eventId;
 
     /**
      * The Event Start Time.
      */
     @SerializedName("eventStartTime")
+    @Expose
     public DateTimeTimeZone eventStartTime;
 
     /**
      * The Event End Time.
      */
     @SerializedName("eventEndTime")
+    @Expose
     public DateTimeTimeZone eventEndTime;
 
     /**
      * The Change Key.
      */
     @SerializedName("changeKey")
+    @Expose
     public String changeKey;
 
     /**
      * The Event Subject.
      */
     @SerializedName("eventSubject")
+    @Expose
     public String eventSubject;
 
     /**
      * The Event Location.
      */
     @SerializedName("eventLocation")
+    @Expose
     public Location eventLocation;
 
     /**
      * The Event Web Link.
      */
     @SerializedName("eventWebLink")
+    @Expose
     public String eventWebLink;
 
     /**
      * The Reminder Fire Time.
      */
     @SerializedName("reminderFireTime")
+    @Expose
     public DateTimeTimeZone reminderFireTime;
 
 

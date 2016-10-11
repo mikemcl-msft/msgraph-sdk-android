@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,42 +35,49 @@ public class BasePlanDetails extends Entity implements IJsonBackedObject {
      * The Shared With.
      */
     @SerializedName("sharedWith")
-    public UserIdCollection sharedWith;
+    @Expose
+    public Map<String, Boolean> sharedWith;
 
     /**
      * The Category0Description.
      */
     @SerializedName("category0Description")
+    @Expose
     public String category0Description;
 
     /**
      * The Category1Description.
      */
     @SerializedName("category1Description")
+    @Expose
     public String category1Description;
 
     /**
      * The Category2Description.
      */
     @SerializedName("category2Description")
+    @Expose
     public String category2Description;
 
     /**
      * The Category3Description.
      */
     @SerializedName("category3Description")
+    @Expose
     public String category3Description;
 
     /**
      * The Category4Description.
      */
     @SerializedName("category4Description")
+    @Expose
     public String category4Description;
 
     /**
      * The Category5Description.
      */
     @SerializedName("category5Description")
+    @Expose
     public String category5Description;
 
 

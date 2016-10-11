@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseLocationConstraint implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseLocationConstraint() {
@@ -36,18 +38,21 @@ public class BaseLocationConstraint implements IJsonBackedObject {
      * The Is Required.
      */
     @SerializedName("isRequired")
+    @Expose
     public Boolean isRequired;
 
     /**
      * The Suggest Location.
      */
     @SerializedName("suggestLocation")
+    @Expose
     public Boolean suggestLocation;
 
     /**
      * The Locations.
      */
     @SerializedName("locations")
+    @Expose
     public List<LocationConstraintItem> locations;
 
 

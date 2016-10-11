@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,18 +35,21 @@ public class BaseDirectorySettingTemplate extends DirectoryObject implements IJs
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Description.
      */
     @SerializedName("description")
+    @Expose
     public String description;
 
     /**
      * The Values.
      */
     @SerializedName("values")
+    @Expose
     public List<SettingTemplateValue> values;
 
 

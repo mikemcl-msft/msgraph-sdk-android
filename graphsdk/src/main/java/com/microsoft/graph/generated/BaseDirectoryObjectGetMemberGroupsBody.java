@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,6 +30,7 @@ public class BaseDirectoryObjectGetMemberGroupsBody {
      * The security Enabled Only.
      */
     @SerializedName("securityEnabledOnly")
+    @Expose
     public Boolean securityEnabledOnly;
 
 

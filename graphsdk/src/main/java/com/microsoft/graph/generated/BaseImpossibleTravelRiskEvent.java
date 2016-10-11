@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,36 +35,42 @@ public class BaseImpossibleTravelRiskEvent extends LocatedRiskEvent implements I
      * The User Agent.
      */
     @SerializedName("userAgent")
+    @Expose
     public String userAgent;
 
     /**
      * The Device Information.
      */
     @SerializedName("deviceInformation")
+    @Expose
     public String deviceInformation;
 
     /**
      * The Is Atypical Location.
      */
     @SerializedName("isAtypicalLocation")
+    @Expose
     public Boolean isAtypicalLocation;
 
     /**
      * The Previous Signin Date Time.
      */
     @SerializedName("previousSigninDateTime")
+    @Expose
     public java.util.Calendar previousSigninDateTime;
 
     /**
      * The Previous Location.
      */
     @SerializedName("previousLocation")
-    public String previousLocation;
+    @Expose
+    public SignInLocation previousLocation;
 
     /**
      * The Previous Ip Address.
      */
     @SerializedName("previousIpAddress")
+    @Expose
     public String previousIpAddress;
 
 

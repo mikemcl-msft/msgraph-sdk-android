@@ -35,10 +35,10 @@ public class BasePageRequestBuilder extends BaseRequestBuilder implements IBaseP
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
+     * @param requestOptions The options for this request
      */
-    public BasePageRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options) {
-        super(requestUrl, client, options);
+    public BasePageRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> requestOptions) {
+        super(requestUrl, client, requestOptions);
     }
 
     /**
@@ -49,10 +49,10 @@ public class BasePageRequestBuilder extends BaseRequestBuilder implements IBaseP
     }
 
     /**
-     * Creates the request with specific options instead of the existing options
+     * Creates the request with specific requestOptions instead of the existing requestOptions
      */
-    public IPageRequest buildRequest(final List<Option> options) {
-        return new PageRequest(getRequestUrl(), getClient(), options);
+    public IPageRequest buildRequest(final List<Option> requestOptions) {
+        return new PageRequest(getRequestUrl(), getClient(), requestOptions);
     }
 
 
@@ -73,10 +73,6 @@ public class BasePageRequestBuilder extends BaseRequestBuilder implements IBaseP
     public IPageStreamRequestBuilder getContent() {
         return new PageStreamRequestBuilder(getRequestUrlWithAdditionalSegment("content"), getClient(), null);
     }
-
-//    public IPageStreamRequestBuilder getContent() {
-//        return new PageStreamRequestBuilder(getRequestUrlWithAdditionalSegment("$value"), getClient(), null);
-//    }
 
     public IPagePatchContentRequestBuilder getPatchContent(final List<PatchContentCommand> commands) {
         return new PagePatchContentRequestBuilder(getRequestUrlWithAdditionalSegment("microsoft.graph.PatchContent"), getClient(), null, commands);

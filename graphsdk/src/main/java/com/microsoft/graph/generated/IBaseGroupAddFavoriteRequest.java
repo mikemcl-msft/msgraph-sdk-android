@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,16 +27,15 @@ import com.google.gson.annotations.*;
 public interface IBaseGroupAddFavoriteRequest {
 
     /**
-     * Creates the Group
+     * Creates the GroupAddFavorite
      *
      * @param callback The callback to be called after success or failure.
      */
     void post(final ICallback<Void> callback);
 
     /**
-     * Creates the Group
+     * Creates the GroupAddFavorite
      *
-     * @return The Group
      * @throws ClientException An exception occurs if there was an error while the request was sent.
      */
     void post() throws ClientException;

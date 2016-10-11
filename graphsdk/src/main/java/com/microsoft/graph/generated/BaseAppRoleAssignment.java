@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,36 +35,42 @@ public class BaseAppRoleAssignment extends Entity implements IJsonBackedObject {
      * The Creation Timestamp.
      */
     @SerializedName("creationTimestamp")
+    @Expose
     public java.util.Calendar creationTimestamp;
 
     /**
      * The Principal Display Name.
      */
     @SerializedName("principalDisplayName")
+    @Expose
     public String principalDisplayName;
 
     /**
      * The Principal Id.
      */
     @SerializedName("principalId")
+    @Expose
     public java.util.UUID principalId;
 
     /**
      * The Principal Type.
      */
     @SerializedName("principalType")
+    @Expose
     public String principalType;
 
     /**
      * The Resource Display Name.
      */
     @SerializedName("resourceDisplayName")
+    @Expose
     public String resourceDisplayName;
 
     /**
      * The Resource Id.
      */
     @SerializedName("resourceId")
+    @Expose
     public java.util.UUID resourceId;
 
 

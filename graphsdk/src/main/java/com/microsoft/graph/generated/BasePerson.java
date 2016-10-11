@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,115 +35,141 @@ public class BasePerson extends Entity implements IJsonBackedObject {
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Given Name.
      */
     @SerializedName("givenName")
+    @Expose
     public String givenName;
 
     /**
      * The Surname.
      */
     @SerializedName("surname")
+    @Expose
     public String surname;
 
     /**
      * The Birthday.
      */
     @SerializedName("birthday")
+    @Expose
     public String birthday;
 
     /**
      * The Person Notes.
      */
     @SerializedName("personNotes")
+    @Expose
     public String personNotes;
 
     /**
      * The Is Favorite.
      */
     @SerializedName("isFavorite")
+    @Expose
     public Boolean isFavorite;
 
     /**
      * The Email Addresses.
      */
     @SerializedName("emailAddresses")
+    @Expose
     public List<RankedEmailAddress> emailAddresses;
 
     /**
      * The Phones.
      */
     @SerializedName("phones")
+    @Expose
     public List<Phone> phones;
 
     /**
      * The Postal Addresses.
      */
     @SerializedName("postalAddresses")
+    @Expose
     public List<Location> postalAddresses;
 
     /**
-     * The Web Sites.
+     * The Websites.
      */
-    @SerializedName("webSites")
-    public List<WebSite> webSites;
+    @SerializedName("websites")
+    @Expose
+    public List<Website> websites;
 
     /**
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
 
     /**
      * The Company Name.
      */
     @SerializedName("companyName")
+    @Expose
     public String companyName;
 
     /**
      * The Yomi Company.
      */
     @SerializedName("yomiCompany")
+    @Expose
     public String yomiCompany;
 
     /**
      * The Department.
      */
     @SerializedName("department")
+    @Expose
     public String department;
 
     /**
      * The Office Location.
      */
     @SerializedName("officeLocation")
+    @Expose
     public String officeLocation;
 
     /**
      * The Profession.
      */
     @SerializedName("profession")
+    @Expose
     public String profession;
 
     /**
      * The Sources.
      */
     @SerializedName("sources")
+    @Expose
     public List<PersonDataSource> sources;
 
     /**
      * The Mailbox Type.
      */
     @SerializedName("mailboxType")
+    @Expose
     public String mailboxType;
 
     /**
      * The Person Type.
      */
     @SerializedName("personType")
+    @Expose
     public String personType;
+
+    /**
+     * The User Principal Name.
+     */
+    @SerializedName("userPrincipalName")
+    @Expose
+    public String userPrincipalName;
 
 
     /**

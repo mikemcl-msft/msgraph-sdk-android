@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,133 +35,162 @@ public class BaseApplication extends DirectoryObject implements IJsonBackedObjec
      * The Add Ins.
      */
     @SerializedName("addIns")
+    @Expose
     public List<AddIn> addIns;
 
     /**
      * The App Id.
      */
     @SerializedName("appId")
+    @Expose
     public String appId;
 
     /**
      * The App Roles.
      */
     @SerializedName("appRoles")
+    @Expose
     public List<AppRole> appRoles;
 
     /**
      * The Available To Other Organizations.
      */
     @SerializedName("availableToOtherOrganizations")
+    @Expose
     public Boolean availableToOtherOrganizations;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Error Url.
      */
     @SerializedName("errorUrl")
+    @Expose
     public String errorUrl;
 
     /**
      * The Group Membership Claims.
      */
     @SerializedName("groupMembershipClaims")
+    @Expose
     public String groupMembershipClaims;
 
     /**
      * The Homepage.
      */
     @SerializedName("homepage")
+    @Expose
     public String homepage;
 
     /**
      * The Identifier Uris.
      */
     @SerializedName("identifierUris")
+    @Expose
     public List<String> identifierUris;
 
     /**
      * The Key Credentials.
      */
     @SerializedName("keyCredentials")
+    @Expose
     public List<KeyCredential> keyCredentials;
 
     /**
      * The Known Client Applications.
      */
     @SerializedName("knownClientApplications")
+    @Expose
     public List<java.util.UUID> knownClientApplications;
 
     /**
      * The Logout Url.
      */
     @SerializedName("logoutUrl")
+    @Expose
     public String logoutUrl;
 
     /**
      * The Oauth2Allow Implicit Flow.
      */
     @SerializedName("oauth2AllowImplicitFlow")
+    @Expose
     public Boolean oauth2AllowImplicitFlow;
 
     /**
      * The Oauth2Allow Url Path Matching.
      */
     @SerializedName("oauth2AllowUrlPathMatching")
+    @Expose
     public Boolean oauth2AllowUrlPathMatching;
 
     /**
      * The Oauth2Permissions.
      */
     @SerializedName("oauth2Permissions")
+    @Expose
     public List<OAuth2Permission> oauth2Permissions;
 
     /**
      * The Oauth2Require Post Response.
      */
     @SerializedName("oauth2RequirePostResponse")
+    @Expose
     public Boolean oauth2RequirePostResponse;
 
     /**
      * The Password Credentials.
      */
     @SerializedName("passwordCredentials")
+    @Expose
     public List<PasswordCredential> passwordCredentials;
 
     /**
      * The Public Client.
      */
     @SerializedName("publicClient")
+    @Expose
     public Boolean publicClient;
 
     /**
      * The Record Consent Conditions.
      */
     @SerializedName("recordConsentConditions")
+    @Expose
     public String recordConsentConditions;
 
     /**
      * The Reply Urls.
      */
     @SerializedName("replyUrls")
+    @Expose
     public List<String> replyUrls;
 
     /**
      * The Required Resource Access.
      */
     @SerializedName("requiredResourceAccess")
+    @Expose
     public List<RequiredResourceAccess> requiredResourceAccess;
 
     /**
      * The Saml Metadata Url.
      */
     @SerializedName("samlMetadataUrl")
+    @Expose
     public String samlMetadataUrl;
+
+    /**
+     * The On Premises Publishing.
+     */
+    @SerializedName("onPremisesPublishing")
+    @Expose
+    public OnPremisesPublishing onPremisesPublishing;
 
     /**
      * The Extension Properties.
@@ -171,12 +201,25 @@ public class BaseApplication extends DirectoryObject implements IJsonBackedObjec
      * The Created On Behalf Of.
      */
     @SerializedName("createdOnBehalfOf")
+    @Expose
     public DirectoryObject createdOnBehalfOf;
 
     /**
      * The Owners.
      */
     public transient DirectoryObjectCollectionPage owners;
+
+    /**
+     * The Policies.
+     */
+    public transient DirectoryObjectCollectionPage policies;
+
+    /**
+     * The Connector Group.
+     */
+    @SerializedName("connectorGroup")
+    @Expose
+    public ConnectorGroup connectorGroup;
 
 
     /**
@@ -246,6 +289,22 @@ public class BaseApplication extends DirectoryObject implements IJsonBackedObjec
             }
             response.value = Arrays.asList(array);
             owners = new DirectoryObjectCollectionPage(response, null);
+        }
+
+        if (json.has("policies")) {
+            final BaseDirectoryObjectCollectionResponse response = new BaseDirectoryObjectCollectionResponse();
+            if (json.has("policies@odata.nextLink")) {
+                response.nextLink = json.get("policies@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("policies").toString(), JsonObject[].class);
+            final DirectoryObject[] array = new DirectoryObject[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), DirectoryObject.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            policies = new DirectoryObjectCollectionPage(response, null);
         }
     }
 }

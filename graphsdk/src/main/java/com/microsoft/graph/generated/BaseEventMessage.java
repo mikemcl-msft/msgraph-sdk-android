@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,48 +35,63 @@ public class BaseEventMessage extends Message implements IJsonBackedObject {
      * The Meeting Message Type.
      */
     @SerializedName("meetingMessageType")
+    @Expose
     public MeetingMessageType meetingMessageType;
 
     /**
      * The Start Date Time.
      */
     @SerializedName("startDateTime")
+    @Expose
     public DateTimeTimeZone startDateTime;
 
     /**
      * The End Date Time.
      */
     @SerializedName("endDateTime")
+    @Expose
     public DateTimeTimeZone endDateTime;
 
     /**
      * The Location.
      */
     @SerializedName("location")
+    @Expose
     public Location location;
 
     /**
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public EventType type;
 
     /**
      * The Recurrence.
      */
     @SerializedName("recurrence")
+    @Expose
     public PatternedRecurrence recurrence;
 
     /**
      * The Is Out Of Date.
      */
     @SerializedName("isOutOfDate")
+    @Expose
     public Boolean isOutOfDate;
+
+    /**
+     * The Is All Day.
+     */
+    @SerializedName("isAllDay")
+    @Expose
+    public Boolean isAllDay;
 
     /**
      * The Event.
      */
     @SerializedName("event")
+    @Expose
     public Event event;
 
 

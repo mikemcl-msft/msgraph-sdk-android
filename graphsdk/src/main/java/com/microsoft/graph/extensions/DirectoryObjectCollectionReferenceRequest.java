@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -23,7 +24,7 @@ import java.util.List;
 public class DirectoryObjectCollectionReferenceRequest extends BaseDirectoryObjectCollectionReferenceRequest implements IDirectoryObjectCollectionReferenceRequest {
 
     /**
-     * The request for this collection of User
+     * The request for this collection of AdministrativeUnit
      *
      * @param requestUrl The request url
      * @param client The service client

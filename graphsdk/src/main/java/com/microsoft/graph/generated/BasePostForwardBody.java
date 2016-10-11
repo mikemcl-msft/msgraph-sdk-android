@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,12 +30,14 @@ public class BasePostForwardBody {
      * The comment.
      */
     @SerializedName("comment")
+    @Expose
     public String comment;
 
     /**
      * The to Recipients.
      */
     @SerializedName("toRecipients")
+    @Expose
     public List<Recipient> toRecipients;
 
 

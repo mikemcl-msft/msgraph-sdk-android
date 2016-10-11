@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BasePasswordCredential implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BasePasswordCredential() {
@@ -36,30 +38,35 @@ public class BasePasswordCredential implements IJsonBackedObject {
      * The Custom Key Identifier.
      */
     @SerializedName("customKeyIdentifier")
+    @Expose
     public byte[] customKeyIdentifier;
 
     /**
      * The End Date.
      */
     @SerializedName("endDate")
+    @Expose
     public java.util.Calendar endDate;
 
     /**
      * The Key Id.
      */
     @SerializedName("keyId")
+    @Expose
     public java.util.UUID keyId;
 
     /**
      * The Start Date.
      */
     @SerializedName("startDate")
+    @Expose
     public java.util.Calendar startDate;
 
     /**
      * The Value.
      */
     @SerializedName("value")
+    @Expose
     public String value;
 
 

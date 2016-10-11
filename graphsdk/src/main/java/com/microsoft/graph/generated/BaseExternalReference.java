@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseExternalReference implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseExternalReference() {
@@ -36,30 +38,35 @@ public class BaseExternalReference implements IJsonBackedObject {
      * The Alias.
      */
     @SerializedName("alias")
+    @Expose
     public String alias;
 
     /**
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public String type;
 
     /**
      * The Preview Priority.
      */
     @SerializedName("previewPriority")
+    @Expose
     public String previewPriority;
 
     /**
      * The Last Modified By.
      */
     @SerializedName("lastModifiedBy")
+    @Expose
     public String lastModifiedBy;
 
     /**
      * The Last Modified Date Time.
      */
     @SerializedName("lastModifiedDateTime")
+    @Expose
     public java.util.Calendar lastModifiedDateTime;
 
 

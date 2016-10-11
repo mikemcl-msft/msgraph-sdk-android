@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -27,24 +28,9 @@ public class EventMessageRequest extends BaseEventMessageRequest implements IEve
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
-     * @param responseClass The class of the reponse
+     * @param requestOptions The options for this request
      */
-    public EventMessageRequest(final String requestUrl,
-            final IBaseClient client,
-            final List<Option> options,
-            final Class responseClass) {
-        super(requestUrl, client, options, responseClass);
-    }
-
-    /**
-     * The request for the EventMessage
-     *
-     * @param requestUrl The request url
-     * @param client The service client
-     * @param options The options for this request
-     */
-    public EventMessageRequest(final String requestUrl, final IBaseClient client, final List<Option> options) {
-        super(requestUrl, client, options, EventMessage.class);
+    public EventMessageRequest(final String requestUrl, final IBaseClient client, final List<Option> requestOptions) {
+        super(requestUrl, client, requestOptions, EventMessage.class);
     }
 }

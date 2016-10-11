@@ -14,16 +14,13 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The Enum Phone Type.
 */
 public enum PhoneType
 {
-    /**
-    * unknown
-    */
-    unknown,
     /**
     * home
     */
@@ -45,14 +42,6 @@ public enum PhoneType
     */
     assistant,
     /**
-    * callback
-    */
-    callback,
-    /**
-    * car
-    */
-    car,
-    /**
     * home Fax
     */
     homeFax,
@@ -69,25 +58,9 @@ public enum PhoneType
     */
     pager,
     /**
-    * primary
-    */
-    primary,
-    /**
     * radio
     */
     radio,
-    /**
-    * telex
-    */
-    telex,
-    /**
-    * tty Tdd
-    */
-    ttyTdd,
-    /**
-    * organization Main
-    */
-    organizationMain,
     /**
     * For PhoneType values that were not expected from the service
     */

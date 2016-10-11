@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -27,9 +28,9 @@ public class PostForwardRequestBuilder extends BasePostForwardRequestBuilder imp
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
+     * @param requestOptions The options for this request
      */
-    public PostForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options, final String comment, final List<Recipient> toRecipients) {
-        super(requestUrl, client, options, comment, toRecipients);
+    public PostForwardRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> requestOptions, final String comment, final List<Recipient> toRecipients) {
+        super(requestUrl, client, requestOptions, comment, toRecipients);
     }
 }

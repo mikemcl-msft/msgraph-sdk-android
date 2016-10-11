@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseNotebookLinks implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseNotebookLinks() {
@@ -36,12 +38,14 @@ public class BaseNotebookLinks implements IJsonBackedObject {
      * The One Note Client Url.
      */
     @SerializedName("oneNoteClientUrl")
+    @Expose
     public ExternalLink oneNoteClientUrl;
 
     /**
      * The One Note Web Url.
      */
     @SerializedName("oneNoteWebUrl")
+    @Expose
     public ExternalLink oneNoteWebUrl;
 
 

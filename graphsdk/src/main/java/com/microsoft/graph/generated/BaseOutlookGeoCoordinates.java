@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseOutlookGeoCoordinates implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseOutlookGeoCoordinates() {
@@ -36,30 +38,35 @@ public class BaseOutlookGeoCoordinates implements IJsonBackedObject {
      * The Altitude.
      */
     @SerializedName("altitude")
+    @Expose
     public Double altitude;
 
     /**
      * The Latitude.
      */
     @SerializedName("latitude")
+    @Expose
     public Double latitude;
 
     /**
      * The Longitude.
      */
     @SerializedName("longitude")
+    @Expose
     public Double longitude;
 
     /**
      * The Accuracy.
      */
     @SerializedName("accuracy")
+    @Expose
     public Double accuracy;
 
     /**
      * The Altitude Accuracy.
      */
     @SerializedName("altitudeAccuracy")
+    @Expose
     public Double altitudeAccuracy;
 
 

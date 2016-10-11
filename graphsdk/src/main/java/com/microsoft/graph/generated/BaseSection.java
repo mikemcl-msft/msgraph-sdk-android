@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,72 +35,84 @@ public class BaseSection extends Entity implements IJsonBackedObject {
      * The Is Default.
      */
     @SerializedName("isDefault")
+    @Expose
     public Boolean isDefault;
 
     /**
      * The Pages Url.
      */
     @SerializedName("pagesUrl")
+    @Expose
     public String pagesUrl;
 
     /**
      * The Name.
      */
     @SerializedName("name")
+    @Expose
     public String name;
 
     /**
      * The Created By.
      */
     @SerializedName("createdBy")
+    @Expose
     public String createdBy;
 
     /**
      * The Created By Identity.
      */
     @SerializedName("createdByIdentity")
+    @Expose
     public OneNoteIdentitySet createdByIdentity;
 
     /**
      * The Last Modified By.
      */
     @SerializedName("lastModifiedBy")
+    @Expose
     public String lastModifiedBy;
 
     /**
      * The Last Modified By Identity.
      */
     @SerializedName("lastModifiedByIdentity")
+    @Expose
     public OneNoteIdentitySet lastModifiedByIdentity;
 
     /**
      * The Last Modified Time.
      */
     @SerializedName("lastModifiedTime")
+    @Expose
     public java.util.Calendar lastModifiedTime;
 
     /**
      * The Self.
      */
     @SerializedName("self")
+    @Expose
     public String self;
 
     /**
      * The Created Time.
      */
     @SerializedName("createdTime")
+    @Expose
     public java.util.Calendar createdTime;
 
     /**
      * The Parent Notebook.
      */
     @SerializedName("parentNotebook")
+    @Expose
     public Notebook parentNotebook;
 
     /**
      * The Parent Section Group.
      */
     @SerializedName("parentSectionGroup")
+    @Expose
     public SectionGroup parentSectionGroup;
 
     /**

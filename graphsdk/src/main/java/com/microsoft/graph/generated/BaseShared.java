@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseShared implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseShared() {
@@ -36,12 +38,14 @@ public class BaseShared implements IJsonBackedObject {
      * The Owner.
      */
     @SerializedName("owner")
+    @Expose
     public IdentitySet owner;
 
     /**
      * The Scope.
      */
     @SerializedName("scope")
+    @Expose
     public String scope;
 
 

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,36 +35,42 @@ public class BaseNotesOperation extends Entity implements IJsonBackedObject {
      * The Status.
      */
     @SerializedName("status")
+    @Expose
     public String status;
 
     /**
      * The Created Date Time.
      */
     @SerializedName("createdDateTime")
+    @Expose
     public java.util.Calendar createdDateTime;
 
     /**
      * The Last Action Date Time.
      */
     @SerializedName("lastActionDateTime")
+    @Expose
     public java.util.Calendar lastActionDateTime;
 
     /**
      * The Resource Location.
      */
     @SerializedName("resourceLocation")
+    @Expose
     public String resourceLocation;
 
     /**
      * The Resource Id.
      */
     @SerializedName("resourceId")
+    @Expose
     public String resourceId;
 
     /**
      * The Error.
      */
     @SerializedName("error")
+    @Expose
     public NotesOperationError error;
 
 

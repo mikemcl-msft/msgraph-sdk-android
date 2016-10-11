@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseRequiredResourceAccess implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseRequiredResourceAccess() {
@@ -36,12 +38,14 @@ public class BaseRequiredResourceAccess implements IJsonBackedObject {
      * The Resource App Id.
      */
     @SerializedName("resourceAppId")
+    @Expose
     public String resourceAppId;
 
     /**
      * The Resource Access.
      */
     @SerializedName("resourceAccess")
+    @Expose
     public List<ResourceAccess> resourceAccess;
 
 

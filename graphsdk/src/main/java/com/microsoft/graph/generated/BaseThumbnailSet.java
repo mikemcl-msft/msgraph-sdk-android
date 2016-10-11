@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,24 +35,28 @@ public class BaseThumbnailSet extends Entity implements IJsonBackedObject {
      * The Large.
      */
     @SerializedName("large")
+    @Expose
     public Thumbnail large;
 
     /**
      * The Medium.
      */
     @SerializedName("medium")
+    @Expose
     public Thumbnail medium;
 
     /**
      * The Small.
      */
     @SerializedName("small")
+    @Expose
     public Thumbnail small;
 
     /**
      * The Source.
      */
     @SerializedName("source")
+    @Expose
     public Thumbnail source;
 
 

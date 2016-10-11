@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -31,111 +32,178 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
     }
 
     /**
+     * The Classification.
+     */
+    @SerializedName("classification")
+    @Expose
+    public String classification;
+
+    /**
+     * The Created Date Time.
+     */
+    @SerializedName("createdDateTime")
+    @Expose
+    public java.util.Calendar createdDateTime;
+
+    /**
      * The Description.
      */
     @SerializedName("description")
+    @Expose
     public String description;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Group Types.
      */
     @SerializedName("groupTypes")
+    @Expose
     public List<String> groupTypes;
 
     /**
      * The Mail.
      */
     @SerializedName("mail")
+    @Expose
     public String mail;
 
     /**
      * The Mail Enabled.
      */
     @SerializedName("mailEnabled")
+    @Expose
     public Boolean mailEnabled;
 
     /**
      * The Mail Nickname.
      */
     @SerializedName("mailNickname")
+    @Expose
     public String mailNickname;
+
+    /**
+     * The Membership Rule.
+     */
+    @SerializedName("membershipRule")
+    @Expose
+    public String membershipRule;
+
+    /**
+     * The Membership Rule Processing State.
+     */
+    @SerializedName("membershipRuleProcessingState")
+    @Expose
+    public String membershipRuleProcessingState;
 
     /**
      * The On Premises Last Sync Date Time.
      */
     @SerializedName("onPremisesLastSyncDateTime")
+    @Expose
     public java.util.Calendar onPremisesLastSyncDateTime;
 
     /**
      * The On Premises Security Identifier.
      */
     @SerializedName("onPremisesSecurityIdentifier")
+    @Expose
     public String onPremisesSecurityIdentifier;
 
     /**
      * The On Premises Sync Enabled.
      */
     @SerializedName("onPremisesSyncEnabled")
+    @Expose
     public Boolean onPremisesSyncEnabled;
+
+    /**
+     * The Preferred Language.
+     */
+    @SerializedName("preferredLanguage")
+    @Expose
+    public String preferredLanguage;
 
     /**
      * The Proxy Addresses.
      */
     @SerializedName("proxyAddresses")
+    @Expose
     public List<String> proxyAddresses;
+
+    /**
+     * The Renewed Date Time.
+     */
+    @SerializedName("renewedDateTime")
+    @Expose
+    public java.util.Calendar renewedDateTime;
 
     /**
      * The Security Enabled.
      */
     @SerializedName("securityEnabled")
+    @Expose
     public Boolean securityEnabled;
+
+    /**
+     * The Theme.
+     */
+    @SerializedName("theme")
+    @Expose
+    public String theme;
 
     /**
      * The Visibility.
      */
     @SerializedName("visibility")
+    @Expose
     public String visibility;
 
     /**
      * The Access Type.
      */
     @SerializedName("accessType")
+    @Expose
     public GroupAccessType accessType;
 
     /**
      * The Allow External Senders.
      */
     @SerializedName("allowExternalSenders")
+    @Expose
     public Boolean allowExternalSenders;
 
     /**
      * The Auto Subscribe New Members.
      */
     @SerializedName("autoSubscribeNewMembers")
+    @Expose
     public Boolean autoSubscribeNewMembers;
 
     /**
      * The Is Favorite.
      */
     @SerializedName("isFavorite")
+    @Expose
     public Boolean isFavorite;
 
     /**
      * The Is Subscribed By Mail.
      */
     @SerializedName("isSubscribedByMail")
+    @Expose
     public Boolean isSubscribedByMail;
 
     /**
      * The Unseen Count.
      */
     @SerializedName("unseenCount")
+    @Expose
     public Integer unseenCount;
 
     /**
@@ -152,6 +220,7 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      * The Created On Behalf Of.
      */
     @SerializedName("createdOnBehalfOf")
+    @Expose
     public DirectoryObject createdOnBehalfOf;
 
     /**
@@ -173,6 +242,7 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      * The Calendar.
      */
     @SerializedName("calendar")
+    @Expose
     public Calendar calendar;
 
     /**
@@ -194,6 +264,7 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      * The Photo.
      */
     @SerializedName("photo")
+    @Expose
     public ProfilePhoto photo;
 
     /**
@@ -215,7 +286,22 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      * The Drive.
      */
     @SerializedName("drive")
+    @Expose
     public Drive drive;
+
+    /**
+     * The Sharepoint.
+     */
+    @SerializedName("sharepoint")
+    @Expose
+    public SharePoint sharepoint;
+
+    /**
+     * The Plan.
+     */
+    @SerializedName("plan")
+    @Expose
+    public Plan plan;
 
     /**
      * The Plans.
@@ -226,6 +312,7 @@ public class BaseGroup extends DirectoryObject implements IJsonBackedObject {
      * The Notes.
      */
     @SerializedName("notes")
+    @Expose
     public Notes notes;
 
 

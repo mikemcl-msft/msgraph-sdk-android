@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,48 +35,56 @@ public class BasePost extends OutlookItem implements IJsonBackedObject {
      * The Body.
      */
     @SerializedName("body")
+    @Expose
     public ItemBody body;
 
     /**
      * The Received Date Time.
      */
     @SerializedName("receivedDateTime")
+    @Expose
     public java.util.Calendar receivedDateTime;
 
     /**
      * The Has Attachments.
      */
     @SerializedName("hasAttachments")
+    @Expose
     public Boolean hasAttachments;
 
     /**
      * The From.
      */
     @SerializedName("from")
+    @Expose
     public Recipient from;
 
     /**
      * The Sender.
      */
     @SerializedName("sender")
+    @Expose
     public Recipient sender;
 
     /**
      * The Conversation Thread Id.
      */
     @SerializedName("conversationThreadId")
+    @Expose
     public String conversationThreadId;
 
     /**
      * The New Participants.
      */
     @SerializedName("newParticipants")
+    @Expose
     public List<Recipient> newParticipants;
 
     /**
      * The Conversation Id.
      */
     @SerializedName("conversationId")
+    @Expose
     public String conversationId;
 
     /**
@@ -87,6 +96,7 @@ public class BasePost extends OutlookItem implements IJsonBackedObject {
      * The In Reply To.
      */
     @SerializedName("inReplyTo")
+    @Expose
     public Post inReplyTo;
 
     /**
@@ -103,6 +113,11 @@ public class BasePost extends OutlookItem implements IJsonBackedObject {
      * The Multi Value Extended Properties.
      */
     public transient MultiValueLegacyExtendedPropertyCollectionPage multiValueExtendedProperties;
+
+    /**
+     * The Mentions.
+     */
+    public transient MentionCollectionPage mentions;
 
 
     /**
@@ -204,6 +219,22 @@ public class BasePost extends OutlookItem implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             multiValueExtendedProperties = new MultiValueLegacyExtendedPropertyCollectionPage(response, null);
+        }
+
+        if (json.has("mentions")) {
+            final BaseMentionCollectionResponse response = new BaseMentionCollectionResponse();
+            if (json.has("mentions@odata.nextLink")) {
+                response.nextLink = json.get("mentions@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("mentions").toString(), JsonObject[].class);
+            final Mention[] array = new Mention[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Mention.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            mentions = new MentionCollectionPage(response, null);
         }
     }
 }

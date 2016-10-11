@@ -14,26 +14,35 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
- * The Enum Web Site Type.
+ * The Enum Website Type.
 */
-public enum WebSiteType
+public enum WebsiteType
 {
     /**
-    * unknown
+    * other
     */
-    unknown,
+    other,
     /**
-    * personal Home Page
+    * home
     */
-    personalHomePage,
+    home,
     /**
-    * business Home Page
+    * work
     */
-    businessHomePage,
+    work,
     /**
-    * For WebSiteType values that were not expected from the service
+    * blog
+    */
+    blog,
+    /**
+    * profile
+    */
+    profile,
+    /**
+    * For WebsiteType values that were not expected from the service
     */
     unexpectedValue
 }

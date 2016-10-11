@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseChecklistItem implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseChecklistItem() {
@@ -36,30 +38,35 @@ public class BaseChecklistItem implements IJsonBackedObject {
      * The Is Checked.
      */
     @SerializedName("isChecked")
+    @Expose
     public Boolean isChecked;
 
     /**
      * The Title.
      */
     @SerializedName("title")
+    @Expose
     public String title;
 
     /**
      * The Order Hint.
      */
     @SerializedName("orderHint")
+    @Expose
     public String orderHint;
 
     /**
      * The Last Modified By.
      */
     @SerializedName("lastModifiedBy")
+    @Expose
     public String lastModifiedBy;
 
     /**
      * The Last Modified Date Time.
      */
     @SerializedName("lastModifiedDateTime")
+    @Expose
     public java.util.Calendar lastModifiedDateTime;
 
 

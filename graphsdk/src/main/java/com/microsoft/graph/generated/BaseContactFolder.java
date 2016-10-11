@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,18 +35,21 @@ public class BaseContactFolder extends Entity implements IJsonBackedObject {
      * The Parent Folder Id.
      */
     @SerializedName("parentFolderId")
+    @Expose
     public String parentFolderId;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Well Known Name.
      */
     @SerializedName("wellKnownName")
+    @Expose
     public String wellKnownName;
 
     /**

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseAppRole implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseAppRole() {
@@ -36,42 +38,49 @@ public class BaseAppRole implements IJsonBackedObject {
      * The Allowed Member Types.
      */
     @SerializedName("allowedMemberTypes")
+    @Expose
     public List<String> allowedMemberTypes;
 
     /**
      * The Description.
      */
     @SerializedName("description")
+    @Expose
     public String description;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Id.
      */
     @SerializedName("id")
+    @Expose
     public java.util.UUID id;
 
     /**
      * The Is Enabled.
      */
     @SerializedName("isEnabled")
+    @Expose
     public Boolean isEnabled;
 
     /**
      * The Origin.
      */
     @SerializedName("origin")
+    @Expose
     public String origin;
 
     /**
      * The Value.
      */
     @SerializedName("value")
+    @Expose
     public String value;
 
 

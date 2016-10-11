@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseAutomaticRepliesSetting implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseAutomaticRepliesSetting() {
@@ -36,36 +38,42 @@ public class BaseAutomaticRepliesSetting implements IJsonBackedObject {
      * The Status.
      */
     @SerializedName("status")
+    @Expose
     public AutomaticRepliesStatus status;
 
     /**
      * The External Audience.
      */
     @SerializedName("externalAudience")
+    @Expose
     public ExternalAudienceScope externalAudience;
 
     /**
      * The Scheduled Start Date Time.
      */
     @SerializedName("scheduledStartDateTime")
+    @Expose
     public DateTimeTimeZone scheduledStartDateTime;
 
     /**
      * The Scheduled End Date Time.
      */
     @SerializedName("scheduledEndDateTime")
+    @Expose
     public DateTimeTimeZone scheduledEndDateTime;
 
     /**
      * The Internal Reply Message.
      */
     @SerializedName("internalReplyMessage")
+    @Expose
     public String internalReplyMessage;
 
     /**
      * The External Reply Message.
      */
     @SerializedName("externalReplyMessage")
+    @Expose
     public String externalReplyMessage;
 
 

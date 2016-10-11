@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -23,13 +24,13 @@ import java.util.List;
 public class DirectoryObjectCollectionReferenceRequestBuilder extends BaseDirectoryObjectCollectionReferenceRequestBuilder implements IDirectoryObjectCollectionReferenceRequestBuilder {
 
     /**
-     * The request builder for this collection of User
+     * The request builder for this collection of AdministrativeUnit
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
+     * @param requestOptions The options for this request
      */
-    public DirectoryObjectCollectionReferenceRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> options) {
-        super(requestUrl, client, options);
+    public DirectoryObjectCollectionReferenceRequestBuilder(final String requestUrl, final IBaseClient client, final List<Option> requestOptions) {
+        super(requestUrl, client, requestOptions);
     }
 }

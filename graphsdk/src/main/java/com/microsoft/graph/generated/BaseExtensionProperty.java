@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,30 +35,35 @@ public class BaseExtensionProperty extends DirectoryObject implements IJsonBacke
      * The App Display Name.
      */
     @SerializedName("appDisplayName")
+    @Expose
     public String appDisplayName;
 
     /**
      * The Name.
      */
     @SerializedName("name")
+    @Expose
     public String name;
 
     /**
      * The Data Type.
      */
     @SerializedName("dataType")
+    @Expose
     public String dataType;
 
     /**
      * The Is Synced From On Premises.
      */
     @SerializedName("isSyncedFromOnPremises")
+    @Expose
     public Boolean isSyncedFromOnPremises;
 
     /**
      * The Target Objects.
      */
     @SerializedName("targetObjects")
+    @Expose
     public List<String> targetObjects;
 
 

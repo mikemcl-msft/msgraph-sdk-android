@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,7 +30,8 @@ public class BaseWorkbookProcessQueryBody {
      * The input.
      */
     @SerializedName("input")
-    public java.io.InputStream input;
+    @Expose
+    public byte[] input;
 
 
     /**

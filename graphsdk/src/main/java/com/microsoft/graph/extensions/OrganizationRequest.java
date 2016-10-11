@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 // This file is available for extending, afterwards please submit a pull request.
 
@@ -27,9 +28,9 @@ public class OrganizationRequest extends BaseOrganizationRequest implements IOrg
      *
      * @param requestUrl The request url
      * @param client The service client
-     * @param options The options for this request
+     * @param requestOptions The options for this request
      */
-    public OrganizationRequest(final String requestUrl, final IBaseClient client, final List<Option> options) {
-        super(requestUrl, client, options, Organization.class);
+    public OrganizationRequest(final String requestUrl, final IBaseClient client, final List<Option> requestOptions) {
+        super(requestUrl, client, requestOptions, Organization.class);
     }
 }

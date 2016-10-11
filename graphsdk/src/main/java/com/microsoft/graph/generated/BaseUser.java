@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,252 +35,308 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
      * The Account Enabled.
      */
     @SerializedName("accountEnabled")
+    @Expose
     public Boolean accountEnabled;
 
     /**
      * The Assigned Licenses.
      */
     @SerializedName("assignedLicenses")
+    @Expose
     public List<AssignedLicense> assignedLicenses;
 
     /**
      * The Assigned Plans.
      */
     @SerializedName("assignedPlans")
+    @Expose
     public List<AssignedPlan> assignedPlans;
 
     /**
      * The Business Phones.
      */
     @SerializedName("businessPhones")
+    @Expose
     public List<String> businessPhones;
 
     /**
      * The City.
      */
     @SerializedName("city")
+    @Expose
     public String city;
 
     /**
      * The Company Name.
      */
     @SerializedName("companyName")
+    @Expose
     public String companyName;
 
     /**
      * The Country.
      */
     @SerializedName("country")
+    @Expose
     public String country;
 
     /**
      * The Department.
      */
     @SerializedName("department")
+    @Expose
     public String department;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Given Name.
      */
     @SerializedName("givenName")
+    @Expose
     public String givenName;
 
     /**
      * The Job Title.
      */
     @SerializedName("jobTitle")
+    @Expose
     public String jobTitle;
 
     /**
      * The Mail.
      */
     @SerializedName("mail")
+    @Expose
     public String mail;
 
     /**
      * The Mail Nickname.
      */
     @SerializedName("mailNickname")
+    @Expose
     public String mailNickname;
 
     /**
      * The Mobile Phone.
      */
     @SerializedName("mobilePhone")
+    @Expose
     public String mobilePhone;
 
     /**
      * The On Premises Immutable Id.
      */
     @SerializedName("onPremisesImmutableId")
+    @Expose
     public String onPremisesImmutableId;
 
     /**
      * The On Premises Last Sync Date Time.
      */
     @SerializedName("onPremisesLastSyncDateTime")
+    @Expose
     public java.util.Calendar onPremisesLastSyncDateTime;
 
     /**
      * The On Premises Security Identifier.
      */
     @SerializedName("onPremisesSecurityIdentifier")
+    @Expose
     public String onPremisesSecurityIdentifier;
 
     /**
      * The On Premises Sync Enabled.
      */
     @SerializedName("onPremisesSyncEnabled")
+    @Expose
     public Boolean onPremisesSyncEnabled;
 
     /**
      * The Password Policies.
      */
     @SerializedName("passwordPolicies")
+    @Expose
     public String passwordPolicies;
 
     /**
      * The Password Profile.
      */
     @SerializedName("passwordProfile")
+    @Expose
     public PasswordProfile passwordProfile;
 
     /**
      * The Office Location.
      */
     @SerializedName("officeLocation")
+    @Expose
     public String officeLocation;
 
     /**
      * The Postal Code.
      */
     @SerializedName("postalCode")
+    @Expose
     public String postalCode;
 
     /**
      * The Preferred Language.
      */
     @SerializedName("preferredLanguage")
+    @Expose
     public String preferredLanguage;
 
     /**
      * The Provisioned Plans.
      */
     @SerializedName("provisionedPlans")
+    @Expose
     public List<ProvisionedPlan> provisionedPlans;
 
     /**
      * The Proxy Addresses.
      */
     @SerializedName("proxyAddresses")
+    @Expose
     public List<String> proxyAddresses;
+
+    /**
+     * The Refresh Tokens Valid From Date Time.
+     */
+    @SerializedName("refreshTokensValidFromDateTime")
+    @Expose
+    public java.util.Calendar refreshTokensValidFromDateTime;
+
+    /**
+     * The Show In Address List.
+     */
+    @SerializedName("showInAddressList")
+    @Expose
+    public Boolean showInAddressList;
 
     /**
      * The State.
      */
     @SerializedName("state")
+    @Expose
     public String state;
 
     /**
      * The Street Address.
      */
     @SerializedName("streetAddress")
+    @Expose
     public String streetAddress;
 
     /**
      * The Surname.
      */
     @SerializedName("surname")
+    @Expose
     public String surname;
 
     /**
      * The Usage Location.
      */
     @SerializedName("usageLocation")
+    @Expose
     public String usageLocation;
 
     /**
      * The User Principal Name.
      */
     @SerializedName("userPrincipalName")
+    @Expose
     public String userPrincipalName;
 
     /**
      * The User Type.
      */
     @SerializedName("userType")
+    @Expose
     public String userType;
 
     /**
      * The Mailbox Settings.
      */
     @SerializedName("mailboxSettings")
+    @Expose
     public MailboxSettings mailboxSettings;
 
     /**
      * The About Me.
      */
     @SerializedName("aboutMe")
+    @Expose
     public String aboutMe;
 
     /**
      * The Birthday.
      */
     @SerializedName("birthday")
+    @Expose
     public java.util.Calendar birthday;
 
     /**
      * The Hire Date.
      */
     @SerializedName("hireDate")
+    @Expose
     public java.util.Calendar hireDate;
 
     /**
      * The Interests.
      */
     @SerializedName("interests")
+    @Expose
     public List<String> interests;
 
     /**
      * The My Site.
      */
     @SerializedName("mySite")
+    @Expose
     public String mySite;
 
     /**
      * The Past Projects.
      */
     @SerializedName("pastProjects")
+    @Expose
     public List<String> pastProjects;
 
     /**
      * The Preferred Name.
      */
     @SerializedName("preferredName")
+    @Expose
     public String preferredName;
 
     /**
      * The Responsibilities.
      */
     @SerializedName("responsibilities")
+    @Expose
     public List<String> responsibilities;
 
     /**
      * The Schools.
      */
     @SerializedName("schools")
+    @Expose
     public List<String> schools;
 
     /**
      * The Skills.
      */
     @SerializedName("skills")
+    @Expose
     public List<String> skills;
 
     /**
@@ -296,6 +353,7 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
      * The Manager.
      */
     @SerializedName("manager")
+    @Expose
     public DirectoryObject manager;
 
     /**
@@ -319,6 +377,11 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
     public transient DirectoryObjectCollectionPage ownedObjects;
 
     /**
+     * The Scoped Administrator Of.
+     */
+    public transient ScopedRoleMembershipCollectionPage scopedAdministratorOf;
+
+    /**
      * The Messages.
      */
     public transient MessageCollectionPage messages;
@@ -337,6 +400,7 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
      * The Calendar.
      */
     @SerializedName("calendar")
+    @Expose
     public Calendar calendar;
 
     /**
@@ -378,12 +442,14 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
      * The Inference Classification.
      */
     @SerializedName("inferenceClassification")
+    @Expose
     public InferenceClassification inferenceClassification;
 
     /**
      * The Photo.
      */
     @SerializedName("photo")
+    @Expose
     public ProfilePhoto photo;
 
     /**
@@ -395,12 +461,26 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
      * The Drive.
      */
     @SerializedName("drive")
+    @Expose
     public Drive drive;
+
+    /**
+     * The Drives.
+     */
+    public transient DriveCollectionPage drives;
+
+    /**
+     * The Sharepoint.
+     */
+    @SerializedName("sharepoint")
+    @Expose
+    public SharePoint sharepoint;
 
     /**
      * The Insights.
      */
     @SerializedName("insights")
+    @Expose
     public OfficeGraphInsights insights;
 
     /**
@@ -427,6 +507,7 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
      * The Notes.
      */
     @SerializedName("notes")
+    @Expose
     public Notes notes;
 
 
@@ -561,6 +642,22 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             ownedObjects = new DirectoryObjectCollectionPage(response, null);
+        }
+
+        if (json.has("scopedAdministratorOf")) {
+            final BaseScopedRoleMembershipCollectionResponse response = new BaseScopedRoleMembershipCollectionResponse();
+            if (json.has("scopedAdministratorOf@odata.nextLink")) {
+                response.nextLink = json.get("scopedAdministratorOf@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("scopedAdministratorOf").toString(), JsonObject[].class);
+            final ScopedRoleMembership[] array = new ScopedRoleMembership[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), ScopedRoleMembership.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            scopedAdministratorOf = new ScopedRoleMembershipCollectionPage(response, null);
         }
 
         if (json.has("messages")) {
@@ -737,6 +834,22 @@ public class BaseUser extends DirectoryObject implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             photos = new ProfilePhotoCollectionPage(response, null);
+        }
+
+        if (json.has("drives")) {
+            final BaseDriveCollectionResponse response = new BaseDriveCollectionResponse();
+            if (json.has("drives@odata.nextLink")) {
+                response.nextLink = json.get("drives@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("drives").toString(), JsonObject[].class);
+            final Drive[] array = new Drive[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Drive.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            drives = new DriveCollectionPage(response, null);
         }
 
         if (json.has("trendingAround")) {

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,31 +35,36 @@ public class BaseTaskDetails extends Entity implements IJsonBackedObject {
      * The Description.
      */
     @SerializedName("description")
+    @Expose
     public String description;
 
     /**
      * The Preview Type.
      */
     @SerializedName("previewType")
+    @Expose
     public PreviewType previewType;
 
     /**
      * The Completed By.
      */
     @SerializedName("completedBy")
+    @Expose
     public String completedBy;
 
     /**
      * The References.
      */
     @SerializedName("references")
-    public ExternalReferenceCollection references;
+    @Expose
+    public Map<String, ExternalReference> references;
 
     /**
      * The Checklist.
      */
     @SerializedName("checklist")
-    public ChecklistItemCollection checklist;
+    @Expose
+    public Map<String, ChecklistItem> checklist;
 
 
     /**

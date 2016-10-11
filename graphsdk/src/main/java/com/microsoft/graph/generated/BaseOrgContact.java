@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,120 +35,140 @@ public class BaseOrgContact extends DirectoryObject implements IJsonBackedObject
      * The Business Phones.
      */
     @SerializedName("businessPhones")
+    @Expose
     public List<String> businessPhones;
 
     /**
      * The City.
      */
     @SerializedName("city")
+    @Expose
     public String city;
 
     /**
      * The Company Name.
      */
     @SerializedName("companyName")
+    @Expose
     public String companyName;
 
     /**
      * The Country.
      */
     @SerializedName("country")
+    @Expose
     public String country;
 
     /**
      * The Department.
      */
     @SerializedName("department")
+    @Expose
     public String department;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Given Name.
      */
     @SerializedName("givenName")
+    @Expose
     public String givenName;
 
     /**
      * The Job Title.
      */
     @SerializedName("jobTitle")
+    @Expose
     public String jobTitle;
 
     /**
      * The Mail.
      */
     @SerializedName("mail")
+    @Expose
     public String mail;
 
     /**
      * The Mail Nickname.
      */
     @SerializedName("mailNickname")
+    @Expose
     public String mailNickname;
 
     /**
      * The Mobile Phone.
      */
     @SerializedName("mobilePhone")
+    @Expose
     public String mobilePhone;
 
     /**
      * The On Premises Sync Enabled.
      */
     @SerializedName("onPremisesSyncEnabled")
+    @Expose
     public Boolean onPremisesSyncEnabled;
 
     /**
      * The On Premises Last Sync Date Time.
      */
     @SerializedName("onPremisesLastSyncDateTime")
+    @Expose
     public java.util.Calendar onPremisesLastSyncDateTime;
 
     /**
      * The Office Location.
      */
     @SerializedName("officeLocation")
+    @Expose
     public String officeLocation;
 
     /**
      * The Postal Code.
      */
     @SerializedName("postalCode")
+    @Expose
     public String postalCode;
 
     /**
      * The Proxy Addresses.
      */
     @SerializedName("proxyAddresses")
+    @Expose
     public List<String> proxyAddresses;
 
     /**
      * The State.
      */
     @SerializedName("state")
+    @Expose
     public String state;
 
     /**
      * The Street Address.
      */
     @SerializedName("streetAddress")
+    @Expose
     public String streetAddress;
 
     /**
      * The Surname.
      */
     @SerializedName("surname")
+    @Expose
     public String surname;
 
     /**
      * The Manager.
      */
     @SerializedName("manager")
+    @Expose
     public DirectoryObject manager;
 
     /**

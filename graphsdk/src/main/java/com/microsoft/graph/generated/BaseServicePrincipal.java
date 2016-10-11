@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,121 +35,148 @@ public class BaseServicePrincipal extends DirectoryObject implements IJsonBacked
      * The Account Enabled.
      */
     @SerializedName("accountEnabled")
+    @Expose
     public Boolean accountEnabled;
 
     /**
      * The Add Ins.
      */
     @SerializedName("addIns")
+    @Expose
     public List<AddIn> addIns;
 
     /**
      * The App Display Name.
      */
     @SerializedName("appDisplayName")
+    @Expose
     public String appDisplayName;
 
     /**
      * The App Id.
      */
     @SerializedName("appId")
+    @Expose
     public String appId;
 
     /**
      * The App Owner Organization Id.
      */
     @SerializedName("appOwnerOrganizationId")
+    @Expose
     public java.util.UUID appOwnerOrganizationId;
 
     /**
      * The App Role Assignment Required.
      */
     @SerializedName("appRoleAssignmentRequired")
+    @Expose
     public Boolean appRoleAssignmentRequired;
 
     /**
      * The App Roles.
      */
     @SerializedName("appRoles")
+    @Expose
     public List<AppRole> appRoles;
 
     /**
      * The Display Name.
      */
     @SerializedName("displayName")
+    @Expose
     public String displayName;
 
     /**
      * The Error Url.
      */
     @SerializedName("errorUrl")
+    @Expose
     public String errorUrl;
 
     /**
      * The Homepage.
      */
     @SerializedName("homepage")
+    @Expose
     public String homepage;
 
     /**
      * The Key Credentials.
      */
     @SerializedName("keyCredentials")
+    @Expose
     public List<KeyCredential> keyCredentials;
 
     /**
      * The Logout Url.
      */
     @SerializedName("logoutUrl")
+    @Expose
     public String logoutUrl;
 
     /**
      * The Oauth2Permissions.
      */
     @SerializedName("oauth2Permissions")
+    @Expose
     public List<OAuth2Permission> oauth2Permissions;
 
     /**
      * The Password Credentials.
      */
     @SerializedName("passwordCredentials")
+    @Expose
     public List<PasswordCredential> passwordCredentials;
 
     /**
      * The Preferred Token Signing Key Thumbprint.
      */
     @SerializedName("preferredTokenSigningKeyThumbprint")
+    @Expose
     public String preferredTokenSigningKeyThumbprint;
 
     /**
      * The Publisher Name.
      */
     @SerializedName("publisherName")
+    @Expose
     public String publisherName;
 
     /**
      * The Reply Urls.
      */
     @SerializedName("replyUrls")
+    @Expose
     public List<String> replyUrls;
 
     /**
      * The Saml Metadata Url.
      */
     @SerializedName("samlMetadataUrl")
+    @Expose
     public String samlMetadataUrl;
 
     /**
      * The Service Principal Names.
      */
     @SerializedName("servicePrincipalNames")
+    @Expose
     public List<String> servicePrincipalNames;
 
     /**
      * The Tags.
      */
     @SerializedName("tags")
+    @Expose
     public List<String> tags;
+
+    /**
+     * The App Role Assignment.
+     */
+    @SerializedName("appRoleAssignment")
+    @Expose
+    public AppRoleAssignment appRoleAssignment;
 
     /**
      * The App Role Assigned To.
@@ -159,6 +187,13 @@ public class BaseServicePrincipal extends DirectoryObject implements IJsonBacked
      * The App Role Assignments.
      */
     public transient AppRoleAssignmentCollectionPage appRoleAssignments;
+
+    /**
+     * The Oauth2Permission Grant.
+     */
+    @SerializedName("oauth2PermissionGrant")
+    @Expose
+    public OAuth2PermissionGrant oauth2PermissionGrant;
 
     /**
      * The Oauth2Permission Grants.
@@ -184,6 +219,11 @@ public class BaseServicePrincipal extends DirectoryObject implements IJsonBacked
      * The Owned Objects.
      */
     public transient DirectoryObjectCollectionPage ownedObjects;
+
+    /**
+     * The Policies.
+     */
+    public transient DirectoryObjectCollectionPage policies;
 
 
     /**
@@ -333,6 +373,22 @@ public class BaseServicePrincipal extends DirectoryObject implements IJsonBacked
             }
             response.value = Arrays.asList(array);
             ownedObjects = new DirectoryObjectCollectionPage(response, null);
+        }
+
+        if (json.has("policies")) {
+            final BaseDirectoryObjectCollectionResponse response = new BaseDirectoryObjectCollectionResponse();
+            if (json.has("policies@odata.nextLink")) {
+                response.nextLink = json.get("policies@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("policies").toString(), JsonObject[].class);
+            final DirectoryObject[] array = new DirectoryObject[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), DirectoryObject.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            policies = new DirectoryObjectCollectionPage(response, null);
         }
     }
 }

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,12 +35,14 @@ public class BaseTaskBoardTaskFormat extends Entity implements IJsonBackedObject
      * The Type.
      */
     @SerializedName("type")
+    @Expose
     public TaskBoardType type;
 
     /**
      * The Order Hint.
      */
     @SerializedName("orderHint")
+    @Expose
     public String orderHint;
 
 

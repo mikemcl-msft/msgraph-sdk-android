@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,173 +35,207 @@ public class BaseMessage extends OutlookItem implements IJsonBackedObject {
      * The Received Date Time.
      */
     @SerializedName("receivedDateTime")
+    @Expose
     public java.util.Calendar receivedDateTime;
 
     /**
      * The Sent Date Time.
      */
     @SerializedName("sentDateTime")
+    @Expose
     public java.util.Calendar sentDateTime;
 
     /**
      * The Has Attachments.
      */
     @SerializedName("hasAttachments")
+    @Expose
     public Boolean hasAttachments;
 
     /**
      * The Internet Message Id.
      */
     @SerializedName("internetMessageId")
+    @Expose
     public String internetMessageId;
 
     /**
      * The Subject.
      */
     @SerializedName("subject")
+    @Expose
     public String subject;
 
     /**
      * The Body.
      */
     @SerializedName("body")
+    @Expose
     public ItemBody body;
 
     /**
      * The Body Preview.
      */
     @SerializedName("bodyPreview")
+    @Expose
     public String bodyPreview;
 
     /**
      * The Importance.
      */
     @SerializedName("importance")
+    @Expose
     public Importance importance;
 
     /**
      * The Parent Folder Id.
      */
     @SerializedName("parentFolderId")
+    @Expose
     public String parentFolderId;
 
     /**
      * The Sender.
      */
     @SerializedName("sender")
+    @Expose
     public Recipient sender;
 
     /**
      * The From.
      */
     @SerializedName("from")
+    @Expose
     public Recipient from;
 
     /**
      * The To Recipients.
      */
     @SerializedName("toRecipients")
+    @Expose
     public List<Recipient> toRecipients;
 
     /**
      * The Cc Recipients.
      */
     @SerializedName("ccRecipients")
+    @Expose
     public List<Recipient> ccRecipients;
 
     /**
      * The Bcc Recipients.
      */
     @SerializedName("bccRecipients")
+    @Expose
     public List<Recipient> bccRecipients;
 
     /**
      * The Reply To.
      */
     @SerializedName("replyTo")
+    @Expose
     public List<Recipient> replyTo;
 
     /**
      * The Conversation Id.
      */
     @SerializedName("conversationId")
+    @Expose
     public String conversationId;
 
     /**
      * The Conversation Index.
      */
     @SerializedName("conversationIndex")
+    @Expose
     public byte[] conversationIndex;
 
     /**
      * The Unique Body.
      */
     @SerializedName("uniqueBody")
+    @Expose
     public ItemBody uniqueBody;
 
     /**
      * The Is Delivery Receipt Requested.
      */
     @SerializedName("isDeliveryReceiptRequested")
+    @Expose
     public Boolean isDeliveryReceiptRequested;
 
     /**
      * The Is Read Receipt Requested.
      */
     @SerializedName("isReadReceiptRequested")
+    @Expose
     public Boolean isReadReceiptRequested;
 
     /**
      * The Is Read.
      */
     @SerializedName("isRead")
+    @Expose
     public Boolean isRead;
 
     /**
      * The Is Draft.
      */
     @SerializedName("isDraft")
+    @Expose
     public Boolean isDraft;
 
     /**
      * The Web Link.
      */
     @SerializedName("webLink")
+    @Expose
     public String webLink;
+
+    /**
+     * The Mentions Preview.
+     */
+    @SerializedName("mentionsPreview")
+    @Expose
+    public MentionsPreview mentionsPreview;
 
     /**
      * The Inference Classification.
      */
     @SerializedName("inferenceClassification")
+    @Expose
     public InferenceClassificationType inferenceClassification;
 
     /**
      * The Unsubscribe Data.
      */
     @SerializedName("unsubscribeData")
+    @Expose
     public List<String> unsubscribeData;
 
     /**
      * The Unsubscribe Enabled.
      */
     @SerializedName("unsubscribeEnabled")
+    @Expose
     public Boolean unsubscribeEnabled;
 
     /**
      * The Flag.
      */
     @SerializedName("flag")
+    @Expose
     public FollowupFlag flag;
-
-    /**
-     * The Extensions.
-     */
-    public transient ExtensionCollectionPage extensions;
 
     /**
      * The Attachments.
      */
     public transient AttachmentCollectionPage attachments;
+
+    /**
+     * The Extensions.
+     */
+    public transient ExtensionCollectionPage extensions;
 
     /**
      * The Single Value Extended Properties.
@@ -211,6 +246,11 @@ public class BaseMessage extends OutlookItem implements IJsonBackedObject {
      * The Multi Value Extended Properties.
      */
     public transient MultiValueLegacyExtendedPropertyCollectionPage multiValueExtendedProperties;
+
+    /**
+     * The Mentions.
+     */
+    public transient MentionCollectionPage mentions;
 
 
     /**
@@ -250,22 +290,6 @@ public class BaseMessage extends OutlookItem implements IJsonBackedObject {
         mRawObject = json;
 
 
-        if (json.has("extensions")) {
-            final BaseExtensionCollectionResponse response = new BaseExtensionCollectionResponse();
-            if (json.has("extensions@odata.nextLink")) {
-                response.nextLink = json.get("extensions@odata.nextLink").getAsString();
-            }
-
-            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("extensions").toString(), JsonObject[].class);
-            final Extension[] array = new Extension[sourceArray.length];
-            for (int i = 0; i < sourceArray.length; i++) {
-                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Extension.class);
-                array[i].setRawObject(serializer, sourceArray[i]);
-            }
-            response.value = Arrays.asList(array);
-            extensions = new ExtensionCollectionPage(response, null);
-        }
-
         if (json.has("attachments")) {
             final BaseAttachmentCollectionResponse response = new BaseAttachmentCollectionResponse();
             if (json.has("attachments@odata.nextLink")) {
@@ -280,6 +304,22 @@ public class BaseMessage extends OutlookItem implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             attachments = new AttachmentCollectionPage(response, null);
+        }
+
+        if (json.has("extensions")) {
+            final BaseExtensionCollectionResponse response = new BaseExtensionCollectionResponse();
+            if (json.has("extensions@odata.nextLink")) {
+                response.nextLink = json.get("extensions@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("extensions").toString(), JsonObject[].class);
+            final Extension[] array = new Extension[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Extension.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            extensions = new ExtensionCollectionPage(response, null);
         }
 
         if (json.has("singleValueExtendedProperties")) {
@@ -312,6 +352,22 @@ public class BaseMessage extends OutlookItem implements IJsonBackedObject {
             }
             response.value = Arrays.asList(array);
             multiValueExtendedProperties = new MultiValueLegacyExtendedPropertyCollectionPage(response, null);
+        }
+
+        if (json.has("mentions")) {
+            final BaseMentionCollectionResponse response = new BaseMentionCollectionResponse();
+            if (json.has("mentions@odata.nextLink")) {
+                response.nextLink = json.get("mentions@odata.nextLink").getAsString();
+            }
+
+            final JsonObject[] sourceArray = serializer.deserializeObject(json.get("mentions").toString(), JsonObject[].class);
+            final Mention[] array = new Mention[sourceArray.length];
+            for (int i = 0; i < sourceArray.length; i++) {
+                array[i] = serializer.deserializeObject(sourceArray[i].toString(), Mention.class);
+                array[i].setRawObject(serializer, sourceArray[i]);
+            }
+            response.value = Arrays.asList(array);
+            mentions = new MentionCollectionPage(response, null);
         }
     }
 }

@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -29,12 +30,14 @@ public class BaseUserAssignLicenseBody {
      * The add Licenses.
      */
     @SerializedName("addLicenses")
+    @Expose
     public List<AssignedLicense> addLicenses;
 
     /**
      * The remove Licenses.
      */
     @SerializedName("removeLicenses")
+    @Expose
     public List<java.util.UUID> removeLicenses;
 
 

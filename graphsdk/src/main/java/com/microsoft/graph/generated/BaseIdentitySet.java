@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseIdentitySet implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseIdentitySet() {
@@ -36,18 +38,21 @@ public class BaseIdentitySet implements IJsonBackedObject {
      * The Application.
      */
     @SerializedName("application")
+    @Expose
     public Identity application;
 
     /**
      * The Device.
      */
     @SerializedName("device")
+    @Expose
     public Identity device;
 
     /**
      * The User.
      */
     @SerializedName("user")
+    @Expose
     public Identity user;
 
 

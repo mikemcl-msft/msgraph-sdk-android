@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,12 +35,14 @@ public class BaseLocatedRiskEvent extends IdentityRiskEvent implements IJsonBack
      * The Location.
      */
     @SerializedName("location")
-    public String location;
+    @Expose
+    public SignInLocation location;
 
     /**
      * The Ip Address.
      */
     @SerializedName("ipAddress")
+    @Expose
     public String ipAddress;
 
 

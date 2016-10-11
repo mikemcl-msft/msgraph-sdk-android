@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -26,6 +27,7 @@ import com.google.gson.annotations.*;
 public class BaseExternalLink implements IJsonBackedObject {
 
     @SerializedName("@odata.type")
+    @Expose(serialize = false)
     public String oDataType;
 
     public BaseExternalLink() {
@@ -36,6 +38,7 @@ public class BaseExternalLink implements IJsonBackedObject {
      * The Href.
      */
     @SerializedName("href")
+    @Expose
     public String href;
 
 

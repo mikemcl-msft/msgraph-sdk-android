@@ -14,6 +14,7 @@ import com.microsoft.graph.serializer.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.*;
@@ -34,60 +35,70 @@ public class BaseIdentityRiskEvent extends Entity implements IJsonBackedObject {
      * The User Display Name.
      */
     @SerializedName("userDisplayName")
+    @Expose
     public String userDisplayName;
 
     /**
      * The User Principal Name.
      */
     @SerializedName("userPrincipalName")
+    @Expose
     public String userPrincipalName;
 
     /**
      * The Risk Event Date Time.
      */
     @SerializedName("riskEventDateTime")
+    @Expose
     public java.util.Calendar riskEventDateTime;
 
     /**
      * The Risk Event Type.
      */
     @SerializedName("riskEventType")
+    @Expose
     public String riskEventType;
 
     /**
      * The Risk Level.
      */
     @SerializedName("riskLevel")
+    @Expose
     public RiskLevel riskLevel;
 
     /**
      * The Risk Event Status.
      */
     @SerializedName("riskEventStatus")
+    @Expose
     public RiskEventStatus riskEventStatus;
 
     /**
      * The Closed Date Time.
      */
     @SerializedName("closedDateTime")
+    @Expose
     public java.util.Calendar closedDateTime;
 
     /**
      * The Created Date Time.
      */
     @SerializedName("createdDateTime")
+    @Expose
     public java.util.Calendar createdDateTime;
 
     /**
      * The User Id.
      */
     @SerializedName("userId")
+    @Expose
     public String userId;
 
     /**
      * The Impacted User.
      */
     @SerializedName("impactedUser")
+    @Expose
     public User impactedUser;
 
 
